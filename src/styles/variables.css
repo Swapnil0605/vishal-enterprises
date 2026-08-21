@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — Vishal Enterprises (Clean White Light Theme)
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+    /* ─── Primary Palette: Clean White & Pure Neutrals ─── */
+    --bg-white: #ffffff;
+    --bg-light: #ffffff;
+    --bg-card: #ffffff;
+    --bg-subtle: #f8fafc;
+
+    /* ─── Brand Colors ─── */
+    --blue-900: #0f172a;
+    --blue-800: #1e293b;
+    --blue-700: #334155;
+    --blue-600: #1d4ed8;
+    --blue-500: #2563eb;
+    --blue-100: #eff6ff;
+
+    /* ─── Accent: Electric Red ─── */
+    --red-600: #c4141b;
+    --red-500: #e31b23;
+    --red-400: #ef4444;
+    --red-100: #fee2e2;
+
+    /* ─── Neutrals & Typography Colors ─── */
+    --white: #ffffff;
+    --gray-50: #ffffff;
+    --gray-100: #f8fafc;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
+    --gray-900: #0f172a;
+
+    /* ─── Typography ─── */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Space Grotesk', 'Inter', sans-serif;
+
+    /* ─── Layout ─── */
+    --section-padding: 80px;
+    --container-max: 1280px;
+    --container-padding: 32px;
+
+    /* ─── Transitions ─── */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+    --transition-fast: 200ms var(--ease-out);
+    --transition-base: 400ms var(--ease-out);
+    --transition-slow: 600ms var(--ease-out);
+
+    /* ─── Shadows (Soft light industrial elevation) ─── */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet (768px – 1024px) */
+@media (max-width: 1024px) {
+    :root {
+        --section-padding: 64px;
+        --container-padding: 24px;
+    }
+}
+
+/* Mobile (481px – 767px) */
+@media (max-width: 768px) {
+    :root {
+        --section-padding: 52px;
+        --container-padding: 20px;
+    }
+}
+
+/* Small Mobile (320px – 480px) */
+@media (max-width: 480px) {
+    :root {
+        --section-padding: 44px;
+        --container-padding: 16px;
+    }
+}

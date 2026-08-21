@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════════════════════
+   CSS RESET & RESPONSIVE FOUNDATION
+   ═══════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    color: var(--gray-800);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
+
+#root {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.page-wrapper {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+img, picture, svg, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+input, select, textarea {
+    font-family: inherit;
+    font-size: 16px; /* Prevents auto zoom on iOS Safari */
+}

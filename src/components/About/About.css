@@ -1,0 +1,249 @@
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT US SECTION — PERFECTLY CENTERED STICKY "35"
+   ═══════════════════════════════════════════════════════════════ */
+
+.about-section {
+    padding: var(--section-padding) 0;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
+.about-two-col-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 60px;
+    align-items: start;
+    position: relative;
+    width: 100%;
+}
+
+/* ─── Left Side: Perfectly Centered Sticky "35" ─── */
+.about-sticky-col {
+    position: sticky;
+    top: 110px;
+    align-self: start;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-sticky-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Giant Number 35 Filled with High-Contrast Centered Industrial Panel Image */
+.about-number-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    line-height: 0.85;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.image-clipped-number {
+    font-family: var(--font-display);
+    font-size: clamp(12rem, 20vw, 18.5rem);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -4px;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    /* High-contrast industrial equipment image matching reference */
+    background-image: url('/images/products/VCB Servicing and Maintenance.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.15);
+    filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.18));
+}
+
+/* Centered Caption Underneath */
+.about-number-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4px;
+    width: 100%;
+}
+
+.caption-main {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.caption-sub {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #64748b;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* ─── Right Side: Concise About Content ─── */
+.about-content-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.about-main-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+}
+
+/* Highlighted Quote Box with Vertical Red Accent Line */
+.about-quote-box {
+    border-left: 4px solid var(--red-500);
+    padding: 18px 24px;
+    background: #f8fafc;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 22px;
+    border-top: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    width: 100%;
+}
+
+.about-quote-box p {
+    font-size: 1.05rem;
+    color: #0f172a;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 500;
+}
+
+.about-quote-box strong {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* Body Text */
+.about-body-text {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.about-body-text p {
+    font-size: clamp(0.96rem, 1.15vw, 1.02rem);
+    color: #475569;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.about-body-text strong {
+    color: #0f172a;
+    font-weight: 700;
+}
+
+/* CTA Button */
+.about-action-wrap {
+    width: 100%;
+}
+
+.about-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--red-500);
+    color: #ffffff;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 14px 30px;
+    min-height: 50px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 18px rgba(227, 27, 35, 0.3);
+}
+
+.about-cta-button:hover {
+    background: #c4141b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(227, 27, 35, 0.4);
+}
+
+.cta-arrow-icon {
+    transition: transform 0.2s ease;
+}
+
+.about-cta-button:hover .cta-arrow-icon {
+    transform: translateX(4px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Tablet (768px – 1040px) */
+@media (max-width: 1040px) {
+    .about-two-col-layout {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-sticky-col {
+        position: relative;
+        top: 0;
+    }
+
+    .image-clipped-number {
+        font-size: clamp(9rem, 24vw, 14rem);
+    }
+}
+
+/* Mobile (≤767px) */
+@media (max-width: 767px) {
+    .image-clipped-number {
+        font-size: clamp(7.5rem, 28vw, 11rem);
+        letter-spacing: -2px;
+    }
+
+    .about-quote-box {
+        padding: 14px 16px;
+    }
+
+    .about-quote-box p {
+        font-size: 0.96rem;
+    }
+
+    .about-cta-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

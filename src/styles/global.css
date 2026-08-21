@@ -1,0 +1,142 @@
+/* ═══════════════════════════════════════════════════════════════
+   GLOBAL STYLES — Shared utilities, typography, buttons
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import './variables.css';
+@import './reset.css';
+
+/* ─── Layout ─── */
+.section-container {
+    max-width: var(--container-max);
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+}
+
+/* ─── Section Headers ─── */
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--red-500);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.label-line {
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--red-500);
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.section-label--light {
+    color: var(--red-400);
+}
+
+.label-line--light {
+    background: var(--red-400);
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.85rem, 3.8vw, 3rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--gray-900);
+    letter-spacing: -0.5px;
+    word-break: break-word;
+}
+
+.section-title--light {
+    color: var(--white);
+}
+
+.title-accent {
+    color: var(--red-500);
+}
+
+.section-subtitle {
+    font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+    color: var(--gray-500);
+    max-width: 560px;
+    margin-top: 14px;
+    line-height: 1.65;
+}
+
+.section-header {
+    margin-bottom: 48px;
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: 36px;
+    }
+}
+
+/* ─── Buttons ─── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 28px;
+    min-height: 48px; /* Touch-friendly tap target */
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--red-500);
+    color: var(--white);
+    box-shadow: 0 4px 18px rgba(220, 38, 38, 0.35);
+}
+
+.btn-primary:hover {
+    background: var(--red-600);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 26px rgba(220, 38, 38, 0.45);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--white);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline:hover {
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-2px);
+}
+
+.btn-full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ─── GSAP Animation Base ─── */
+.gs-fade-up,
+.gs-fade-left,
+.gs-fade-right {
+    will-change: transform, opacity;
+}
+
+/* ─── Spin Keyframe ─── */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
