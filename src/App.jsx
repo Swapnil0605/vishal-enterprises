@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
+import { ContactPage } from './pages/ContactPage';
 import { ScrollToTop } from './components/ScrollToTop';
 
 export const App = () => {
@@ -13,6 +14,7 @@ export const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/services/:slug" element={<ServiceDetailPage />} />
+                <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<Home />} />
             </Routes>
         </Router>

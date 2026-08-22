@@ -44,14 +44,14 @@ export const useScrollAnimation = (options = {}) => {
                         trigger: target,
                         start: 'top 90%',
                         toggleActions: 'play none none none',
-                        ...options.scrollTrigger
+                        once: true
                     }
                 });
             });
         }, el);
 
         return () => ctx.revert();
-    }, [options]);
+    }, []); // Runs once on mount to prevent animation resetting on re-render
 
     return containerRef;
 };

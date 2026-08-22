@@ -3,24 +3,24 @@ import './Hero.css';
 
 const heroBackgroundImages = [
     {
-        id: 'workbench',
-        image: '/images/hero/hero-workbench.jpg',
-        alt: 'Electronics Hardware Engineering & Blueprint Design Workbench'
+        id: 'hero-1',
+        image: '/images/hero/hero1.png',
+        alt: 'Industrial Electrical Control Engineering and Blueprint Design'
     },
     {
-        id: 'mv-switchgear',
-        image: '/images/hero/mv-switchgear-facility.jpg',
-        alt: 'Industrial MV Switchgear & MCC Distribution Facility'
+        id: 'hero-2',
+        image: '/images/hero/hero2.png',
+        alt: 'Custom Automation Panel Manufacturing and Power Distribution'
     },
     {
-        id: 'scada-control',
-        image: '/images/hero/scada-control-room.jpg',
-        alt: 'Central SCADA & Industrial Process Automation Control Room'
+        id: 'hero-3',
+        image: '/images/hero/hero3.png',
+        alt: 'SCADA Process Automation and Industrial Control Systems'
     },
     {
-        id: 'automation-panel',
-        image: '/images/hero/automation-panel.jpg',
-        alt: 'Custom PLC Automation Control Panel Manufacturing'
+        id: 'hero-4',
+        image: '/images/hero/hero4.png',
+        alt: 'High Voltage Switchgear and Electrical Engineering Facility'
     }
 ];
 
@@ -60,10 +60,11 @@ export const Hero = () => {
                         />
                     </div>
                 ))}
+                {/* Reduced Gradient Overlay: Keeps text readable on left, images vivid on center/right */}
                 <div className="hero-fullscreen-overlay"></div>
             </div>
 
-            {/* ─── Hero Content Overlay (Tagline Only) ─── */}
+            {/* ─── Hero Content Overlay (Aligned with Navbar Logo) ─── */}
             <div className="hero-fullscreen-content">
                 <div className="section-container">
                     <div className="hero-text-block">

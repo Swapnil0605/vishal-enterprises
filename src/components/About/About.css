@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════
-   ABOUT US SECTION — PERFECTLY CENTERED STICKY "35"
+   ABOUT US SECTION — CENTERED STICKY IMAGE-CLIPPED "35"
    ═══════════════════════════════════════════════════════════════ */
 
 .about-section {
@@ -66,7 +66,6 @@
     display: inline-block;
     text-align: center;
     margin: 0 auto;
-    /* High-contrast industrial equipment image matching reference */
     background-image: url('/images/products/VCB Servicing and Maintenance.jpeg');
     background-size: cover;
     background-position: center 30%;
@@ -77,6 +76,7 @@
     color: transparent;
     -webkit-text-stroke: 1.5px rgba(15, 23, 42, 0.15);
     filter: drop-shadow(0 16px 32px rgba(0, 0, 0, 0.18));
+    padding-top: 80px;
 }
 
 /* Centered Caption Underneath */
@@ -115,23 +115,38 @@
     width: 100%;
 }
 
+/* Main Heading (Strictly 2 Lines on Desktop) */
 .about-main-title {
     font-family: var(--font-display);
-    font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+    font-size: clamp(1.95rem, 3.2vw, 2.85rem);
     font-weight: 800;
     color: #0f172a;
-    line-height: 1.15;
+    line-height: 1.2;
     letter-spacing: -0.5px;
-    margin-bottom: 24px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-line-1 {
+    display: block;
+    color: #0f172a;
+    white-space: nowrap;
+}
+
+.heading-line-2 {
+    display: block;
+    color: var(--red-500);
+    white-space: nowrap;
 }
 
 /* Highlighted Quote Box with Vertical Red Accent Line */
 .about-quote-box {
     border-left: 4px solid var(--red-500);
-    padding: 18px 24px;
+    padding: 16px 22px;
     background: #f8fafc;
     border-radius: 0 12px 12px 0;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
     border-top: 1px solid #f1f5f9;
     border-right: 1px solid #f1f5f9;
     border-bottom: 1px solid #f1f5f9;
@@ -139,9 +154,9 @@
 }
 
 .about-quote-box p {
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     color: #0f172a;
-    line-height: 1.7;
+    line-height: 1.68;
     margin: 0;
     font-weight: 500;
 }
@@ -151,18 +166,17 @@
     color: #0f172a;
 }
 
-/* Body Text */
+/* Body Text (Natural Spacing) */
 .about-body-text {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
 }
 
 .about-body-text p {
-    font-size: clamp(0.96rem, 1.15vw, 1.02rem);
+    font-size: clamp(0.95rem, 1.1vw, 1rem);
     color: #475569;
-    line-height: 1.75;
+    line-height: 1.72;
     margin: 0;
 }
 
@@ -184,8 +198,8 @@
     color: #ffffff;
     font-size: 0.98rem;
     font-weight: 700;
-    padding: 14px 30px;
-    min-height: 50px;
+    padding: 13px 28px;
+    min-height: 48px;
     border-radius: 8px;
     text-decoration: none;
     transition: all 0.25s ease;
@@ -224,6 +238,11 @@
 
     .image-clipped-number {
         font-size: clamp(9rem, 24vw, 14rem);
+    }
+
+    .heading-line-1,
+    .heading-line-2 {
+        white-space: normal;
     }
 }
 

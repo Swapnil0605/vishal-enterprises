@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { productsData } from '../../data/products';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
@@ -7,21 +7,30 @@ import './Products.css';
 export const Products = () => {
     const sectionRef = useScrollAnimation();
     const trackRef = useRef(null);
-    const [progress, setProgress] = useState(12);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeftState, setScrollLeftState] = useState(0);
+    const progressBarRef = useRef(null);
+    
+    // Non-re-rendering drag refs for 60fps performance
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const rafIdRef = useRef(null);
 
-    const updateProgress = () => {
-        if (!trackRef.current) return;
+    const updateProgressDirect = () => {
+        if (!trackRef.current || !progressBarRef.current) return;
         const { scrollLeft, scrollWidth, clientWidth } = trackRef.current;
         const maxScroll = scrollWidth - clientWidth;
         if (maxScroll > 0) {
             const currentProgress = (scrollLeft / maxScroll) * 100;
-            setProgress(Math.min(100, Math.max(12, currentProgress)));
+            const clamped = Math.min(100, Math.max(12, currentProgress));
+            progressBarRef.current.style.width = `${clamped}%`;
         } else {
-            setProgress(100);
+            progressBarRef.current.style.width = '100%';
         }
+    };
+
+    const handleScroll = () => {
+        if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = requestAnimationFrame(updateProgressDirect);
     };
 
     const scroll = (direction) => {
@@ -35,33 +44,45 @@ export const Products = () => {
         });
     };
 
-    // Mouse drag handlers
+    // Mouse drag handlers without triggering React state re-renders
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - trackRef.current.offsetLeft);
-        setScrollLeftState(trackRef.current.scrollLeft);
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - trackRef.current.offsetLeft;
+        scrollLeftRef.current = trackRef.current.scrollLeft;
+        if (trackRef.current) {
+            trackRef.current.classList.add('dragging');
+        }
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
+        if (trackRef.current) {
+            trackRef.current.classList.remove('dragging');
+        }
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
+        if (trackRef.current) {
+            trackRef.current.classList.remove('dragging');
+        }
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging || !trackRef.current) return;
+        if (!isDraggingRef.current || !trackRef.current) return;
         e.preventDefault();
         const x = e.pageX - trackRef.current.offsetLeft;
-        const walk = (x - startX) * 1.5;
-        trackRef.current.scrollLeft = scrollLeftState - walk;
+        const walk = (x - startXRef.current) * 1.5;
+        trackRef.current.scrollLeft = scrollLeftRef.current - walk;
     };
 
     useEffect(() => {
-        updateProgress();
-        window.addEventListener('resize', updateProgress);
-        return () => window.removeEventListener('resize', updateProgress);
+        updateProgressDirect();
+        window.addEventListener('resize', updateProgressDirect);
+        return () => {
+            window.removeEventListener('resize', updateProgressDirect);
+            if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+        };
     }, []);
 
     return (
@@ -80,12 +101,12 @@ export const Products = () => {
                     </p>
                 </div>
 
-                {/* Slider and Controls contained within the symmetric section container */}
+                {/* Slider and Controls */}
                 <div className="products-slider-wrapper">
                     <div 
-                        className={`products-track ${isDragging ? 'dragging' : ''}`}
+                        className="products-track"
                         ref={trackRef}
-                        onScroll={updateProgress}
+                        onScroll={handleScroll}
                         onMouseDown={handleMouseDown}
                         onMouseLeave={handleMouseLeave}
                         onMouseUp={handleMouseUp}
@@ -94,7 +115,7 @@ export const Products = () => {
                         {productsData.map((prod) => (
                             <div key={prod.id} className="product-card">
                                 <div className="product-img">
-                                    <img src={prod.image} alt={prod.title} draggable={false} />
+                                    <img src={prod.image} alt={prod.title} draggable={false} loading="lazy" />
                                     <span className="product-category-tag">{prod.category}</span>
                                 </div>
                                 <div className="product-info">
@@ -117,7 +138,8 @@ export const Products = () => {
                         <div className="scroll-progress">
                             <div 
                                 className="scroll-progress-bar" 
-                                style={{ width: `${progress}%` }}
+                                ref={progressBarRef}
+                                style={{ width: '12%' }}
                             ></div>
                         </div>
 

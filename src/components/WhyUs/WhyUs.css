@@ -1,132 +1,201 @@
 /* ═══════════════════════════════════════════════════════════════
-   WHY US SECTION — PURE WHITE LIGHT THEME
+   THE VISHAL ADVANTAGE — BALANCED VISIBILITY PARALLAX SECTION
    ═══════════════════════════════════════════════════════════════ */
 
-.why-us {
-    position: relative;
-    padding: var(--section-padding) 0;
-    background: #ffffff;
+.why-us-testimonial-section {
+    padding: 70px 0 65px;
+    background-color: #0f172a;
+    /* Reduced overlay (40%) for a sharp, vivid background image */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.38)), 
+        url('/images/advantage.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Fixed parallax background */
     border-top: 1px solid #e2e8f0;
-    overflow: hidden;
+    border-bottom: 1px solid #e2e8f0;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
-.why-us .section-container {
+.relative-z {
     position: relative;
     z-index: 2;
 }
 
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+/* ─── Centered Title with High-Contrast Frosted Badge ─── */
+.why-testimonial-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 36px;
+}
+
+.why-testimonial-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.8vw, 3.1rem);
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin: 0;
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 8px 28px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Cards Slider Wrapper ─── */
+.why-testimonial-wrapper {
+    position: relative;
     width: 100%;
 }
 
-.why-card {
-    position: relative;
-    padding: 34px 28px;
+.why-testimonial-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 10px 4px 20px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.why-testimonial-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* ─── Solid High-Contrast White Cards ─── */
+.testimonial-advantage-card {
+    flex: 0 0 calc(33.333% - 16px);
+    min-width: 310px;
+    scroll-snap-align: start;
     background: #ffffff;
     border: 1.5px solid #e2e8f0;
-    border-radius: 16px;
-    transition: all var(--transition-base);
-    overflow: hidden;
+    border-radius: 18px;
+    padding: 28px 26px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    justify-content: flex-start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.why-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--red-500);
-    opacity: 0;
-    transition: opacity var(--transition-base);
-}
-
-.why-card:hover {
-    border-color: #cbd5e1;
+.testimonial-advantage-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.16);
+    border-color: #cbd5e1;
 }
 
-.why-card:hover::before {
-    opacity: 1;
+/* Rating Stars */
+.rating-stars-row {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 14px;
 }
 
-.why-card-number {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    font-family: var(--font-display);
-    font-size: 2.8rem;
-    font-weight: 900;
-    color: #f1f5f9;
+.star-icon {
+    color: #f59e0b;
+    font-size: 1.15rem;
     line-height: 1;
 }
 
-.why-card-icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: rgba(227, 27, 35, 0.08);
-    color: var(--red-500);
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-    border: 1px solid rgba(227, 27, 35, 0.15);
-}
-
-.why-card h3 {
-    font-family: var(--font-display);
-    font-size: clamp(1.08rem, 1.4vw, 1.18rem);
-    font-weight: 700;
-    color: #0f172a;
+/* Author Headline */
+.card-author-info {
     margin-bottom: 12px;
-    position: relative;
-    z-index: 1;
-    line-height: 1.35;
 }
 
-.why-card p {
-    font-size: clamp(0.84rem, 1vw, 0.88rem);
-    color: #64748b;
-    line-height: 1.68;
-    position: relative;
-    z-index: 1;
+.author-name {
+    font-family: var(--font-display);
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.35;
     margin: 0;
 }
 
+/* Quoted Text */
+.advantage-quote {
+    font-size: 0.9rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0;
+    font-style: normal;
+}
+
+/* ─── Pagination Dots ─── */
+.why-pagination-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.pagination-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.2);
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pagination-dot.active {
+    background: #059669; /* Green active dot */
+    border-color: #059669;
+    width: 10px;
+    height: 10px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════ */
+
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
-    .why-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
+    .testimonial-advantage-card {
+        flex: 0 0 calc(50% - 12px);
     }
 }
 
-/* Mobile (≤680px) */
-@media (max-width: 680px) {
-    .why-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+/* Mobile (≤640px) */
+@media (max-width: 640px) {
+    .why-us-testimonial-section {
+        padding: 50px 0 45px;
+        background-attachment: scroll;
     }
 
-    .why-card {
-        padding: 24px 20px;
+    .why-testimonial-header {
+        margin-bottom: 24px;
     }
 
-    .why-card-icon {
-        width: 44px;
-        height: 44px;
-        margin-bottom: 14px;
+    .why-testimonial-title {
+        font-size: 1.6rem;
+        padding: 6px 18px;
+    }
+
+    .testimonial-advantage-card {
+        flex: 0 0 88%;
+        min-width: 270px;
+        padding: 22px 18px;
+    }
+
+    .author-name {
+        font-size: 0.94rem;
+    }
+
+    .advantage-quote {
+        font-size: 0.84rem;
     }
 }

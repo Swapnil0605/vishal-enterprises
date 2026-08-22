@@ -115,10 +115,10 @@ export const ServicesPage = () => {
                             <h3>Require a Custom Engineered Control Solution?</h3>
                             <p>Our senior electrical and R&D engineers are available to review your project specifications and provide comprehensive proposals.</p>
                         </div>
-                        <a href="/#contact" className="services-cta-btn">
+                        <Link to="/contact" className="services-cta-btn">
                             <span>Request a Technical Proposal</span>
                             <ArrowRight size={16} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

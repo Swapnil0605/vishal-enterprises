@@ -15,7 +15,7 @@ export const Navbar = () => {
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('resize', handleScroll);
     }, []);
 
     const toggleMobileMenu = () => {
@@ -31,12 +31,9 @@ export const Navbar = () => {
     return (
         <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-inner">
-                <Link to="/" className="nav-logo" onClick={closeMobileMenu}>
-                    <img src="/images/logo.jpeg" alt="Vishal Enterprises Logo" className="logo-img" />
-                    <div className="logo-text">
-                        <span className="logo-name">VISHAL</span>
-                        <span className="logo-sub">ENTERPRISES</span>
-                    </div>
+                {/* Enlarged VE Logo Only (Text removed as requested) */}
+                <Link to="/" className="nav-logo" onClick={closeMobileMenu} aria-label="Vishal Enterprises Home">
+                    <img src="/images/logo.jpeg" alt="Vishal Enterprises VE Logo" className="logo-img" />
                 </Link>
 
                 <nav className={`nav-links ${mobileOpen ? 'open' : ''}`}>
@@ -67,10 +64,14 @@ export const Navbar = () => {
                             <a href={isHomePage ? "#products" : "/#products"} className="nav-link" onClick={closeMobileMenu}>Products</a>
                         </li>
                         <li>
-                            <a href={isHomePage ? "#contact" : "/#contact"} className="nav-cta-btn" onClick={closeMobileMenu}>
+                            <Link 
+                                to="/contact" 
+                                className={`nav-cta-btn ${location.pathname === '/contact' ? 'active' : ''}`} 
+                                onClick={closeMobileMenu}
+                            >
                                 <span>Get a Quote</span>
                                 <ArrowUpRight size={16} className="cta-arrow" />
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </nav>

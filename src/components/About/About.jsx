@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import './About.css';
@@ -34,10 +35,10 @@ export const About = () => {
                             <span>About Our Enterprise</span>
                         </div>
 
-                        {/* Main Large Heading */}
+                        {/* Main Large Heading (Exactly 2 Lines) */}
                         <h2 className="about-main-title">
-                            Experience in Engineering.<br />
-                            <span className="title-accent">Innovation for Tomorrow.</span>
+                            <span className="heading-line-1">Experience in Engineering.</span>
+                            <span className="title-accent heading-line-2">Innovation for Tomorrow.</span>
                         </h2>
 
                         {/* Highlighted Statement with Vertical Accent Line */}
@@ -47,22 +48,19 @@ export const About = () => {
                             </p>
                         </div>
 
-                        {/* Supporting Short Descriptions */}
+                        {/* Supporting Short Description */}
                         <div className="about-body-text">
                             <p>
                                 With over <strong>35 years of experience</strong>, we specialize in customised automation panels, PLC and process controls, fire and safety systems, and flameproof solutions for demanding industrial environments.
                             </p>
-                            <p>
-                                Operating from <strong>Dhule and Pune</strong>, we combine practical engineering expertise, quality, and innovation to deliver safe, efficient, and dependable solutions for industrial and public-sector clients.
-                            </p>
                         </div>
 
-                        {/* Action CTA Button */}
+                        {/* Action CTA Button: Know More */}
                         <div className="about-action-wrap">
-                            <a href="#contact" className="about-cta-button">
-                                <span>Get in Touch</span>
+                            <Link to="/contact" className="about-cta-button">
+                                <span>Know More</span>
                                 <ArrowRight size={18} className="cta-arrow-icon" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

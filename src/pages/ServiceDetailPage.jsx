@@ -14,7 +14,6 @@ import {
     ArrowRight, 
     Award,
     Factory,
-    FileText,
     ArrowUpRight
 } from 'lucide-react';
 import './ServiceDetailPage.css';
@@ -103,10 +102,10 @@ export const ServiceDetailPage = () => {
                                     </div>
                                 </div>
 
-                                <a href="/#contact" className="sidebar-quote-btn">
+                                <Link to="/contact" className="sidebar-quote-btn">
                                     <span>Request a Quote</span>
                                     <ArrowUpRight size={16} />
-                                </a>
+                                </Link>
                             </div>
 
                             {/* 3. Credentials Card */}
@@ -189,10 +188,10 @@ export const ServiceDetailPage = () => {
                                     <h3>Ready to deploy {service.title}?</h3>
                                     <p>Submit your project technical specifications or bill of materials for custom pricing and fast turnaround.</p>
                                 </div>
-                                <a href="/#contact" className="quote-action-btn">
+                                <Link to="/contact" className="quote-action-btn">
                                     <span>Get a Technical Proposal</span>
                                     <ArrowRight size={16} />
-                                </a>
+                                </Link>
                             </div>
                         </main>
                     </div>
