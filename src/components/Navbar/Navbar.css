@@ -36,21 +36,21 @@
     flex-shrink: 0;
 }
 
-/* Enlarged VE Logo for stronger visual presence */
+/* Transparent Logo styling */
 .logo-img {
-    width: 54px;
-    height: 54px;
-    border-radius: 10px;
-    object-fit: cover;
-    border: 1.5px solid #e2e8f0;
+    width: auto;
+    height: 52px;
+    max-width: 170px;
+    object-fit: contain;
+    border: none;
+    background: transparent;
+    border-radius: 0;
     flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .nav-logo:hover .logo-img {
     transform: scale(1.04);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .nav-links ul {

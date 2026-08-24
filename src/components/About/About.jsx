@@ -14,7 +14,7 @@ export const About = () => {
                     {/* ─── Left Side: Sticky Image-Clipped "35" Display ─── */}
                     <div className="about-sticky-col gs-animate" data-animate="fade-right">
                         <div className="about-sticky-wrapper">
-                            {/* Giant Image-Filled Number "35" (Properly Centered) */}
+                            {/* Giant Image-Filled Number "35" */}
                             <div className="about-number-visual" title="35 Years of Engineering Excellence">
                                 <span className="image-clipped-number">35</span>
                             </div>
@@ -35,7 +35,7 @@ export const About = () => {
                             <span>About Our Enterprise</span>
                         </div>
 
-                        {/* Main Large Heading (Exactly 2 Lines) */}
+                        {/* Main Large Heading */}
                         <h2 className="about-main-title">
                             <span className="heading-line-1">Experience in Engineering.</span>
                             <span className="title-accent heading-line-2">Innovation for Tomorrow.</span>
@@ -55,9 +55,9 @@ export const About = () => {
                             </p>
                         </div>
 
-                        {/* Action CTA Button: Know More */}
+                        {/* Action CTA Button: Routes to /about */}
                         <div className="about-action-wrap">
-                            <Link to="/contact" className="about-cta-button">
+                            <Link to="/about" className="about-cta-button">
                                 <span>Know More</span>
                                 <ArrowRight size={18} className="cta-arrow-icon" />
                             </Link>

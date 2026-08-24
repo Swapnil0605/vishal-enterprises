@@ -31,9 +31,9 @@ export const Navbar = () => {
     return (
         <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-inner">
-                {/* Enlarged VE Logo Only (Text removed as requested) */}
+                {/* Enlarged VE Logo */}
                 <Link to="/" className="nav-logo" onClick={closeMobileMenu} aria-label="Vishal Enterprises Home">
-                    <img src="/images/logo.jpeg" alt="Vishal Enterprises VE Logo" className="logo-img" />
+                    <img src="/images/logo.png" alt="Vishal Enterprises Official Logo" className="logo-img" />
                 </Link>
 
                 <nav className={`nav-links ${mobileOpen ? 'open' : ''}`}>
@@ -46,10 +46,13 @@ export const Navbar = () => {
                             )}
                         </li>
                         <li>
-                            <a href={isHomePage ? "#about" : "/#about"} className="nav-link" onClick={closeMobileMenu}>About Us</a>
-                        </li>
-                        <li>
-                            <a href={isHomePage ? "#clients" : "/#clients"} className="nav-link" onClick={closeMobileMenu}>Clients</a>
+                            <Link 
+                                to="/about" 
+                                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} 
+                                onClick={closeMobileMenu}
+                            >
+                                About Us
+                            </Link>
                         </li>
                         <li>
                             <Link 
@@ -62,6 +65,18 @@ export const Navbar = () => {
                         </li>
                         <li>
                             <a href={isHomePage ? "#products" : "/#products"} className="nav-link" onClick={closeMobileMenu}>Products</a>
+                        </li>
+                        <li>
+                            <Link 
+                                to="/gallery" 
+                                className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`} 
+                                onClick={closeMobileMenu}
+                            >
+                                Gallery
+                            </Link>
+                        </li>
+                        <li>
+                            <a href={isHomePage ? "#clients" : "/#clients"} className="nav-link" onClick={closeMobileMenu}>Clients</a>
                         </li>
                         <li>
                             <Link 

@@ -12,18 +12,19 @@ import {
     Check, 
     Loader2, 
     ShieldCheck, 
-    Clock, 
     Home as HomeIcon, 
     ChevronRight, 
     Building2,
     Award,
-    Sparkles
+    ExternalLink,
+    Navigation
 } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './ContactPage.css';
 
 export const ContactPage = () => {
     const sectionRef = useScrollAnimation();
+    const [selectedLocation, setSelectedLocation] = useState('dhule'); // 'dhule' | 'pune'
     const [formState, setFormState] = useState({
         name: '',
         company: '',
@@ -59,6 +60,25 @@ export const ContactPage = () => {
             }, 4000);
         }, 1200);
     };
+
+    const locationDetails = {
+        dhule: {
+            title: "HEADQUARTERS & MANUFACTURING WORKS",
+            name: "VISHAL ENTERPRISES",
+            address: "18, Keruji Nagar, Chakkarbardi Road, Dhule, Maharashtra 424001, India",
+            mapQuery: "https://maps.google.com/maps?q=18+Keruji+Nagar+Chakkarbardi+Road+Dhule+Maharashtra+424001&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=18,+Keruji+Nagar,+Chakkarbardi+Road,+Dhule+424001"
+        },
+        pune: {
+            title: "REGIONAL OPERATIONS & PROJECT LIAISON",
+            name: "VISHAL ENTERPRISES",
+            address: "P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune, Maharashtra 411057, India",
+            mapQuery: "https://maps.google.com/maps?q=P7+Thakar+Nagar+Maan+Hinjewadi+Phase+1+Pune+Maharashtra+411057&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=P7,+Thakar+Nagar,+Maan,+Hinjewadi+Phase+1,+Pune+411057"
+        }
+    };
+
+    const activeLoc = locationDetails[selectedLocation];
 
     return (
         <div className="contact-page-wrapper">
@@ -148,15 +168,15 @@ export const ContactPage = () => {
                                     <div className="location-item">
                                         <MapPin size={18} className="loc-icon" />
                                         <div>
-                                            <strong>Manufacturing Works</strong>
-                                            <p>Dhule, Maharashtra, India</p>
+                                            <strong>Manufacturing Works (Dhule)</strong>
+                                            <p>18, Keruji Nagar, Chakkarbardi Road, Dhule 424001</p>
                                         </div>
                                     </div>
                                     <div className="location-item">
                                         <MapPin size={18} className="loc-icon" />
                                         <div>
-                                            <strong>Regional Office</strong>
-                                            <p>Pune, Maharashtra, India</p>
+                                            <strong>Regional Office (Pune)</strong>
+                                            <p>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
                                         </div>
                                     </div>
                                 </div>
@@ -318,6 +338,56 @@ export const ContactPage = () => {
                                 </form>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* ─── Interactive Industrial Map Section (Reference Style) ─── */}
+            <section className="contact-map-section">
+                {/* Embedded Map Container */}
+                <div className="contact-map-container">
+                    <iframe
+                        title="Vishal Enterprises Location Map"
+                        src={activeLoc.mapQuery}
+                        className="contact-map-iframe"
+                        loading="lazy"
+                        allowFullScreen=""
+                    ></iframe>
+
+                    {/* Floating Info Card on Map (Matching Reference) */}
+                    <div className="map-floating-overlay-card gs-animate" data-animate="fade-right">
+                        <div className="map-card-tabs">
+                            <button 
+                                className={`map-tab-btn ${selectedLocation === 'dhule' ? 'active' : ''}`}
+                                onClick={() => setSelectedLocation('dhule')}
+                            >
+                                Dhule (Plant)
+                            </button>
+                            <button 
+                                className={`map-tab-btn ${selectedLocation === 'pune' ? 'active' : ''}`}
+                                onClick={() => setSelectedLocation('pune')}
+                            >
+                                Pune (Office)
+                            </button>
+                        </div>
+
+                        <div className="map-card-tag-row">
+                            <span className="map-card-dot"></span>
+                            <span className="map-card-tag">{activeLoc.title}</span>
+                        </div>
+
+                        <h3 className="map-card-name">{activeLoc.name}</h3>
+                        <p className="map-card-address">{activeLoc.address}</p>
+
+                        <a 
+                            href={activeLoc.directionsLink}
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="map-card-directions-link"
+                        >
+                            <span>GET DIRECTIONS</span>
+                            <ExternalLink size={14} />
+                        </a>
                     </div>
                 </div>
             </section>
