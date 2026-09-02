@@ -10,62 +10,64 @@
     width: 100%;
 }
 
-/* ─── Hero Banner ─── */
+/* ─── Hero Page Banner (Matching 70vh Height & Industrial Background) ─── */
 .contact-page-hero {
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
-    padding: 60px 0 50px;
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 440px;
+    background: linear-gradient(
+        180deg, 
+        rgba(11, 17, 32, 0.42) 0%, 
+        rgba(11, 17, 32, 0.25) 50%, 
+        rgba(11, 17, 32, 0.62) 100%
+    ), url('/images/contact/contact-hero-bg.jpg') center / cover no-repeat;
+    border-bottom: 1px solid #1e293b;
+    display: flex;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.contact-page-hero .section-container {
     width: 100%;
 }
 
-.breadcrumb-trail {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    font-size: 0.84rem;
-    font-weight: 500;
-    color: #64748b;
-}
-
-.breadcrumb-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    color: #64748b;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.breadcrumb-link:hover {
-    color: var(--red-500);
-}
-
-.breadcrumb-sep {
+.contact-page-hero .breadcrumb-trail .breadcrumb-link {
     color: #cbd5e1;
 }
 
-.breadcrumb-active {
-    color: #0f172a;
-    font-weight: 600;
+.contact-page-hero .breadcrumb-trail .breadcrumb-sep {
+    color: #94a3b8;
+}
+
+.contact-page-hero .breadcrumb-trail .breadcrumb-active {
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .contact-page-title {
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 3.8vw, 3.2rem);
     font-weight: 800;
-    color: #0f172a;
+    color: #ffffff;
     line-height: 1.15;
     letter-spacing: -0.5px;
     margin-bottom: 14px;
+    max-width: 920px;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.contact-page-title .title-accent {
+    color: #ffffff;
 }
 
 .contact-page-subtitle {
     font-size: clamp(0.95rem, 1.2vw, 1.08rem);
-    color: #64748b;
+    color: #e2e8f0;
     max-width: 760px;
     line-height: 1.6;
     margin: 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 /* ─── Main Section ─── */
@@ -559,7 +561,9 @@
 /* Mobile (≤640px) */
 @media (max-width: 640px) {
     .contact-page-hero {
-        padding: 40px 0 34px;
+        height: auto;
+        min-height: auto;
+        padding: 50px 0 40px;
     }
 
     .contact-main-section {

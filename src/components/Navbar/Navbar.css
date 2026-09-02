@@ -92,9 +92,35 @@
     border-radius: 2px;
 }
 
-/* ─── Two-Section Dropdown Menu ─── */
-.nav-item-dropdown {
-    position: relative;
+/* ─── Qiro Tech Style Full-Width Mega Dropdown Menu ─── */
+@media (min-width: 992px) {
+    .nav-links {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item-mega {
+        position: static;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-link-dropdown {
+        height: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
 }
 
 .nav-link-dropdown {
@@ -107,137 +133,126 @@
     transition: transform 0.25s ease;
 }
 
-.nav-item-dropdown:hover .dropdown-chevron,
-.nav-item-dropdown.open .dropdown-chevron {
+.nav-item-mega:hover .dropdown-chevron,
+.nav-item-mega.open .dropdown-chevron {
     transform: rotate(180deg);
 }
 
-.two-section-dropdown {
+.mega-dropdown {
     position: absolute;
     top: 100%;
-    left: 50%;
-    transform: translateX(-50%) translateY(12px);
-    width: 580px;
+    left: 0;
+    right: 0;
+    width: 100%;
     background: #ffffff;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 16px;
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
-    padding: 22px 24px 18px;
+    border-top: 1px solid #f1f5f9;
+    border-bottom: 1.5px solid #e2e8f0;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12);
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(4px);
+    transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+                visibility 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1000;
 }
 
-.nav-item-dropdown:hover .two-section-dropdown,
-.nav-item-dropdown.open .two-section-dropdown {
+/* Invisible hover bridge eliminating any physical gap between navbar and dropdown */
+.mega-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -24px;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background: transparent;
+    pointer-events: auto;
+}
+
+.nav-item-mega:hover .mega-dropdown,
+.nav-item-mega.open .mega-dropdown,
+.mega-dropdown:hover {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translateX(-50%) translateY(4px);
+    transform: translateY(0);
 }
 
-.dropdown-sections-container {
+.mega-dropdown-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 34px 32px 30px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 40px;
 }
 
-.dropdown-section-col {
+.mega-col {
+    padding: 0;
+    border-right: none;
     display: flex;
     flex-direction: column;
 }
 
-.dropdown-section-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.dropdown-section-icon {
-    color: #0b4ea2;
-}
-
-.dropdown-section-header h4 {
-    font-family: var(--font-display);
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0;
-}
-
-.dropdown-items-list {
+.mega-items-list {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 16px;
 }
 
-.dropdown-items-list li {
+.mega-items-list li {
     margin: 0;
     padding: 0;
 }
 
-.dropdown-item-link {
+.mega-item-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 7px 10px;
-    border-radius: 6px;
     text-decoration: none;
-    font-size: 0.86rem;
-    font-weight: 600;
-    color: #475569;
+    color: #334155;
+    font-size: 0.92rem;
+    font-weight: 500;
     transition: all 0.2s ease;
+    line-height: 1.45;
 }
 
-.dropdown-item-link .item-arrow {
-    opacity: 0;
-    transform: translateX(-4px);
+.mega-arrow {
+    color: #cbd5e1;
     transition: all 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.mega-item-link:hover {
     color: #e31b23;
 }
 
-.dropdown-item-link:hover {
-    background: #f8fafc;
-    color: #0b4ea2;
+.mega-item-link:hover .mega-arrow {
+    color: #e31b23;
+    transform: translateX(4px);
 }
 
-.dropdown-item-link:hover .item-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.dropdown-footer-row {
-    margin-top: 16px;
-    padding-top: 14px;
+.mega-bottom-strip {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 16px 32px 18px;
     border-top: 1px solid #f1f5f9;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
+    text-align: center;
 }
 
-.dropdown-view-all {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.mega-strip-tagline {
     font-size: 0.84rem;
-    font-weight: 700;
-    color: #e31b23;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.dropdown-view-all:hover {
-    transform: translateX(3px);
+    color: #64748b;
+    font-weight: 500;
+    text-align: center;
 }
 
 .nav-cta-btn {
@@ -344,14 +359,14 @@
         font-weight: 700;
     }
 
-    .two-section-dropdown {
+    .mega-dropdown {
         position: static;
         transform: none;
         width: 100%;
         box-shadow: none;
         border: 1px solid #e2e8f0;
         border-radius: 12px;
-        padding: 14px;
+        padding: 16px;
         margin-top: 6px;
         background: #f8fafc;
         display: none;
@@ -360,21 +375,35 @@
         pointer-events: auto;
     }
 
-    .nav-item-dropdown:hover .two-section-dropdown,
-    .nav-item-dropdown.open .two-section-dropdown {
+    .nav-item-mega:hover .mega-dropdown,
+    .nav-item-mega.open .mega-dropdown {
         display: block;
         transform: none;
     }
 
-    .dropdown-sections-container {
+    .mega-dropdown-inner {
         grid-template-columns: 1fr;
-        gap: 16px;
+        gap: 20px;
+        padding: 0;
     }
 
-    .dropdown-footer-row {
-        justify-content: flex-start;
-        padding-top: 10px;
-        margin-top: 10px;
+    .mega-col {
+        padding: 0 0 10px 0;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .mega-col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .mega-bottom-strip {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 14px 0 0;
+        gap: 10px;
     }
 
     .nav-cta-btn {

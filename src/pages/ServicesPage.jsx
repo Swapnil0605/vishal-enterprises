@@ -76,28 +76,12 @@ export const ServicesPage = () => {
             <section className="services-yt-section">
                 <div className="section-container">
 
-                    {/* YouTube-Style Category Filter Chips */}
-                    <div className="yt-filter-chips-bar">
-                        {serviceCategories.map(cat => (
-                            <button
-                                key={cat.id}
-                                className={`yt-chip-btn ${activeFilter === cat.id ? 'active' : ''}`}
-                                onClick={() => setActiveFilter(cat.id)}
-                            >
-                                <span>{cat.label}</span>
-                                <span className="yt-chip-count">
-                                    {cat.id === 'all' ? servicesData.length : servicesData.filter(s => s.category === cat.id).length}
-                                </span>
-                            </button>
-                        ))}
-                    </div>
-
                     {/* 4-Column YouTube-Style Video/Service Grid */}
                     <div className="yt-services-grid">
-                        {filteredServices.map((service) => (
+                        {servicesData.map((service) => (
                             <div key={service.id} className="yt-service-card" id={service.slug}>
                                 
-                                {/* 16:9 Thumbnail Wrap */}
+                                {/* Enlarged Thumbnail Wrap */}
                                 <Link to={`/services/${service.slug}`} className="yt-thumbnail-wrap">
                                     <img 
                                         src={service.image} 
@@ -105,32 +89,16 @@ export const ServicesPage = () => {
                                         className="yt-thumbnail-img"
                                         loading="lazy"
                                     />
-                                    
-                                    {/* Number Index Tag (Top Left) */}
-                                    <div className="yt-card-num-badge">
-                                        #{service.num}
-                                    </div>
 
                                     {/* YouTube Duration-Style Compliance Badge (Bottom Right) */}
                                     <div className="yt-duration-badge">
                                         <ShieldCheck size={12} />
                                         <span>{service.standards[0] || 'ISO 9001:2015'}</span>
                                     </div>
-
-                                    {/* Hover Quick Overlay */}
-                                    <div className="yt-hover-overlay">
-                                        <span className="yt-overlay-explore">Explore Details <ArrowUpRight size={14} /></span>
-                                    </div>
                                 </Link>
 
-                                {/* Metadata Row (Avatar/Icon + Content) */}
+                                {/* Metadata Content */}
                                 <div className="yt-card-details">
-                                    {/* Category Icon Channel-Avatar */}
-                                    <div className="yt-category-avatar" title={service.category}>
-                                        {getCategoryIcon(service.category)}
-                                    </div>
-
-                                    {/* Text Info */}
                                     <div className="yt-meta-content">
                                         <Link to={`/services/${service.slug}`} className="yt-card-title-link">
                                             <h3 className="yt-card-title">{service.title}</h3>
@@ -139,10 +107,6 @@ export const ServicesPage = () => {
                                         <div className="yt-card-meta-line">
                                             <span className="yt-meta-category">{service.category}</span>
                                         </div>
-
-                                        <p className="yt-card-description">
-                                            {service.shortDesc}
-                                        </p>
 
                                         {/* Action Explore Link */}
                                         <div className="yt-card-action">

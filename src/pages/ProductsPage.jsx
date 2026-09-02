@@ -71,63 +71,31 @@ export const ProductsPage = () => {
             <section className="products-yt-section">
                 <div className="section-container">
 
-                    {/* YouTube-Style Category Filter Chips */}
-                    <div className="yt-filter-chips-bar">
-                        {productCategories.map(cat => (
-                            <button
-                                key={cat.id}
-                                className={`yt-chip-btn ${activeFilter === cat.id ? 'active' : ''}`}
-                                onClick={() => setActiveFilter(cat.id)}
-                            >
-                                <span>{cat.label}</span>
-                                <span className="yt-chip-count">
-                                    {cat.id === 'all' ? productsData.length : productsData.filter(p => p.category === cat.id).length}
-                                </span>
-                            </button>
-                        ))}
-                    </div>
-
                     {/* 4-Column YouTube-Style Products Grid */}
                     <div className="yt-products-grid">
-                        {filteredProducts.map((product) => (
+                        {productsData.map((product) => (
                             <div key={product.id} className="yt-product-card" id={product.id}>
                                 
-                                {/* 16:9 Thumbnail Wrap */}
-                                <Link to="/contact" state={{ subject: `Quote Inquiry: ${product.title}` }} className="yt-thumbnail-wrap">
+                                {/* Enlarged Thumbnail Wrap */}
+                                <Link to={`/products/${product.slug || product.id}`} className="yt-thumbnail-wrap">
                                     <img 
                                         src={product.image} 
                                         alt={product.title} 
                                         className="yt-thumbnail-img"
                                         loading="lazy"
                                     />
-                                    
-                                    {/* Number Index Tag (Top Left) */}
-                                    <div className="yt-card-num-badge">
-                                        #{product.num}
-                                    </div>
 
                                     {/* YouTube Duration-Style Compliance Badge (Bottom Right) */}
                                     <div className="yt-duration-badge">
                                         <ShieldCheck size={12} />
                                         <span>{product.standard}</span>
                                     </div>
-
-                                    {/* Hover Quick Overlay */}
-                                    <div className="yt-hover-overlay">
-                                        <span className="yt-overlay-explore">Request Quotation <ArrowUpRight size={14} /></span>
-                                    </div>
                                 </Link>
 
-                                {/* Metadata Row (Avatar/Icon + Content) */}
+                                {/* Metadata Content */}
                                 <div className="yt-card-details">
-                                    {/* Category Icon Channel-Avatar */}
-                                    <div className="yt-category-avatar" title={product.category}>
-                                        {getProductCategoryIcon(product.category)}
-                                    </div>
-
-                                    {/* Text Info */}
                                     <div className="yt-meta-content">
-                                        <Link to="/contact" state={{ subject: `Quote Inquiry: ${product.title}` }} className="yt-card-title-link">
+                                        <Link to={`/products/${product.slug || product.id}`} className="yt-card-title-link">
                                             <h3 className="yt-card-title">{product.title}</h3>
                                         </Link>
 
@@ -135,18 +103,13 @@ export const ProductsPage = () => {
                                             <span className="yt-meta-category">{product.category}</span>
                                         </div>
 
-                                        <p className="yt-card-description">
-                                            {product.shortDesc}
-                                        </p>
-
                                         {/* Action Explore / Quote Link */}
                                         <div className="yt-card-action">
                                             <Link 
-                                                to="/contact" 
-                                                state={{ subject: `Quote Inquiry: ${product.title}` }}
+                                                to={`/products/${product.slug || product.id}`}
                                                 className="yt-explore-action-btn"
                                             >
-                                                <span>Inquire Now</span>
+                                                <span>Explore</span>
                                                 <ArrowUpRight size={14} className="yt-arrow-icon" />
                                             </Link>
                                         </div>

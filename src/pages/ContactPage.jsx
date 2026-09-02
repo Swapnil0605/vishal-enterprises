@@ -66,15 +66,15 @@ export const ContactPage = () => {
             title: "HEADQUARTERS & MANUFACTURING WORKS",
             name: "VISHAL ENTERPRISES",
             address: "18, Keruji Nagar, Chakkarbardi Road, Dhule, Maharashtra 424001, India",
-            mapQuery: "https://maps.google.com/maps?q=18+Keruji+Nagar+Chakkarbardi+Road+Dhule+Maharashtra+424001&t=&z=16&ie=UTF8&iwloc=B&output=embed",
-            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=18,+Keruji+Nagar,+Chakkarbardi+Road,+Dhule+424001"
+            mapQuery: "https://maps.google.com/maps?q=20.8955,74.7675+(Vishal+Enterprises+-+Manufacturing+Works)&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=20.8955,74.7675"
         },
         pune: {
             title: "REGIONAL OPERATIONS & PROJECT LIAISON",
             name: "VISHAL ENTERPRISES",
             address: "P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune, Maharashtra 411057, India",
-            mapQuery: "https://maps.google.com/maps?q=P7+Thakar+Nagar+Maan+Hinjewadi+Phase+1+Pune+Maharashtra+411057&t=&z=16&ie=UTF8&iwloc=B&output=embed",
-            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=P7,+Thakar+Nagar,+Maan,+Hinjewadi+Phase+1,+Pune+411057"
+            mapQuery: "https://maps.google.com/maps?q=18.571676,73.719457+(Vishal+Enterprises+-+Pune+Office)&t=&z=17&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=18.571676,73.719457"
         }
     };
 
@@ -179,22 +179,6 @@ export const ContactPage = () => {
                                             <p>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            {/* Statutory Credentials */}
-                            <div className="credentials-banner">
-                                <div className="cred-badge">
-                                    <ShieldCheck size={18} className="cred-ic" />
-                                    <span>ISO 9001:2015 Certified OEM</span>
-                                </div>
-                                <div className="cred-badge">
-                                    <Award size={18} className="cred-ic" />
-                                    <span>GeM-Accredited Manufacturer</span>
-                                </div>
-                                <div className="cred-badge">
-                                    <Building2 size={18} className="cred-ic" />
-                                    <span>Licensed Class-1 Contractor</span>
                                 </div>
                             </div>
                         </div>

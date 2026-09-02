@@ -1,60 +1,96 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
     Menu, 
     X, 
     ArrowUpRight, 
     ChevronDown, 
-    Cpu, 
-    Activity, 
-    Flame, 
-    Zap, 
     ArrowRight 
 } from 'lucide-react';
 import './Navbar.css';
 
-const servicesDropdownSections = [
+const servicesMegaColumns = [
     {
-        title: "Automation & Control Panels",
-        icon: <Cpu size={15} className="dropdown-section-icon" />,
+        num: "01",
+        category: "AUTOMATION & CONTROLS",
         items: [
             { name: "Customised Automation Panels", slug: "customised-automation-panels" },
             { name: "PLC Panels & Process Controls", slug: "plc-panels-process-controls" },
             { name: "VFD, FASD & PMCC Panels", slug: "vfd-fasd-pmcc-ro-utility-panels" },
-            { name: "Flameproof (FLP) Control Panels", slug: "flp-control-panels-starters" }
+            { name: "RO & Utility Control Panels", slug: "vfd-fasd-pmcc-ro-utility-panels" }
         ]
     },
     {
-        title: "Testing & Maintenance Services",
-        icon: <Activity size={15} className="dropdown-section-icon" />,
+        num: "02",
+        category: "FLAMEPROOF & SAFETY",
         items: [
-            { name: "Relay Testing & Calibration", slug: "secondary-injection-relay-testing" },
+            { name: "Flameproof (FLP) Control Panels", slug: "flp-control-panels-starters" },
+            { name: "FLP Gas Detection & Simulation", slug: "flp-gas-detection-fire-simulation" },
+            { name: "FLP Earthing Relay Interlocks", slug: "flp-earthing-relay-decantation" },
+            { name: "Flameproof Audio-Visual Panels", slug: "flp-annunciation-audio-visual" }
+        ]
+    },
+    {
+        num: "03",
+        category: "TESTING & COMMISSIONING",
+        items: [
+            { name: "Secondary Injection Relay Testing", slug: "secondary-injection-relay-testing" },
+            { name: "Numerical Relay Configuration", slug: "numerical-relay-configuration-testing" },
             { name: "Substation Automation (SAS)", slug: "substation-automation-systems" },
+            { name: "HV Breaker Timing & Testing", slug: "breaker-timing-dynamic-resistance" }
+        ]
+    },
+    {
+        num: "04",
+        category: "MAINTENANCE & RETROFITTING",
+        items: [
             { name: "Transformer Health & Filtration", slug: "transformer-testing-oil-filtration" },
-            { name: "Breaker Timing & Testing", slug: "breaker-timing-dynamic-resistance" }
+            { name: "HT Switchgear Modernisation", slug: "ht-panel-retrofitting-modernisation" },
+            { name: "Thermography & Power Audit", slug: "thermography-power-quality-audit" },
+            { name: "Fire Pump Duty & Engine Panels", slug: "fire-engine-jockey-pump-panels" }
         ]
     }
 ];
 
-const productsDropdownSections = [
+const productsMegaColumns = [
     {
-        title: "Safety & Flameproof Systems",
-        icon: <Flame size={15} className="dropdown-section-icon" />,
+        num: "01",
+        category: "FIRE & SAFETY SYSTEMS",
         items: [
-            { name: "Fire Pump Duty Controllers", id: "fire-pump-adv" },
-            { name: "Gas Detection with Bluetooth", id: "gas-detection-bt" },
-            { name: "Flameproof Dyke Valve Panels", id: "flp-dyke-valve" },
-            { name: "Flameproof SOP Narrator Panels", id: "flp-sop-narrator" }
+            { name: "Advanced Fire Pump Controller", id: "fire-pump-adv" },
+            { name: "Fire Pump Fail-Safe Logic Panel", id: "fire-pump-seq" },
+            { name: "SOP Narrator Audio System", id: "sop-narrator" },
+            { name: "Tank Level Annunciation Panel", id: "tank-level" }
         ]
     },
     {
-        title: "Power, Monitoring & Displays",
-        icon: <Zap size={15} className="dropdown-section-icon" />,
+        num: "02",
+        category: "HAZARDOUS & FLAMEPROOF",
         items: [
-            { name: "Tank Level Annunciation Panels", id: "tank-level" },
-            { name: "Graphical LCD Dual Battery Units", id: "graphical-lcd" },
-            { name: "Digital Accident-Free Displays", id: "accident-free-days" },
-            { name: "Microprocessor ATS Transfer Units", id: "ats-controller" }
+            { name: "Flameproof Dyke Valve Panel", id: "flp-dyke-valve" },
+            { name: "Gas Detection Controller (Bluetooth)", id: "gas-detection-bt" },
+            { name: "Flameproof Fire Alarm Panel", id: "flp-fire-alarm" },
+            { name: "Flameproof SOP Narrator Panel", id: "flp-sop-narrator" }
+        ]
+    },
+    {
+        num: "03",
+        category: "POWER & DISTRIBUTION",
+        items: [
+            { name: "Graphical LCD Dual Battery Unit", id: "graphical-lcd" },
+            { name: "Automatic Battery Changeover System", id: "dual-battery-auto" },
+            { name: "Microprocessor ATS Transfer Unit", id: "ats-controller" },
+            { name: "CNG Station APFC Panel", id: "cng-apfc" }
+        ]
+    },
+    {
+        num: "04",
+        category: "AUTOMATION & PROCESS",
+        items: [
+            { name: "Multi-Compressor AC Sequential Panel", id: "ac-sequential" },
+            { name: "RO Utility & Desalination Panel", id: "ro-utility" },
+            { name: "Digital Safety Milestone Display", id: "accident-free-days" },
+            { name: "FLP Earthing Relay Interlock", id: "flp-earthing" }
         ]
     }
 ];
@@ -64,8 +100,38 @@ export const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
+    const servicesTimeoutRef = useRef(null);
+    const productsTimeoutRef = useRef(null);
     const location = useLocation();
     const isHomePage = location.pathname === '/';
+
+    const handleServicesEnter = () => {
+        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+        if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+        setProductsOpen(false);
+        setServicesOpen(true);
+    };
+
+    const handleServicesLeave = () => {
+        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+        servicesTimeoutRef.current = setTimeout(() => {
+            setServicesOpen(false);
+        }, 220);
+    };
+
+    const handleProductsEnter = () => {
+        if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+        setServicesOpen(false);
+        setProductsOpen(true);
+    };
+
+    const handleProductsLeave = () => {
+        if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+        productsTimeoutRef.current = setTimeout(() => {
+            setProductsOpen(false);
+        }, 220);
+    };
 
     useEffect(() => {
         const handleScroll = () => {
@@ -73,7 +139,11 @@ export const Navbar = () => {
         };
         window.addEventListener('scroll', handleScroll, { passive: true });
         handleScroll();
-        return () => window.removeEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+            if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+        };
     }, []);
 
     const toggleMobileMenu = () => {
@@ -82,6 +152,8 @@ export const Navbar = () => {
     };
 
     const closeMobileMenu = () => {
+        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+        if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
         setMobileOpen(false);
         setServicesOpen(false);
         setProductsOpen(false);
@@ -115,11 +187,11 @@ export const Navbar = () => {
                             </Link>
                         </li>
 
-                        {/* ─── Services with Two-Section Dropdown ─── */}
+                        {/* ─── Services Mega Dropdown (Qiro Tech Style) ─── */}
                         <li 
-                            className={`nav-item-dropdown ${servicesOpen ? 'open' : ''}`}
-                            onMouseEnter={() => setServicesOpen(true)}
-                            onMouseLeave={() => setServicesOpen(false)}
+                            className={`nav-item-mega ${servicesOpen ? 'open' : ''}`}
+                            onMouseEnter={handleServicesEnter}
+                            onMouseLeave={handleServicesLeave}
                         >
                             <Link 
                                 to="/services" 
@@ -130,24 +202,24 @@ export const Navbar = () => {
                                 <ChevronDown size={14} className="dropdown-chevron" />
                             </Link>
 
-                            <div className="nav-dropdown-menu two-section-dropdown">
-                                <div className="dropdown-sections-container">
-                                    {servicesDropdownSections.map((sec, idx) => (
-                                        <div key={idx} className="dropdown-section-col">
-                                            <div className="dropdown-section-header">
-                                                {sec.icon}
-                                                <h4>{sec.title}</h4>
-                                            </div>
-                                            <ul className="dropdown-items-list">
-                                                {sec.items.map((item, i) => (
+                            <div 
+                                className="mega-dropdown"
+                                onMouseEnter={handleServicesEnter}
+                                onMouseLeave={handleServicesLeave}
+                            >
+                                <div className="mega-dropdown-inner">
+                                    {servicesMegaColumns.map((col, idx) => (
+                                        <div key={idx} className="mega-col">
+                                            <ul className="mega-items-list">
+                                                {col.items.map((item, i) => (
                                                     <li key={i}>
                                                         <Link 
                                                             to={`/services/${item.slug}`} 
-                                                            className="dropdown-item-link"
+                                                            className="mega-item-link"
                                                             onClick={closeMobileMenu}
                                                         >
                                                             <span>{item.name}</span>
-                                                            <ArrowRight size={13} className="item-arrow" />
+                                                            <ArrowRight size={14} className="mega-arrow" />
                                                         </Link>
                                                     </li>
                                                 ))}
@@ -155,48 +227,47 @@ export const Navbar = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="dropdown-footer-row">
-                                    <Link to="/services" className="dropdown-view-all" onClick={closeMobileMenu}>
-                                        <span>View All 16 Engineering Services</span>
-                                        <ArrowRight size={14} />
-                                    </Link>
+                                <div className="mega-bottom-strip">
+                                    <span className="mega-strip-tagline">
+                                        Turnkey Engineering, Automation Panels & Testing Solutions Across India
+                                    </span>
                                 </div>
                             </div>
                         </li>
 
-                        {/* ─── Products with Two-Section Dropdown ─── */}
+                        {/* ─── Products Mega Dropdown (Qiro Tech Style) ─── */}
                         <li 
-                            className={`nav-item-dropdown ${productsOpen ? 'open' : ''}`}
-                            onMouseEnter={() => setProductsOpen(true)}
-                            onMouseLeave={() => setProductsOpen(false)}
+                            className={`nav-item-mega ${productsOpen ? 'open' : ''}`}
+                            onMouseEnter={handleProductsEnter}
+                            onMouseLeave={handleProductsLeave}
                         >
                             <Link 
                                 to="/products" 
-                                className={`nav-link nav-link-dropdown ${location.pathname === '/products' ? 'active' : ''}`} 
+                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''}`} 
                                 onClick={closeMobileMenu}
                             >
                                 <span>Products</span>
                                 <ChevronDown size={14} className="dropdown-chevron" />
                             </Link>
 
-                            <div className="nav-dropdown-menu two-section-dropdown">
-                                <div className="dropdown-sections-container">
-                                    {productsDropdownSections.map((sec, idx) => (
-                                        <div key={idx} className="dropdown-section-col">
-                                            <div className="dropdown-section-header">
-                                                {sec.icon}
-                                                <h4>{sec.title}</h4>
-                                            </div>
-                                            <ul className="dropdown-items-list">
-                                                {sec.items.map((item, i) => (
+                            <div 
+                                className="mega-dropdown"
+                                onMouseEnter={handleProductsEnter}
+                                onMouseLeave={handleProductsLeave}
+                            >
+                                <div className="mega-dropdown-inner">
+                                    {productsMegaColumns.map((col, idx) => (
+                                        <div key={idx} className="mega-col">
+                                            <ul className="mega-items-list">
+                                                {col.items.map((item, i) => (
                                                     <li key={i}>
                                                         <Link 
-                                                            to="/products" 
-                                                            className="dropdown-item-link"
+                                                            to={`/products/${item.id}`} 
+                                                            className="mega-item-link"
                                                             onClick={closeMobileMenu}
                                                         >
                                                             <span>{item.name}</span>
-                                                            <ArrowRight size={13} className="item-arrow" />
+                                                            <ArrowRight size={14} className="mega-arrow" />
                                                         </Link>
                                                     </li>
                                                 ))}
@@ -204,11 +275,10 @@ export const Navbar = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="dropdown-footer-row">
-                                    <Link to="/products" className="dropdown-view-all" onClick={closeMobileMenu}>
-                                        <span>View All 16 Industrial Products</span>
-                                        <ArrowRight size={14} />
-                                    </Link>
+                                <div className="mega-bottom-strip">
+                                    <span className="mega-strip-tagline">
+                                        ISO 9001:2015 & GeM Accredited OEM Manufacturer • PESO / TAC Standards
+                                    </span>
                                 </div>
                             </div>
                         </li>

@@ -107,15 +107,6 @@ export const ServiceDetailPage = () => {
                                     <ArrowUpRight size={16} />
                                 </Link>
                             </div>
-
-                            {/* 3. Credentials Card */}
-                            <div className="sidebar-widget cert-widget">
-                                <div className="cert-badge-row">
-                                    <ShieldCheck size={20} className="cert-ic" />
-                                    <span>ISO 9001:2015 & GeM Accredited</span>
-                                </div>
-                                <p className="cert-subtext">Class-1 Licensed Electrical Contractor with over 35 years of engineering track record.</p>
-                            </div>
                         </aside>
 
                         {/* ─── Right Main Content: Comprehensive Details ─── */}

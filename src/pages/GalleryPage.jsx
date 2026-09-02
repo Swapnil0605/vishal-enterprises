@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
-import { galleryCategories, galleryItems } from '../data/gallery';
+import { galleryItems } from '../data/gallery';
 import { 
     Home as HomeIcon, 
     ChevronRight, 
@@ -16,12 +16,7 @@ import './GalleryPage.css';
 
 export const GalleryPage = () => {
     const sectionRef = useScrollAnimation();
-    const [activeCategory, setActiveCategory] = useState('all');
     const [lightboxIndex, setLightboxIndex] = useState(null);
-
-    const filteredItems = activeCategory === 'all' 
-        ? galleryItems 
-        : galleryItems.filter(item => item.category === activeCategory);
 
     const openLightbox = (index) => {
         setLightboxIndex(index);
@@ -36,14 +31,14 @@ export const GalleryPage = () => {
     const nextImage = (e) => {
         if (e) e.stopPropagation();
         if (lightboxIndex !== null) {
-            setLightboxIndex((lightboxIndex + 1) % filteredItems.length);
+            setLightboxIndex((lightboxIndex + 1) % galleryItems.length);
         }
     };
 
     const prevImage = (e) => {
         if (e) e.stopPropagation();
         if (lightboxIndex !== null) {
-            setLightboxIndex((lightboxIndex - 1 + filteredItems.length) % filteredItems.length);
+            setLightboxIndex((lightboxIndex - 1 + galleryItems.length) % galleryItems.length);
         }
     };
 
@@ -58,9 +53,9 @@ export const GalleryPage = () => {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [lightboxIndex, filteredItems.length]);
+    }, [lightboxIndex]);
 
-    const currentLightboxItem = lightboxIndex !== null ? filteredItems[lightboxIndex] : null;
+    const currentLightboxItem = lightboxIndex !== null ? galleryItems[lightboxIndex] : null;
 
     return (
         <div className="gallery-page-wrapper">
@@ -87,33 +82,12 @@ export const GalleryPage = () => {
                 </div>
             </div>
 
-            {/* ─── Gallery Filter & Grid Section ─── */}
+            {/* ─── Gallery Grid Section ─── */}
             <section className="gallery-main-section" ref={sectionRef}>
                 <div className="section-container">
-                    
-                    {/* Category Filter Pills */}
-                    <div className="gallery-filter-bar gs-animate" data-animate="fade-up">
-                        {galleryCategories.map(cat => (
-                            <button
-                                key={cat.id}
-                                className={`gallery-filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
-                                onClick={() => setActiveCategory(cat.id)}
-                            >
-                                <span>{cat.label}</span>
-                                {activeCategory === cat.id && (
-                                    <span className="filter-count">
-                                        {cat.id === 'all' 
-                                            ? galleryItems.length 
-                                            : galleryItems.filter(i => i.category === cat.id).length}
-                                    </span>
-                                )}
-                            </button>
-                        ))}
-                    </div>
-
-                    {/* Responsive Gallery Grid (Reference Hover Banner Overlay) */}
+                    {/* Responsive Gallery Grid */}
                     <div className="gallery-grid">
-                        {filteredItems.map((item, index) => (
+                        {galleryItems.map((item, index) => (
                             <div 
                                 key={item.id}
                                 className="gallery-photo-card gs-animate"

@@ -40,12 +40,7 @@ export const AboutPage = () => {
 
                     <div className="about-hero-text">
                         <span className="about-hero-tag">ESTABLISHED 1990 • 35+ YEARS OF EXCELLENCE</span>
-                        <h1 className="about-page-title">
-                            Three Decades of Precision Engineering & <span className="title-accent">Industrial Innovation</span>
-                        </h1>
-                        <p className="about-page-subtitle">
-                            Vishal Enterprises is an indigenous OEM and specialized engineering solutions provider delivering mission-critical control panels, flameproof automation, and high-tension electrical infrastructure across India.
-                        </p>
+                        <h1 className="about-page-title">Precision Engineering & Innovation</h1>
                     </div>
 
                     {/* Key Metric Dials */}

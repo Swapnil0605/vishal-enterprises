@@ -14,6 +14,47 @@
     padding: 0 var(--container-padding);
 }
 
+/* ─── Breadcrumb Navigation (Strictly Horizontal) ─── */
+.breadcrumb-trail {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    gap: 8px !important;
+    margin-bottom: 16px;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: #64748b;
+    list-style: none;
+    padding: 0;
+}
+
+.breadcrumb-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-link:hover {
+    color: var(--red-500);
+}
+
+.breadcrumb-sep {
+    display: inline-flex !important;
+    align-items: center !important;
+    color: #94a3b8;
+    flex-shrink: 0;
+}
+
+.breadcrumb-active {
+    display: inline-block !important;
+    color: #0f172a;
+    font-weight: 600;
+}
+
 /* ─── Section Headers ─── */
 .section-label {
     display: inline-flex;
