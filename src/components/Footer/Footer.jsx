@@ -76,7 +76,7 @@ export const Footer = () => {
                                 <li><Link to="/about"><ChevronRight size={14} /> About Our Enterprise</Link></li>
                                 <li><Link to="/services"><ChevronRight size={14} /> All Services & Scope</Link></li>
                                 <li><Link to="/gallery"><ChevronRight size={14} /> Project Gallery</Link></li>
-                                <li><a href="/#products"><ChevronRight size={14} /> Product Range</a></li>
+                                <li><Link to="/products"><ChevronRight size={14} /> Product Range</Link></li>
                                 <li><a href="/#clients"><ChevronRight size={14} /> Trusted Clients</a></li>
                                 <li><Link to="/contact"><ChevronRight size={14} /> Contact Our Team</Link></li>
                             </ul>

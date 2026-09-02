@@ -1,8 +1,8 @@
 /* ═══════════════════════════════════════════════════════════════
-   SERVICES PAGE STYLES — YOUTUBE-STYLE COMPACT GRID ARCHITECTURE
+   PRODUCTS PAGE STYLES — YOUTUBE-STYLE COMPACT GRID ARCHITECTURE
    ═══════════════════════════════════════════════════════════════ */
 
-.services-page-wrapper {
+.products-page-wrapper {
     background: #ffffff;
     min-height: 100vh;
     display: flex;
@@ -12,41 +12,41 @@
 }
 
 /* ─── Hero Page Banner (Matching 70vh Height) ─── */
-.services-page-hero {
+.products-page-hero {
     position: relative;
     width: 100%;
     height: 70vh;
     min-height: 440px;
     background: linear-gradient(
         180deg, 
-        rgba(11, 17, 32, 0.72) 0%, 
+        rgba(11, 17, 32, 0.75) 0%, 
         rgba(11, 78, 162, 0.65) 50%, 
-        rgba(11, 17, 32, 0.9) 100%
-    ), url('/images/services/services-hero-bg.png') center / cover no-repeat;
+        rgba(11, 17, 32, 0.92) 100%
+    ), url('/images/cta-bg.jpg') center / cover no-repeat;
     border-bottom: 1px solid #1e293b;
     display: flex;
     align-items: center;
     padding: 40px 0;
 }
 
-.services-page-hero .section-container {
+.products-page-hero .section-container {
     width: 100%;
 }
 
-.services-page-hero .breadcrumb-trail .breadcrumb-link {
+.products-page-hero .breadcrumb-trail .breadcrumb-link {
     color: #cbd5e1;
 }
 
-.services-page-hero .breadcrumb-trail .breadcrumb-sep {
+.products-page-hero .breadcrumb-trail .breadcrumb-sep {
     color: #94a3b8;
 }
 
-.services-page-hero .breadcrumb-trail .breadcrumb-active {
+.products-page-hero .breadcrumb-trail .breadcrumb-active {
     color: #ffffff;
     font-weight: 700;
 }
 
-.services-page-title {
+.products-page-title {
     font-family: var(--font-display);
     font-size: clamp(2.2rem, 3.8vw, 3.2rem);
     font-weight: 800;
@@ -58,11 +58,11 @@
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.services-page-title .title-accent {
+.products-page-title .title-accent {
     color: #ffffff;
 }
 
-.services-page-subtitle {
+.products-page-subtitle {
     font-size: clamp(0.95rem, 1.2vw, 1.08rem);
     color: #e2e8f0;
     max-width: 820px;
@@ -72,7 +72,7 @@
 }
 
 /* ─── YouTube-Style Section & Chips ─── */
-.services-yt-section {
+.products-yt-section {
     padding: 40px 0 80px;
     background: #ffffff;
     width: 100%;
@@ -138,23 +138,23 @@
     color: #475569;
 }
 
-/* ─── 4-Column YouTube-Style Services Grid ─── */
-.yt-services-grid {
+/* ─── 4-Column YouTube-Style Products Grid ─── */
+.yt-products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 32px 20px;
     width: 100%;
 }
 
-/* YouTube Service Card */
-.yt-service-card {
+/* YouTube Product Card */
+.yt-product-card {
     display: flex;
     flex-direction: column;
     width: 100%;
     transition: transform 0.25s ease;
 }
 
-.yt-service-card:hover {
+.yt-product-card:hover {
     transform: translateY(-4px);
 }
 
@@ -179,7 +179,7 @@
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.yt-service-card:hover .yt-thumbnail-img {
+.yt-product-card:hover .yt-thumbnail-img {
     transform: scale(1.06);
 }
 
@@ -198,7 +198,7 @@
     z-index: 2;
 }
 
-/* YouTube Duration-Style Bottom Right Badge */
+/* Duration-Style Compliance Badge */
 .yt-duration-badge {
     position: absolute;
     bottom: 8px;
@@ -236,7 +236,7 @@
     z-index: 3;
 }
 
-.yt-service-card:hover .yt-hover-overlay {
+.yt-product-card:hover .yt-hover-overlay {
     opacity: 1;
 }
 
@@ -255,7 +255,7 @@
     transition: transform 0.25s ease;
 }
 
-.yt-service-card:hover .yt-overlay-explore {
+.yt-product-card:hover .yt-overlay-explore {
     transform: translateY(0);
 }
 
@@ -282,7 +282,7 @@
     transition: all 0.2s ease;
 }
 
-.yt-service-card:hover .yt-category-avatar {
+.yt-product-card:hover .yt-category-avatar {
     background: #0b4ea2;
     color: #ffffff;
     border-color: #0b4ea2;
@@ -293,7 +293,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    min-width: 0; /* Prevents flex blowout */
+    min-width: 0;
 }
 
 .yt-card-title-link {
@@ -315,7 +315,7 @@
     transition: color 0.2s ease;
 }
 
-.yt-service-card:hover .yt-card-title {
+.yt-product-card:hover .yt-card-title {
     color: #0b4ea2;
 }
 
@@ -375,14 +375,14 @@
 }
 
 /* ─── Bottom CTA Banner ─── */
-.services-page-cta-banner {
+.products-page-cta-banner {
     background: #f8fafc;
     border-top: 1px solid #e2e8f0;
     padding: 40px 0 80px;
     width: 100%;
 }
 
-.services-cta-card {
+.products-cta-card {
     background: #0f172a;
     border-radius: 20px;
     padding: 44px 50px;
@@ -394,7 +394,7 @@
     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 }
 
-.services-cta-text h3 {
+.products-cta-text h3 {
     font-family: var(--font-display);
     font-size: clamp(1.4rem, 2.2vw, 1.85rem);
     font-weight: 800;
@@ -403,7 +403,7 @@
     margin-bottom: 10px;
 }
 
-.services-cta-text p {
+.products-cta-text p {
     font-size: 0.94rem;
     color: #94a3b8;
     line-height: 1.6;
@@ -411,7 +411,7 @@
     max-width: 650px;
 }
 
-.services-cta-btn {
+.products-cta-btn {
     display: inline-flex;
     align-items: center;
     gap: 10px;
@@ -428,7 +428,7 @@
     flex-shrink: 0;
 }
 
-.services-cta-btn:hover {
+.products-cta-btn:hover {
     background: #c4141b;
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(227, 27, 35, 0.45);
@@ -440,7 +440,7 @@
 
 /* Large Laptops & Desktops (≤1200px) */
 @media (max-width: 1200px) {
-    .yt-services-grid {
+    .yt-products-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 28px 18px;
     }
@@ -448,25 +448,25 @@
 
 /* Tablets (≤900px) */
 @media (max-width: 900px) {
-    .yt-services-grid {
+    .yt-products-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 24px 16px;
     }
 
-    .services-page-hero {
+    .products-page-hero {
         height: auto;
         min-height: auto;
         padding: 60px 0;
     }
 
-    .services-cta-card {
+    .products-cta-card {
         flex-direction: column;
         align-items: flex-start;
         padding: 32px 28px;
         gap: 22px;
     }
 
-    .services-cta-btn {
+    .products-cta-btn {
         width: 100%;
         justify-content: center;
     }
@@ -474,17 +474,17 @@
 
 /* Mobile Devices (≤560px) */
 @media (max-width: 560px) {
-    .services-page-hero {
+    .products-page-hero {
         height: auto;
         min-height: auto;
         padding: 45px 0 35px;
     }
 
-    .services-yt-section {
+    .products-yt-section {
         padding: 24px 0 50px;
     }
 
-    .yt-services-grid {
+    .yt-products-grid {
         grid-template-columns: 1fr;
         gap: 24px;
     }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { servicesData } from '../data/services';
+import { productsData, productCategories } from '../data/products';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
@@ -9,50 +9,45 @@ import {
     ShieldCheck, 
     Home as HomeIcon, 
     ChevronRight,
+    Flame,
     Cpu,
     Zap,
-    Flame,
     Activity,
+    ShieldAlert,
     Layers
 } from 'lucide-react';
-import './ServicesPage.css';
+import './ProductsPage.css';
 
-const serviceCategories = [
-    { id: 'all', label: 'All Services' },
-    { id: 'Automation & Controls', label: 'Automation & Controls' },
-    { id: 'Power & Distribution', label: 'Power & Distribution' },
-    { id: 'Flameproof & Safety', label: 'Flameproof & Safety' },
-    { id: 'Testing & Maintenance', label: 'Testing & Maintenance' }
-];
-
-const getCategoryIcon = (category) => {
+const getProductCategoryIcon = (category) => {
     switch(category) {
+        case 'Fire & Safety':
+            return <Flame size={18} />;
+        case 'Hazardous Area':
+            return <ShieldAlert size={18} />;
         case 'Automation & Controls':
             return <Cpu size={18} />;
-        case 'Power & Distribution':
+        case 'Power Management':
             return <Zap size={18} />;
-        case 'Flameproof & Safety':
-            return <Flame size={18} />;
-        case 'Testing & Maintenance':
+        case 'Process Monitoring':
             return <Activity size={18} />;
         default:
             return <Layers size={18} />;
     }
 };
 
-export const ServicesPage = () => {
+export const ProductsPage = () => {
     const [activeFilter, setActiveFilter] = useState('all');
 
-    const filteredServices = activeFilter === 'all' 
-        ? servicesData 
-        : servicesData.filter(item => item.category === activeFilter);
+    const filteredProducts = activeFilter === 'all' 
+        ? productsData 
+        : productsData.filter(item => item.category === activeFilter);
 
     return (
-        <div className="services-page-wrapper">
+        <div className="products-page-wrapper">
             <Navbar />
 
             {/* ─── Hero Page Banner (Matching 70vh Architecture) ─── */}
-            <div className="services-page-hero">
+            <div className="products-page-hero">
                 <div className="section-container">
                     <div className="breadcrumb-trail">
                         <Link to="/" className="breadcrumb-link">
@@ -60,25 +55,25 @@ export const ServicesPage = () => {
                             <span>Home</span>
                         </Link>
                         <ChevronRight size={14} className="breadcrumb-sep" />
-                        <span className="breadcrumb-active">Services & Scope</span>
+                        <span className="breadcrumb-active">Products & Solutions</span>
                     </div>
 
-                    <h1 className="services-page-title">
-                        Comprehensive Engineering <span className="title-accent">Services & Scope</span>
+                    <h1 className="products-page-title">
+                        Engineered Industrial <span className="title-accent">Products & Consoles</span>
                     </h1>
-                    <p className="services-page-subtitle">
-                        Explore our complete 16-service portfolio spanning custom automation panels, flameproof systems, and turnkey high-tension testing.
+                    <p className="products-page-subtitle">
+                        Explore our complete line of indigenous fire pump controllers, PESO-certified explosion-proof consoles, and microprocessor-based automation systems.
                     </p>
                 </div>
             </div>
 
             {/* ─── YouTube-Style Compact Grid Section ─── */}
-            <section className="services-yt-section">
+            <section className="products-yt-section">
                 <div className="section-container">
 
                     {/* YouTube-Style Category Filter Chips */}
                     <div className="yt-filter-chips-bar">
-                        {serviceCategories.map(cat => (
+                        {productCategories.map(cat => (
                             <button
                                 key={cat.id}
                                 className={`yt-chip-btn ${activeFilter === cat.id ? 'active' : ''}`}
@@ -86,68 +81,72 @@ export const ServicesPage = () => {
                             >
                                 <span>{cat.label}</span>
                                 <span className="yt-chip-count">
-                                    {cat.id === 'all' ? servicesData.length : servicesData.filter(s => s.category === cat.id).length}
+                                    {cat.id === 'all' ? productsData.length : productsData.filter(p => p.category === cat.id).length}
                                 </span>
                             </button>
                         ))}
                     </div>
 
-                    {/* 4-Column YouTube-Style Video/Service Grid */}
-                    <div className="yt-services-grid">
-                        {filteredServices.map((service) => (
-                            <div key={service.id} className="yt-service-card" id={service.slug}>
+                    {/* 4-Column YouTube-Style Products Grid */}
+                    <div className="yt-products-grid">
+                        {filteredProducts.map((product) => (
+                            <div key={product.id} className="yt-product-card" id={product.id}>
                                 
                                 {/* 16:9 Thumbnail Wrap */}
-                                <Link to={`/services/${service.slug}`} className="yt-thumbnail-wrap">
+                                <Link to="/contact" state={{ subject: `Quote Inquiry: ${product.title}` }} className="yt-thumbnail-wrap">
                                     <img 
-                                        src={service.image} 
-                                        alt={service.alt || service.title} 
+                                        src={product.image} 
+                                        alt={product.title} 
                                         className="yt-thumbnail-img"
                                         loading="lazy"
                                     />
                                     
                                     {/* Number Index Tag (Top Left) */}
                                     <div className="yt-card-num-badge">
-                                        #{service.num}
+                                        #{product.num}
                                     </div>
 
                                     {/* YouTube Duration-Style Compliance Badge (Bottom Right) */}
                                     <div className="yt-duration-badge">
                                         <ShieldCheck size={12} />
-                                        <span>{service.standards[0] || 'ISO 9001:2015'}</span>
+                                        <span>{product.standard}</span>
                                     </div>
 
                                     {/* Hover Quick Overlay */}
                                     <div className="yt-hover-overlay">
-                                        <span className="yt-overlay-explore">Explore Details <ArrowUpRight size={14} /></span>
+                                        <span className="yt-overlay-explore">Request Quotation <ArrowUpRight size={14} /></span>
                                     </div>
                                 </Link>
 
                                 {/* Metadata Row (Avatar/Icon + Content) */}
                                 <div className="yt-card-details">
                                     {/* Category Icon Channel-Avatar */}
-                                    <div className="yt-category-avatar" title={service.category}>
-                                        {getCategoryIcon(service.category)}
+                                    <div className="yt-category-avatar" title={product.category}>
+                                        {getProductCategoryIcon(product.category)}
                                     </div>
 
                                     {/* Text Info */}
                                     <div className="yt-meta-content">
-                                        <Link to={`/services/${service.slug}`} className="yt-card-title-link">
-                                            <h3 className="yt-card-title">{service.title}</h3>
+                                        <Link to="/contact" state={{ subject: `Quote Inquiry: ${product.title}` }} className="yt-card-title-link">
+                                            <h3 className="yt-card-title">{product.title}</h3>
                                         </Link>
 
                                         <div className="yt-card-meta-line">
-                                            <span className="yt-meta-category">{service.category}</span>
+                                            <span className="yt-meta-category">{product.category}</span>
                                         </div>
 
                                         <p className="yt-card-description">
-                                            {service.shortDesc}
+                                            {product.shortDesc}
                                         </p>
 
-                                        {/* Action Explore Link */}
+                                        {/* Action Explore / Quote Link */}
                                         <div className="yt-card-action">
-                                            <Link to={`/services/${service.slug}`} className="yt-explore-action-btn">
-                                                <span>Explore</span>
+                                            <Link 
+                                                to="/contact" 
+                                                state={{ subject: `Quote Inquiry: ${product.title}` }}
+                                                className="yt-explore-action-btn"
+                                            >
+                                                <span>Inquire Now</span>
                                                 <ArrowUpRight size={14} className="yt-arrow-icon" />
                                             </Link>
                                         </div>
@@ -160,15 +159,15 @@ export const ServicesPage = () => {
             </section>
 
             {/* ─── Bottom CTA Banner ─── */}
-            <div className="services-page-cta-banner">
+            <div className="products-page-cta-banner">
                 <div className="section-container">
-                    <div className="services-cta-card">
-                        <div className="services-cta-text">
-                            <h3>Require a Custom Engineered Control Solution?</h3>
-                            <p>Our senior electrical and R&D engineers are available to review your project specifications and provide comprehensive proposals within 24 hours.</p>
+                    <div className="products-cta-card">
+                        <div className="products-cta-text">
+                            <h3>Require a Custom Product Build or OEM Tender Specification?</h3>
+                            <p>We manufacture custom enclosures, flameproof certification batches, and tailored micro-controllers according to your site Single Line Diagrams.</p>
                         </div>
-                        <Link to="/contact" className="services-cta-btn">
-                            <span>Request a Technical Proposal</span>
+                        <Link to="/contact" className="products-cta-btn">
+                            <span>Get Custom Quotation</span>
                             <ArrowUpRight size={16} />
                         </Link>
                     </div>

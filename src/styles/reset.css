@@ -53,13 +53,21 @@ ul {
 }
 
 button {
-    font-family: inherit;
+    font-family: var(--font-primary);
     cursor: pointer;
     border: none;
     background: none;
 }
 
 input, select, textarea {
-    font-family: inherit;
+    font-family: var(--font-primary);
     font-size: 16px; /* Prevents auto zoom on iOS Safari */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+}
+
+p, span, a, li, label {
+    font-family: var(--font-primary);
 }

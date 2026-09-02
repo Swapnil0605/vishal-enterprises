@@ -6,6 +6,7 @@ import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
 import { ContactPage } from './pages/ContactPage';
 import { GalleryPage } from './pages/GalleryPage';
+import { ProductsPage } from './pages/ProductsPage';
 import { ScrollToTop } from './components/ScrollToTop';
 
 export const App = () => {
@@ -17,6 +18,7 @@ export const App = () => {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/services" element={<ServicesPage />} />
                 <Route path="/services/:slug" element={<ServiceDetailPage />} />
+                <Route path="/products" element={<ProductsPage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<Home />} />
