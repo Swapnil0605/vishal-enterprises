@@ -9,12 +9,9 @@ import {
     Home as HomeIcon, 
     Check, 
     ShieldCheck, 
-    Phone, 
-    Mail, 
     ArrowRight, 
     Award,
-    Factory,
-    ArrowUpRight
+    Factory
 } from 'lucide-react';
 import './ServiceDetailPage.css';
 
@@ -60,7 +57,7 @@ export const ServiceDetailPage = () => {
             <section className="service-detail-body-section">
                 <div className="section-container">
                     <div className="service-detail-layout">
-                        {/* ─── Left Sidebar: Services Menu & Consultation Box ─── */}
+                        {/* ─── Left Sidebar: Services Menu ─── */}
                         <aside className="service-detail-sidebar">
                             {/* 1. All Services Quick Navigation Directory */}
                             <div className="sidebar-widget services-menu-widget">
@@ -71,7 +68,7 @@ export const ServiceDetailPage = () => {
                                         return (
                                             <li key={item.id}>
                                                 <Link 
-                                                    to={`/services/${item.slug}`}
+                                                    to={`/services/${item.slug}`} 
                                                     className={`sidebar-service-link ${isActive ? 'active' : ''}`}
                                                 >
                                                     <span className="sidebar-link-text">{item.title}</span>
@@ -81,35 +78,6 @@ export const ServiceDetailPage = () => {
                                         );
                                     })}
                                 </ul>
-                            </div>
-
-                            {/* 2. Direct Engineering Consultation Card */}
-                            <div className="sidebar-widget consultation-widget">
-                                <div className="consultation-icon-box">
-                                    <Phone size={24} />
-                                </div>
-                                <h4>Need Custom Technical Specifications?</h4>
-                                <p>Speak directly with our Chief R&D and Engineering Directors.</p>
-                                
-                                <div className="consultation-contact-info">
-                                    <div className="consult-row">
-                                        <Phone size={16} className="contact-ic" />
-                                        <a href="tel:+918275580423">+91 8275 580 423</a>
-                                    </div>
-                                    <div className="consult-row">
-                                        <Mail size={16} className="contact-ic" />
-                                        <a href="mailto:vishalent@yahoo.co.in">vishalent@yahoo.co.in</a>
-                                    </div>
-                                </div>
-
-                                <Link 
-                                    to="/contact" 
-                                    state={{ service: service.title, subject: service.title }}
-                                    className="sidebar-quote-btn"
-                                >
-                                    <span>Enquire Now</span>
-                                    <ArrowUpRight size={16} />
-                                </Link>
                             </div>
                         </aside>
 

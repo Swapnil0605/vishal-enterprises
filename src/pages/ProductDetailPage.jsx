@@ -9,8 +9,6 @@ import {
     Home as HomeIcon, 
     Check, 
     ShieldCheck, 
-    Phone, 
-    Mail, 
     ArrowRight, 
     Award,
     Factory,
@@ -62,7 +60,7 @@ export const ProductDetailPage = () => {
                 <div className="section-container">
                     <div className="product-detail-layout">
                         
-                        {/* ─── Left Sidebar: Products Menu & Consultation Box ─── */}
+                        {/* ─── Left Sidebar: Products Menu ─── */}
                         <aside className="product-detail-sidebar">
                             {/* 1. All Products Quick Navigation Directory */}
                             <div className="sidebar-widget products-menu-widget">
@@ -83,35 +81,6 @@ export const ProductDetailPage = () => {
                                         );
                                     })}
                                 </ul>
-                            </div>
-
-                            {/* 2. Direct Engineering Consultation Card */}
-                            <div className="sidebar-widget consultation-widget">
-                                <div className="consultation-icon-box">
-                                    <Phone size={24} />
-                                </div>
-                                <h4>Need Custom Specifications?</h4>
-                                <p>Speak directly with our technical design and manufacturing leads.</p>
-                                
-                                <div className="consultation-contact-info">
-                                    <div className="consult-row">
-                                        <Phone size={16} className="contact-ic" />
-                                        <a href="tel:+918275580423">+91 8275 580 423</a>
-                                    </div>
-                                    <div className="consult-row">
-                                        <Mail size={16} className="contact-ic" />
-                                        <a href="mailto:vishal_enterprises@rediffmail.com">vishal_enterprises@rediffmail.com</a>
-                                    </div>
-                                </div>
-
-                                <Link 
-                                    to="/contact" 
-                                    state={{ product: product.title, subject: product.title }}
-                                    className="consult-cta-btn"
-                                >
-                                    <span>Enquire Now</span>
-                                    <ArrowRight size={14} />
-                                </Link>
                             </div>
                         </aside>
 
