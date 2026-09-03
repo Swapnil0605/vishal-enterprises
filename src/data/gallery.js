@@ -25,7 +25,7 @@ export const galleryItems = [
         categoryLabel: "On-Site Engineering & Services",
         image: "/images/gallery/acb-servicing-maintenance.jpeg",
         tag: "Class-1 Licensed",
-        description: "Specialized field engineers performing primary injection testing, contact wear analysis, and overhaul on high-capacity Air Circuit Breakers."
+        description: "Specialized field engineers performing primary injection testing, contact wear analysis and overhaul on high-capacity Air Circuit Breakers."
     },
     {
         id: 3,
@@ -35,7 +35,7 @@ export const galleryItems = [
         categoryLabel: "Micro-Controllers & Simulation",
         image: "/images/gallery/transformer-alarm-panel-1.jpeg",
         tag: "R&D Innovation",
-        description: "Microprocessor simulation panel for testing WTI, OTI, PRV, and Buchholz relay trip sequences without taking power transformers offline."
+        description: "Microprocessor simulation panel for testing WTI, OTI, PRV and Buchholz relay trip sequences without taking power transformers offline."
     },
     {
         id: 4,
@@ -45,11 +45,11 @@ export const galleryItems = [
         categoryLabel: "On-Site Engineering & Services",
         image: "/images/gallery/vcb-servicing-maintenance.jpeg",
         tag: "HT Field Services",
-        description: "Preventive maintenance, breaker timing calibration, and vacuum bottle dielectric testing on 11kV/33kV Vacuum Circuit Breakers."
+        description: "Preventive maintenance, breaker timing calibration and vacuum bottle dielectric testing on 11kV/33kV Vacuum Circuit Breakers."
     },
     {
         id: 5,
-        title: "Transformer Simulation Panel — Dual Rack Enclosure",
+        title: "Transformer Simulation Panel: Dual Rack Enclosure",
         caption: "Transformer Protection & Alarm Simulation Console",
         category: "controllers",
         categoryLabel: "Micro-Controllers & Simulation",
@@ -65,7 +65,7 @@ export const galleryItems = [
         categoryLabel: "On-Site Engineering & Services",
         image: "/images/gallery/transformer-filtration.jpeg",
         tag: "Turnkey Maintenance",
-        description: "On-site dielectric breakdown voltage (BDV) restoration, vacuum degassing, and moisture extraction for distribution power transformers."
+        description: "On-site dielectric breakdown voltage (BDV) restoration, vacuum degassing and moisture extraction for distribution power transformers."
     },
     {
         id: 7,
@@ -85,7 +85,7 @@ export const galleryItems = [
         categoryLabel: "On-Site Engineering & Services",
         image: "/images/gallery/relay-testing-onsite.jpeg",
         tag: "Testing & Calibration",
-        description: "Secondary current and voltage injection calibration for numerical overcurrent, earth fault, differential, and distance relays."
+        description: "Secondary current and voltage injection calibration for numerical overcurrent, earth fault, differential and distance relays."
     },
     {
         id: 9,
@@ -95,7 +95,7 @@ export const galleryItems = [
         categoryLabel: "On-Site Engineering & Services",
         image: "/images/gallery/onsite-services-team.jpeg",
         tag: "Field Execution",
-        description: "Our certified engineering team executing complete substation installation, cable termination, and cold/hot commissioning."
+        description: "Our certified engineering team executing complete substation installation, cable termination and cold/hot commissioning."
     },
     {
         id: 10,
@@ -105,7 +105,7 @@ export const galleryItems = [
         categoryLabel: "Control & Power Panels",
         image: "/images/gallery/fire-pump-duty-panel.jpeg",
         tag: "NBC / TAC Approved",
-        description: "Automatic sequential duty sequencing console governing main electric, standby diesel engine, and jockey fire suppression pumps."
+        description: "Automatic sequential duty sequencing console governing main electric, standby diesel engine and jockey fire suppression pumps."
     },
     {
         id: 11,
@@ -155,7 +155,7 @@ export const galleryItems = [
         categoryLabel: "Micro-Controllers & Simulation",
         image: "/images/gallery/ats-controller-panel.jpeg",
         tag: "Dual Grid Sync",
-        description: "Sub-second mains failure detection, genset cranking sequence, and automated synchronization interlock controller."
+        description: "Sub-second mains failure detection, genset cranking sequence and automated synchronization interlock controller."
     },
     {
         id: 16,
@@ -165,7 +165,7 @@ export const galleryItems = [
         categoryLabel: "Control & Power Panels",
         image: "/images/gallery/graphical-lcd-panel.jpeg",
         tag: "HMI Interface",
-        description: "Customized multi-line graphical telemetry screen displaying real-time feeder status, faults, and chronological event logging."
+        description: "Customized multi-line graphical telemetry screen displaying real-time feeder status, faults and chronological event logging."
     },
     {
         id: 17,
@@ -185,6 +185,6 @@ export const galleryItems = [
         categoryLabel: "Control & Power Panels",
         image: "/images/gallery/switchgear-facility.jpg",
         tag: "Manufacturing Hub",
-        description: "Our modern panel manufacturing plant in Dhule equipped with CNC sheet-metal punching, powder coating, and full routine FAT testing bays."
+        description: "Our modern panel manufacturing plant in Dhule equipped with CNC sheet-metal punching, powder coating and full routine FAT testing bays."
     }
 ];

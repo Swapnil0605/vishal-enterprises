@@ -11,22 +11,22 @@ const advantageCards = [
     {
         id: 2,
         title: "Certified Quality and OEM Compliance",
-        desc: "ISO 9001:2015 certified manufacturing, GeM-accredited OEM status, and Class-1 government licensing ensure adherence to the highest industrial standards."
+        desc: "ISO 9001:2015 certified manufacturing, GeM-accredited OEM status and Class-1 government licensing ensure adherence to the highest industrial standards."
     },
     {
         id: 3,
         title: "Trusted by Leading Public Sector Enterprises",
-        desc: "A proven record of supplying high-reliability systems to industry leaders, including Indian Oil, Bharat Petroleum, HPCL, and Honeywell Automation."
+        desc: "A proven record of supplying high-reliability systems to industry leaders, including Indian Oil, Bharat Petroleum, HPCL and Honeywell Automation."
     },
     {
         id: 4,
         title: "Custom Design and In-House R&D",
-        desc: "Comprehensive in-house design capabilities spanning microprocessor programming, SCADA integration, custom sheet-metal fabrication, and Modbus architecture."
+        desc: "Comprehensive in-house design capabilities spanning microprocessor programming, SCADA integration, custom sheet-metal fabrication and Modbus architecture."
     },
     {
         id: 5,
         title: "Turnkey Execution and Lifecycle Services",
-        desc: "Complete single-source responsibility covering concept engineering, panel assembly, testing, commissioning, and preventive annual maintenance contracts."
+        desc: "Complete single-source responsibility covering concept engineering, panel assembly, testing, commissioning and preventive annual maintenance contracts."
     },
     {
         id: 6,

@@ -76,7 +76,7 @@ export const GalleryPage = () => {
                     <div className="gallery-hero-text">
                         <h1 className="gallery-panoramic-title">Our Gallery</h1>
                         <p className="gallery-panoramic-subtitle">
-                            A Journey of Excellence — Captured in Every Moment, Framed with Pride
+                            A Journey of Excellence: Captured in Every Moment, Framed with Pride
                         </p>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ export const GalleryPage = () => {
                                 <div className="lightbox-meta-row">
                                     <span className="lightbox-category">{currentLightboxItem.categoryLabel}</span>
                                     <span className="lightbox-tag">{currentLightboxItem.tag}</span>
-                                    <span className="lightbox-counter">{lightboxIndex + 1} / {filteredItems.length}</span>
+                                    <span className="lightbox-counter">{lightboxIndex + 1} / {galleryItems.length}</span>
                                 </div>
                                 <h3 className="lightbox-title">{currentLightboxItem.title}</h3>
                                 <p className="lightbox-desc">{currentLightboxItem.description}</p>
@@ -178,7 +178,7 @@ export const GalleryPage = () => {
                         <div className="gallery-cta-content">
                             <div className="gallery-cta-text">
                                 <h2>Require a Custom Control Console or Testing Service?</h2>
-                                <p>Our senior electrical engineers review tender drawings, SLDs, and site specifications to provide comprehensive commercial proposals within 24 hours.</p>
+                                <p>Our senior electrical engineers review tender drawings, SLDs and site specifications to provide comprehensive commercial proposals within 24 hours.</p>
                             </div>
                             <Link to="/contact" className="gallery-cta-btn">
                                 <span>Request a Technical Proposal</span>

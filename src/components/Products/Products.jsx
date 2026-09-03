@@ -97,7 +97,7 @@ export const Products = () => {
                         Custom Engineered <span className="title-accent">Control Solutions</span>
                     </h2>
                     <p className="section-subtitle">
-                        Precision control panels, annunciators, and industrial electronic equipment built to rigorous customer specifications and safety standards.
+                        Precision control panels, annunciators and industrial electronic equipment built to rigorous customer specifications and safety standards.
                     </p>
                 </div>
 

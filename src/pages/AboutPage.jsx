@@ -98,10 +98,10 @@ export const AboutPage = () => {
                                 <span className="title-accent">Built for High-Stakes Operations.</span>
                             </h2>
                             <p className="profile-lead-paragraph">
-                                Founded with a clear vision to bridge indigenous manufacturing with high-precision electronics, Vishal Enterprises has grown into a trusted partner for public sector undertakings, multinational refineries, and critical infrastructure developers.
+                                Founded with a clear vision to bridge indigenous manufacturing with high-precision electronics, Vishal Enterprises has grown into a trusted partner for public sector undertakings, multinational refineries and critical infrastructure developers.
                             </p>
                             <p className="profile-sub-paragraph">
-                                Operating out of modern manufacturing facilities in <strong>Dhule</strong> and a strategic technical office in <strong>Pune</strong>, our multi-disciplinary engineering teams combine deep domain expertise in microprocessor programming, SCADA integration, custom sheet-metal fabrication, and hazardous area engineering.
+                                Operating out of modern manufacturing facilities in <strong>Dhule</strong> and a strategic technical office in <strong>Pune</strong>, our multi-disciplinary engineering teams combine deep domain expertise in microprocessor programming, SCADA integration, custom sheet-metal fabrication and hazardous area engineering.
                             </p>
                         </div>
                     </div>
@@ -120,7 +120,7 @@ export const AboutPage = () => {
                             Our Mission & <span className="title-accent">Strategic Vision</span>
                         </h2>
                         <p className="section-subtitle mx-auto">
-                            Guided by foundational engineering ethics, precision craftsmanship, and zero-compromise safety.
+                            Guided by foundational engineering ethics, precision craftsmanship and zero-compromise safety.
                         </p>
                     </div>
 
@@ -151,7 +151,7 @@ export const AboutPage = () => {
                                 <div className="purpose-perks-list">
                                     <div className="purpose-perk-item"><Check size={14} className="perk-ic" /> Customer-tailored design & manufacturing</div>
                                     <div className="purpose-perk-item"><Check size={14} className="perk-ic" /> 35+ years practical engineering expertise</div>
-                                    <div className="purpose-perk-item"><Check size={14} className="perk-ic" /> Safe, dependable, cost-effective execution</div>
+                                    <div className="purpose-perk-item"><Check size={14} className="perk-ic" /> Safe, dependable and cost-effective execution</div>
                                 </div>
                             </div>
                         </div>
@@ -236,7 +236,7 @@ export const AboutPage = () => {
                             </div>
                             <h4>In-House R&D Autonomy</h4>
                             <p>
-                                Complete end-to-end design autonomy. We develop proprietary microprocessor firmware, Modbus gateways, and customized mimic layouts in-house with zero external reliance.
+                                Complete end-to-end design autonomy. We develop proprietary microprocessor firmware, Modbus gateways and customized mimic layouts in-house with zero external reliance.
                             </p>
                             <div className="pillar-tag-row">
                                 <span>Microprocessor</span>
@@ -252,7 +252,7 @@ export const AboutPage = () => {
                             </div>
                             <h4>Turnkey Single-Source SITC</h4>
                             <p>
-                                Single-source responsibility spanning Supply, Installation, Testing, and Commissioning backed by 24/7 preventive Annual Maintenance Contracts (AMC).
+                                Single-source responsibility spanning Supply, Installation, Testing and Commissioning backed by 24/7 preventive Annual Maintenance Contracts (AMC).
                             </p>
                             <div className="pillar-tag-row">
                                 <span>Turnkey SITC</span>
@@ -268,7 +268,7 @@ export const AboutPage = () => {
                             </div>
                             <h4>PSU & Public Sector Trust</h4>
                             <p>
-                                Trusted by India's premier public sector undertakings including Indian Oil, Bharat Petroleum, HPCL, and Honeywell Automation for critical national infrastructure.
+                                Trusted by India's premier public sector undertakings including Indian Oil, Bharat Petroleum, HPCL and Honeywell Automation for critical national infrastructure.
                             </p>
                             <div className="pillar-tag-row">
                                 <span>GeM OEM</span>

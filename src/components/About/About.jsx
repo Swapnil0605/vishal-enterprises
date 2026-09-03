@@ -44,14 +44,14 @@ export const About = () => {
                         {/* Highlighted Statement with Vertical Accent Line */}
                         <div className="about-quote-box">
                             <p>
-                                <strong>Vishal Enterprises</strong> is an experienced OEM and engineering solutions provider, delivering reliable industrial control panels, automation systems, and electrical infrastructure.
+                                <strong>Vishal Enterprises</strong> is an experienced OEM and engineering solutions provider, delivering reliable industrial control panels, automation systems and electrical infrastructure.
                             </p>
                         </div>
 
                         {/* Supporting Short Description */}
                         <div className="about-body-text">
                             <p>
-                                With over <strong>35 years of experience</strong>, we specialize in customised automation panels, PLC and process controls, fire and safety systems, and flameproof solutions for demanding industrial environments.
+                                With over <strong>35 years of experience</strong>, we specialize in customised automation panels, PLC and process controls, fire safety systems and flameproof solutions for demanding industrial environments.
                             </p>
                         </div>
 

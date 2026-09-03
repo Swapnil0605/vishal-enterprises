@@ -249,8 +249,9 @@
 /* Mobile (≤767px) */
 @media (max-width: 767px) {
     .image-clipped-number {
-        font-size: clamp(7.5rem, 28vw, 11rem);
+        font-size: clamp(7rem, 28vw, 10.5rem);
         letter-spacing: -2px;
+        padding-top: 40px;
     }
 
     .about-quote-box {
@@ -264,5 +265,25 @@
     .about-cta-button {
         width: 100%;
         justify-content: center;
+    }
+}
+
+/* Small Mobile (≤380px) */
+@media (max-width: 380px) {
+    .image-clipped-number {
+        font-size: clamp(5.8rem, 26vw, 7.5rem);
+        padding-top: 24px;
+    }
+
+    .caption-main {
+        font-size: 1.15rem;
+    }
+
+    .caption-sub {
+        font-size: 0.85rem;
+    }
+
+    .about-main-title {
+        font-size: 1.7rem;
     }
 }

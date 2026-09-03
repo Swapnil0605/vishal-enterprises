@@ -102,8 +102,12 @@ export const ServiceDetailPage = () => {
                                     </div>
                                 </div>
 
-                                <Link to="/contact" className="sidebar-quote-btn">
-                                    <span>Request a Quote</span>
+                                <Link 
+                                    to="/contact" 
+                                    state={{ service: service.title, subject: service.title }}
+                                    className="sidebar-quote-btn"
+                                >
+                                    <span>Enquire Now</span>
                                     <ArrowUpRight size={16} />
                                 </Link>
                             </div>
@@ -179,8 +183,12 @@ export const ServiceDetailPage = () => {
                                     <h3>Ready to deploy {service.title}?</h3>
                                     <p>Submit your project technical specifications or bill of materials for custom pricing and fast turnaround.</p>
                                 </div>
-                                <Link to="/contact" className="quote-action-btn">
-                                    <span>Get a Technical Proposal</span>
+                                <Link 
+                                    to="/contact" 
+                                    state={{ service: service.title, subject: service.title }}
+                                    className="quote-action-btn"
+                                >
+                                    <span>Enquire Now</span>
                                     <ArrowRight size={16} />
                                 </Link>
                             </div>

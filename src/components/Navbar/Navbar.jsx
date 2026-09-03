@@ -11,86 +11,70 @@ import './Navbar.css';
 
 const servicesMegaColumns = [
     {
-        num: "01",
-        category: "AUTOMATION & CONTROLS",
         items: [
             { name: "Customised Automation Panels", slug: "customised-automation-panels" },
             { name: "PLC Panels & Process Controls", slug: "plc-panels-process-controls" },
-            { name: "VFD, FASD & PMCC Panels", slug: "vfd-fasd-pmcc-ro-utility-panels" },
-            { name: "RO & Utility Control Panels", slug: "vfd-fasd-pmcc-ro-utility-panels" }
+            { name: "Fire Engine & Jockey Pump Panels", slug: "fire-engine-jockey-pump-panels" },
+            { name: "VFD, FASD, PMCC & RO Utility", slug: "vfd-fasd-pmcc-ro-utility-panels" }
         ]
     },
     {
-        num: "02",
-        category: "FLAMEPROOF & SAFETY",
         items: [
-            { name: "Flameproof (FLP) Control Panels", slug: "flp-control-panels-starters" },
-            { name: "FLP Gas Detection & Simulation", slug: "flp-gas-detection-fire-simulation" },
-            { name: "FLP Earthing Relay Interlocks", slug: "flp-earthing-relay-decantation" },
-            { name: "Flameproof Audio-Visual Panels", slug: "flp-annunciation-audio-visual" }
+            { name: "Siren & Dyke Valve Position Panels", slug: "siren-dyke-valve-position-panels" },
+            { name: "Fire Alarm & Detection Panels", slug: "fire-alarm-detection-panels" },
+            { name: "FLP Gas Detection & Simulation", slug: "flp-gas-detection-simulation" },
+            { name: "FLP Earthing Relay & Monitoring", slug: "flp-earthing-relay-monitoring" }
         ]
     },
     {
-        num: "03",
-        category: "TESTING & COMMISSIONING",
         items: [
-            { name: "Secondary Injection Relay Testing", slug: "secondary-injection-relay-testing" },
-            { name: "Numerical Relay Configuration", slug: "numerical-relay-configuration-testing" },
-            { name: "Substation Automation (SAS)", slug: "substation-automation-systems" },
-            { name: "HV Breaker Timing & Testing", slug: "breaker-timing-dynamic-resistance" }
+            { name: "Automatic Battery Changeover Panels", slug: "automatic-battery-changeover-panels" },
+            { name: "WTI / OTI & Live Simulation", slug: "wti-oti-safety-alarms-simulation" },
+            { name: "Energy Saving & Annunciation Panels", slug: "energy-saving-annunciation-panels" },
+            { name: "Data Communication (Wireless/Modbus)", slug: "data-communication-wireless-modbus" }
         ]
     },
     {
-        num: "04",
-        category: "MAINTENANCE & RETROFITTING",
         items: [
-            { name: "Transformer Health & Filtration", slug: "transformer-testing-oil-filtration" },
-            { name: "HT Switchgear Modernisation", slug: "ht-panel-retrofitting-modernisation" },
-            { name: "Thermography & Power Audit", slug: "thermography-power-quality-audit" },
-            { name: "Fire Pump Duty & Engine Panels", slug: "fire-engine-jockey-pump-panels" }
+            { name: "HT Works & Sub-Station Tests", slug: "ht-works-substation-tests" },
+            { name: "P4 & P6 Safety LED Displays", slug: "p4-p6-safety-led-displays" },
+            { name: "Testing & Thermography Services", slug: "testing-thermography-services" },
+            { name: "AMC, SITC & Turnkey Trading", slug: "amc-sitc-turnkey-trading" }
         ]
     }
 ];
 
 const productsMegaColumns = [
     {
-        num: "01",
-        category: "FIRE & SAFETY SYSTEMS",
         items: [
             { name: "Advanced Fire Pump Controller", id: "fire-pump-adv" },
-            { name: "Fire Pump Fail-Safe Logic Panel", id: "fire-pump-seq" },
+            { name: "Fire Pump Fail-Safe Logic Panel", id: "fire-pump-fail-safe" },
             { name: "SOP Narrator Audio System", id: "sop-narrator" },
             { name: "Tank Level Annunciation Panel", id: "tank-level" }
         ]
     },
     {
-        num: "02",
-        category: "HAZARDOUS & FLAMEPROOF",
         items: [
             { name: "Flameproof Dyke Valve Panel", id: "flp-dyke-valve" },
-            { name: "Gas Detection Controller (Bluetooth)", id: "gas-detection-bt" },
+            { name: "Gas Detection Controller (BT)", id: "gas-detection-bt" },
             { name: "Flameproof Fire Alarm Panel", id: "flp-fire-alarm" },
             { name: "Flameproof SOP Narrator Panel", id: "flp-sop-narrator" }
         ]
     },
     {
-        num: "03",
-        category: "POWER & DISTRIBUTION",
         items: [
             { name: "Graphical LCD Dual Battery Unit", id: "graphical-lcd" },
-            { name: "Automatic Battery Changeover System", id: "dual-battery-auto" },
-            { name: "Microprocessor ATS Transfer Unit", id: "ats-controller" },
-            { name: "CNG Station APFC Panel", id: "cng-apfc" }
+            { name: "Automatic Battery Changeover", id: "battery-changeover" },
+            { name: "Microprocessor ATS Controller", id: "ats-controller" },
+            { name: "CNG Station APFC Panel", id: "cng-apfc-panel" }
         ]
     },
     {
-        num: "04",
-        category: "AUTOMATION & PROCESS",
         items: [
-            { name: "Multi-Compressor AC Sequential Panel", id: "ac-sequential" },
-            { name: "RO Utility & Desalination Panel", id: "ro-utility" },
-            { name: "Digital Safety Milestone Display", id: "accident-free-days" },
-            { name: "FLP Earthing Relay Interlock", id: "flp-earthing" }
+            { name: "AC Sequential Control Panel", id: "ac-sequential" },
+            { name: "RO Utility Automation Panel", id: "ro-utility-panel" },
+            { name: "Accident-Free Days Display", id: "accident-free-days" },
+            { name: "FLP Earthing Relay Interlock", id: "flp-earthing-relay" }
         ]
     }
 ];
@@ -154,10 +138,30 @@ export const Navbar = () => {
     const closeMobileMenu = () => {
         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
         if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
-        setMobileOpen(false);
         setServicesOpen(false);
         setProductsOpen(false);
+        setMobileOpen(false);
         document.body.style.overflow = '';
+    };
+
+    const handleServicesToggle = (e) => {
+        if (window.innerWidth <= 990) {
+            e.preventDefault();
+            setServicesOpen(prev => !prev);
+            setProductsOpen(false);
+        } else {
+            closeMobileMenu();
+        }
+    };
+
+    const handleProductsToggle = (e) => {
+        if (window.innerWidth <= 990) {
+            e.preventDefault();
+            setProductsOpen(prev => !prev);
+            setServicesOpen(false);
+        } else {
+            closeMobileMenu();
+        }
     };
 
     return (
@@ -196,7 +200,7 @@ export const Navbar = () => {
                             <Link 
                                 to="/services" 
                                 className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
+                                onClick={handleServicesToggle}
                             >
                                 <span>Services</span>
                                 <ChevronDown size={14} className="dropdown-chevron" />
@@ -227,11 +231,6 @@ export const Navbar = () => {
                                         </div>
                                     ))}
                                 </div>
-                                <div className="mega-bottom-strip">
-                                    <span className="mega-strip-tagline">
-                                        Turnkey Engineering, Automation Panels & Testing Solutions Across India
-                                    </span>
-                                </div>
                             </div>
                         </li>
 
@@ -244,7 +243,7 @@ export const Navbar = () => {
                             <Link 
                                 to="/products" 
                                 className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
+                                onClick={handleProductsToggle}
                             >
                                 <span>Products</span>
                                 <ChevronDown size={14} className="dropdown-chevron" />
@@ -274,11 +273,6 @@ export const Navbar = () => {
                                             </ul>
                                         </div>
                                     ))}
-                                </div>
-                                <div className="mega-bottom-strip">
-                                    <span className="mega-strip-tagline">
-                                        ISO 9001:2015 & GeM Accredited OEM Manufacturer • PESO / TAC Standards
-                                    </span>
                                 </div>
                             </div>
                         </li>

@@ -62,7 +62,7 @@ export const ProductsPage = () => {
                         Engineered Industrial <span className="title-accent">Products & Consoles</span>
                     </h1>
                     <p className="products-page-subtitle">
-                        Explore our complete line of indigenous fire pump controllers, PESO-certified explosion-proof consoles, and microprocessor-based automation systems.
+                        Explore our complete line of indigenous fire pump controllers, PESO-certified explosion-proof consoles and microprocessor-based automation systems.
                     </p>
                 </div>
             </div>
@@ -81,7 +81,7 @@ export const ProductsPage = () => {
                                     <img 
                                         src={product.image} 
                                         alt={product.title} 
-                                        className="yt-thumbnail-img"
+                                        className="yt-thumbnail-img" 
                                         loading="lazy"
                                     />
 
@@ -127,7 +127,7 @@ export const ProductsPage = () => {
                     <div className="products-cta-card">
                         <div className="products-cta-text">
                             <h3>Require a Custom Product Build or OEM Tender Specification?</h3>
-                            <p>We manufacture custom enclosures, flameproof certification batches, and tailored micro-controllers according to your site Single Line Diagrams.</p>
+                            <p>We manufacture custom enclosures, flameproof certification batches and tailored micro-controllers according to your site Single Line Diagrams.</p>
                         </div>
                         <Link to="/contact" className="products-cta-btn">
                             <span>Get Custom Quotation</span>

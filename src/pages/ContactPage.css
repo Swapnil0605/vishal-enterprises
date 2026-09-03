@@ -401,6 +401,31 @@
     box-shadow: 0 6px 20px rgba(22, 163, 74, 0.35) !important;
 }
 
+.proposal-submit-btn--error {
+    background: #dc2626 !important;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.35) !important;
+}
+
+.contact-form-error-banner {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    color: #b91c1c;
+    font-size: 0.88rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+.error-banner-icon {
+    color: #dc2626;
+    flex-shrink: 0;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    INTERACTIVE MAP SECTION (REFERENCE STYLE)
    ═══════════════════════════════════════════════════════════════ */
@@ -572,6 +597,7 @@
 
     .contact-form-card {
         padding: 26px 18px;
+        border-radius: 16px;
     }
 
     .locations-grid {
@@ -584,15 +610,46 @@
     }
 
     .contact-map-container {
-        height: 520px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .map-floating-overlay-card {
         position: relative;
         top: auto;
         left: auto;
-        width: 90%;
+        width: 100%;
         margin: 20px auto;
-        max-width: 100%;
+        max-width: calc(100% - 32px);
+    }
+
+    .contact-map-iframe {
+        height: 320px;
+        width: 100%;
+    }
+}
+
+/* Small Mobile (≤380px) */
+@media (max-width: 380px) {
+    .contact-form-card {
+        padding: 20px 14px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 10px 12px;
+        font-size: 15px;
+    }
+
+    .proposal-submit-btn {
+        padding: 13px 20px;
+        font-size: 0.92rem;
+    }
+
+    .map-card-tab-btn {
+        padding: 8px 12px;
+        font-size: 0.76rem;
     }
 }

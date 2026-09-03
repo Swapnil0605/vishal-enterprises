@@ -106,10 +106,10 @@ export const ProductDetailPage = () => {
 
                                 <Link 
                                     to="/contact" 
-                                    state={{ subject: `Custom Inquiry: ${product.title}` }}
+                                    state={{ product: product.title, subject: product.title }}
                                     className="consult-cta-btn"
                                 >
-                                    <span>Request Custom Build</span>
+                                    <span>Enquire Now</span>
                                     <ArrowRight size={14} />
                                 </Link>
                             </div>
@@ -191,16 +191,16 @@ export const ProductDetailPage = () => {
                             <div className="product-quote-banner">
                                 <div className="quote-banner-text">
                                     <span className="quote-tag">DIRECT OEM PROCUREMENT</span>
-                                    <h3>Request Formal Technical Quotation</h3>
-                                    <p>Receive technical data sheets, general arrangement (GA) drawings, and customized commercial pricing within 24 hours.</p>
+                                    <h3>Send Product Enquiry</h3>
+                                    <p>Receive technical data sheets, general arrangement (GA) drawings and customized commercial pricing within 24 hours.</p>
                                 </div>
                                 <Link 
                                     to="/contact" 
-                                    state={{ subject: `Technical Quotation: ${product.title} (${product.standard})` }}
+                                    state={{ product: product.title, subject: product.title }}
                                     className="quote-banner-btn"
                                 >
-                                    <span>Request Quotation</span>
-                                    <ArrowUpRight size={16} />
+                                    <span>Enquire Now</span>
+                                    <ArrowRight size={16} />
                                 </Link>
                             </div>
 

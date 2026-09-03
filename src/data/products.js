@@ -16,11 +16,11 @@ export const productsData = [
         fullTitle: 'Advanced Fire Pump Duty & Sequencing Controller Panel',
         category: 'Fire & Safety',
         standard: 'TAC / NBC Approved',
-        shortDesc: 'Intelligent duty rotation, main electric, standby diesel, and jockey pump sequencing controller with Modbus SCADA communication.',
+        shortDesc: 'Intelligent duty rotation, main electric, standby diesel and jockey pump sequencing controller with Modbus SCADA communication.',
         image: '/images/products/Advanced Fire Pump Control Panel.jpeg',
-        overview: 'Engineered in strict accordance with TAC and National Building Code (NBC) guidelines, this intelligent controller automates primary electric, standby diesel engine, and jockey fire hydrant pump sequences. Features dual battery automatic starting, pressure drop sensing, and sub-second failover.',
+        overview: 'Engineered in strict accordance with TAC and National Building Code (NBC) guidelines, this intelligent controller automates primary electric, standby diesel engine and jockey fire hydrant pump sequences. Features dual battery automatic starting, pressure drop sensing and sub-second failover.',
         features: [
-            'Automated main electric, standby diesel, and jockey pump sequencing',
+            'Automated main electric, standby diesel and jockey pump sequencing',
             'Pressure sensor transducer & dual pressure switch interlocks',
             'Dual battery charger with automatic engine cranking cycle logic',
             'RS-485 Modbus RTU telemetry for central BMS & SCADA integration',
@@ -53,7 +53,7 @@ export const productsData = [
         overview: 'A state-of-the-art gas detection and alarm controller with integrated Bluetooth connectivity, allowing field technicians to perform wireless zero/span calibration and diagnostic testing without opening the flameproof housing in explosive gas atmospheres.',
         features: [
             'Wireless Bluetooth BLE communication for hazardous-area field calibration',
-            'Multi-channel monitoring supporting LEL, Hydrocarbon, H2S, and Toxic gas heads',
+            'Multi-channel monitoring supporting LEL, Hydrocarbon, H2S and Toxic gas heads',
             'Tri-color graphical display showing real-time PPM / %LEL gas concentration',
             'Programmable dual-level Warning and Alarm relay contact outputs',
             'Fail-safe internal watchdog circuit with continuous sensor health diagnostics'
@@ -114,7 +114,7 @@ export const productsData = [
         standard: 'OISD-117 Compliant',
         shortDesc: 'Automated multilingual voice guidance and standard operating procedure broadcaster with LCD status display and emergency override.',
         image: '/images/products/SOP Narrator.jpeg',
-        overview: 'A digital audio safety broadcaster designed to enforce standard operating safety procedures (SOPs) at hazardous plant locations like tanker loading gantries, chemical dosing rooms, and substation yards through crystal-clear multilingual automated announcements.',
+        overview: 'A digital audio safety broadcaster designed to enforce standard operating safety procedures (SOPs) at hazardous plant locations like tanker loading gantries, chemical dosing rooms and substation yards through crystal-clear multilingual automated announcements.',
         features: [
             'Crystal-clear automated multilingual audio announcements (English, Hindi, Regional)',
             'Triggered via optical beam, tanker earth clamp, or plant safety interlocks',
@@ -146,7 +146,7 @@ export const productsData = [
         standard: 'ISO 9001:2015',
         shortDesc: 'Multi-channel ultrasonic and hydrostatic tank level alarm annunciator with graphical LCD interface for bulk oil storage facilities.',
         image: '/images/products/Tank Level Annunciation Panel for Oil Industries.jpeg',
-        overview: 'A comprehensive multi-tank level monitoring and overfill prevention panel. Integrates with hydrostatic, ultrasonic, and radar level transmitters to display volumetric data, sounding dual-stage high/low alarms to prevent catastrophic environmental spillages.',
+        overview: 'A comprehensive multi-tank level monitoring and overfill prevention panel. Integrates with hydrostatic, ultrasonic and radar level transmitters to display volumetric data, sounding dual-stage high/low alarms to prevent catastrophic environmental spillages.',
         features: [
             'Simultaneous level monitoring for up to 16 bulk storage tanks',
             'Dual-level alarm annunciation with audible hooter and visual flashing windows',
@@ -176,13 +176,13 @@ export const productsData = [
         fullTitle: 'Microcontroller Dual Battery Charger & Changeover Panel with Graphical LCD',
         category: 'Power Management',
         standard: 'Class-1 Certified',
-        shortDesc: 'Automatic battery changeover panel featuring real-time graphical voltage monitoring, float/boost charging, and automated health diagnostics.',
+        shortDesc: 'Automatic battery changeover panel featuring real-time graphical voltage monitoring, float/boost charging and automated health diagnostics.',
         image: '/images/products/Graphical LCD Panel.jpeg',
-        overview: 'Engineered for uninterrupted DC auxiliary control power in electrical substations and industrial generating sets. Features a high-resolution graphical display showing charge/discharge curves, automated float/boost changeover, and internal battery resistance diagnostics.',
+        overview: 'Engineered for uninterrupted DC auxiliary control power in electrical substations and industrial generating sets. Features a high-resolution graphical display showing charge/discharge curves, automated float/boost changeover and internal battery resistance diagnostics.',
         features: [
             'Real-time graphical voltage & current waveform analysis on backlit LCD',
             'Automatic seamless changeover between Bank-1 and Bank-2 battery sets',
-            'Float, Boost, and Equalizing charging modes with temperature compensation',
+            'Float, Boost and Equalizing charging modes with temperature compensation',
             'Battery deep-discharge cutoff and reverse polarity electronic protection',
             'Comprehensive fault log recorder with date and time-stamped events'
         ],
@@ -242,7 +242,7 @@ export const productsData = [
         standard: 'Industrial Safety',
         shortDesc: 'High-visibility industrial LED safety counter display board for plant-wide tracking of milestone working hours and injury-free records.',
         image: '/images/products/Accident Free Days Display.jpeg',
-        overview: 'Promotes corporate safety culture across manufacturing campuses, petroleum depots, and refineries. Automatically increments safe working days at midnight, displaying past record days, current accident-free days, and lost-time injury statistics.',
+        overview: 'Promotes corporate safety culture across manufacturing campuses, petroleum depots and refineries. Automatically increments safe working days at midnight, displaying past record days, current accident-free days and lost-time injury statistics.',
         features: [
             'Super-bright 4-inch / 6-inch red/green seven-segment LED display visible up to 50m',
             'Built-in real-time clock (RTC) automatically advances day count at 00:00 hrs',
@@ -274,7 +274,7 @@ export const productsData = [
         standard: 'IEC 61439',
         shortDesc: 'Microcontroller-based even-wear runtime balancing and emergency failover automation panel for server rooms and critical substation environments.',
         image: '/images/products/AC Sequential Control Panel.jpeg',
-        overview: 'Designed for mission-critical cooling environments like server rooms, SCADA control centers, and electrical substation battery rooms. Manages multiple air conditioning compressor units to ensure uniform mechanical wear, automatic emergency standby unit cut-in on high temperature, and cyclic duty rotation.',
+        overview: 'Designed for mission-critical cooling environments like server rooms, SCADA control centers and electrical substation battery rooms. Manages multiple air conditioning compressor units to ensure uniform mechanical wear, automatic emergency standby unit cut-in on high temperature and cyclic duty rotation.',
         features: [
             'Equalized runtime balancing across 2, 3, or 4 independent AC units',
             'Dual digital temperature sensors with programmable cut-in thresholds',
@@ -308,11 +308,11 @@ export const productsData = [
         image: '/images/products/Flameproof Fire Alarm Control Panel.jpeg',
         overview: 'An explosion-proof conventional fire alarm and extinguishing releasing control panel housed in an Ex-d cast aluminum enclosure. Certified by PESO for installation directly inside hazardous Zone 1 chemical storage and solvent handling areas.',
         features: [
-            'Class-B 2-wire initiating device circuits for smoke, heat, and flame detectors',
+            'Class-B 2-wire initiating device circuits for smoke, heat and flame detectors',
             'Supervised audio-visual notification appliance circuits for flameproof sounders',
             'Cross-zoned coincidence detection logic for automatic gas suppression release',
             'Built-in trickle charger with internal 24V DC sealed lead-acid standby battery',
-            'Individual LED status indicators for Zone Alarm, Open Circuit, and Short Circuit'
+            'Individual LED status indicators for Zone Alarm, Open Circuit and Short Circuit'
         ],
         specifications: [
             { label: 'Zone Capacity', value: '2, 4, 8 Initiating Detector Zones' },
@@ -402,12 +402,12 @@ export const productsData = [
         standard: 'IEEE 802.3 Grid',
         shortDesc: 'Sub-second dual grid-genset automated synchronization and transfer console preventing cross-feed and Phase sequence mismatches.',
         image: '/images/products/ATS Controller.jpeg',
-        overview: 'A smart micro-controller panel managing automatic changeover between utility grid power and emergency diesel generator sets. Delivers sub-second transfer times, prevents neutral cross-feeding, and supervises generator engine cool-down cycles.',
+        overview: 'A smart micro-controller panel managing automatic changeover between utility grid power and emergency diesel generator sets. Delivers sub-second transfer times, prevents neutral cross-feeding and supervises generator engine cool-down cycles.',
         features: [
-            'True RMS 3-phase voltage, frequency, and phase-sequence monitoring on both sources',
-            'Programmable transfer delays, generator start timer, and engine cool-down sequence',
+            'True RMS 3-phase voltage, frequency and phase-sequence monitoring on both sources',
+            'Programmable transfer delays, generator start timer and engine cool-down sequence',
             'Dual electrical and mechanical interlock control preventing grid-genset collision',
-            'Backlit graphical LCD displaying line voltages, load current, and source status',
+            'Backlit graphical LCD displaying line voltages, load current and source status',
             'Emergency manual bypass handle interlock for maintenance isolation'
         ],
         specifications: [
@@ -466,10 +466,10 @@ export const productsData = [
         standard: 'IP65 Ingress',
         shortDesc: 'Turnkey PLC-driven reverse osmosis high-pressure dosing and valve sequencing automation panel with conductivity alarms.',
         image: '/images/products/RO Utility Control Panel.jpeg',
-        overview: 'A PLC-driven turnkey automation control panel for industrial reverse osmosis water treatment plants. Coordinates feed pumps, anti-scalant dosing metering pumps, high-pressure booster pumps, auto-flush solenoid valves, and continuous permeate conductivity meters.',
+        overview: 'A PLC-driven turnkey automation control panel for industrial reverse osmosis water treatment plants. Coordinates feed pumps, anti-scalant dosing metering pumps, high-pressure booster pumps, auto-flush solenoid valves and continuous permeate conductivity meters.',
         features: [
             'Automated pump start/stop sequencing with low suction pressure protection',
-            'Integrated conductivity, pH, and flow sensor 4-20mA monitoring channels',
+            'Integrated conductivity, pH and flow sensor 4-20mA monitoring channels',
             'Timed membrane auto-flush sequence preventing scaling and membrane fouling',
             'Touchscreen HMI interface displaying process mimic flow diagram and alarms',
             'VFD speed modulation on high-pressure pump optimizing energy efficiency'

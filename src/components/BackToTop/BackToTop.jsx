@@ -6,7 +6,7 @@ export const BackToTop = () => {
 
     const whatsappNumber = '918275580423';
     const defaultMessage = encodeURIComponent(
-        'Hello Vishal Enterprises, I would like to inquire about your engineering solutions, control panels, and services.'
+        'Hello Vishal Enterprises, I would like to inquire about your engineering solutions, control panels and services.'
     );
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
 

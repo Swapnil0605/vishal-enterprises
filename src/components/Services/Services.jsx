@@ -29,7 +29,7 @@ export const Services = () => {
                         Our Comprehensive <span className="title-accent">Services & Scope</span>
                     </h2>
                     <p className="services-subtitle">
-                        Full spectrum of electrical contracting, automation panel manufacturing, flameproof systems, and high-tension engineering services.
+                        Full spectrum of electrical contracting, automation panel manufacturing, flameproof systems and high-tension engineering services.
                     </p>
                 </div>
 

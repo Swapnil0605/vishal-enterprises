@@ -24,7 +24,7 @@ export const Footer = () => {
                                 </div>
                             </div>
                             <p className="footer-about">
-                                A GeM-accredited OEM and ISO 9001:2015 certified manufacturer specializing in industrial control panels, automation systems, and electrical engineering solutions for India's critical infrastructure.
+                                A GeM-accredited OEM and ISO 9001:2015 certified manufacturer specializing in industrial control panels, automation systems and electrical engineering solutions for India's critical infrastructure.
                             </p>
 
                             {/* Social Media Links */}

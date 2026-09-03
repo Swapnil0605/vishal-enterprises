@@ -67,7 +67,7 @@ export const ServicesPage = () => {
                         Comprehensive Engineering <span className="title-accent">Services & Scope</span>
                     </h1>
                     <p className="services-page-subtitle">
-                        Explore our complete 16-service portfolio spanning custom automation panels, flameproof systems, and turnkey high-tension testing.
+                        Explore our complete 16-service portfolio spanning custom automation panels, flameproof systems and turnkey high-tension testing.
                     </p>
                 </div>
             </div>

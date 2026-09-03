@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
-import { allServicesList } from '../data/services';
+import { servicesData } from '../data/services';
+import { productsData } from '../data/products';
 import { 
     Phone, 
     Mail, 
@@ -17,34 +18,115 @@ import {
     Building2,
     Award,
     ExternalLink,
-    Navigation
+    Navigation,
+    AlertCircle
 } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './ContactPage.css';
 
 export const ContactPage = () => {
     const sectionRef = useScrollAnimation();
+    const locationHook = useLocation();
     const [selectedLocation, setSelectedLocation] = useState('dhule'); // 'dhule' | 'pune'
+
+    // Helper to resolve incoming service or product from router state
+    const resolveIncomingState = () => {
+        const state = locationHook.state || {};
+        const rawSubject = (state.subject || '').trim();
+        const rawProduct = (state.product || '').trim();
+        const rawService = (state.service || '').trim();
+
+        // 1. Resolve Product
+        let resolvedProduct = '';
+        if (rawProduct) {
+            const match = productsData.find(p => 
+                p.title.toLowerCase() === rawProduct.toLowerCase() ||
+                p.id.toLowerCase() === rawProduct.toLowerCase() ||
+                p.title.toLowerCase().includes(rawProduct.toLowerCase())
+            );
+            if (match) resolvedProduct = match.title;
+        } else if (rawSubject) {
+            const match = productsData.find(p => 
+                p.title.toLowerCase() === rawSubject.toLowerCase() ||
+                rawSubject.toLowerCase().includes(p.title.toLowerCase())
+            );
+            if (match) resolvedProduct = match.title;
+        }
+
+        // 2. Resolve Service
+        let resolvedService = '';
+        if (rawService) {
+            const match = servicesData.find(s => 
+                s.title.toLowerCase() === rawService.toLowerCase() ||
+                s.slug.toLowerCase() === rawService.toLowerCase() ||
+                s.title.toLowerCase().includes(rawService.toLowerCase())
+            );
+            if (match) resolvedService = match.title;
+        } else if (rawSubject && !resolvedProduct) {
+            const match = servicesData.find(s => 
+                s.title.toLowerCase() === rawSubject.toLowerCase() ||
+                rawSubject.toLowerCase().includes(s.title.toLowerCase())
+            );
+            if (match) resolvedService = match.title;
+        }
+
+        return { resolvedProduct, resolvedService };
+    };
+
+    const { resolvedProduct, resolvedService } = resolveIncomingState();
+
     const [formState, setFormState] = useState({
         name: '',
         company: '',
         email: '',
         phone: '',
-        service: '',
+        service: resolvedService,
+        product: resolvedProduct,
         location: '',
         message: ''
     });
-    const [status, setStatus] = useState('idle'); // idle | loading | success
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
+    const [errorMessage, setErrorMessage] = useState('');
+
+    useEffect(() => {
+        if (locationHook.state) {
+            const { resolvedProduct: newProduct, resolvedService: newService } = resolveIncomingState();
+            setFormState(prev => ({
+                ...prev,
+                product: newProduct || prev.product,
+                service: newService || prev.service
+            }));
+        }
+    }, [locationHook.state]);
 
     const handleChange = (e) => {
         setFormState({ ...formState, [e.target.name]: e.target.value });
+        if (status === 'error') {
+            setStatus('idle');
+            setErrorMessage('');
+        }
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('loading');
+        setErrorMessage('');
 
-        setTimeout(() => {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formState)
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Failed to submit inquiry. Please try again.');
+            }
+
             setStatus('success');
             setTimeout(() => {
                 setFormState({
@@ -53,12 +135,17 @@ export const ContactPage = () => {
                     email: '',
                     phone: '',
                     service: '',
+                    product: '',
                     location: '',
                     message: ''
                 });
                 setStatus('idle');
-            }, 4000);
-        }, 1200);
+            }, 5000);
+        } catch (err) {
+            console.error('[Contact Form Error]:', err);
+            setStatus('error');
+            setErrorMessage(err.message || 'Unable to submit your inquiry at this moment. Please try again or call us directly.');
+        }
     };
 
     const locationDetails = {
@@ -252,35 +339,52 @@ export const ContactPage = () => {
 
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <label htmlFor="p-service">Required Engineering Solution *</label>
+                                            <label htmlFor="p-service">Required Service</label>
                                             <select 
                                                 id="p-service"
                                                 name="service" 
                                                 value={formState.service} 
                                                 onChange={handleChange}
-                                                required
                                             >
-                                                <option value="" disabled>Select a Service</option>
-                                                {allServicesList.map((serviceName, index) => (
-                                                    <option key={index} value={serviceName}>
-                                                        {serviceName}
+                                                <option value="">Select a Service</option>
+                                                {servicesData.map((service) => (
+                                                    <option key={`serv-${service.id}`} value={service.title}>
+                                                        {service.title}
                                                     </option>
                                                 ))}
-                                                <option value="Other Custom Industrial Solution">Other Custom Industrial Solution</option>
+                                                <option value="Other Custom Service">Other Custom Service</option>
                                             </select>
                                         </div>
 
                                         <div className="form-group">
-                                            <label htmlFor="p-location">Project Site / City</label>
-                                            <input 
-                                                id="p-location"
-                                                type="text" 
-                                                name="location"
-                                                value={formState.location}
+                                            <label htmlFor="p-product">Required Product</label>
+                                            <select 
+                                                id="p-product"
+                                                name="product" 
+                                                value={formState.product} 
                                                 onChange={handleChange}
-                                                placeholder="e.g. Mumbai, Pune, Delhi..." 
-                                            />
+                                            >
+                                                <option value="">Select a Product</option>
+                                                {productsData.map((product) => (
+                                                    <option key={`prod-${product.id}`} value={product.title}>
+                                                        {product.title}
+                                                    </option>
+                                                ))}
+                                                <option value="Other Custom Product">Other Custom Product</option>
+                                            </select>
                                         </div>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <label htmlFor="p-location">Project Site / City</label>
+                                        <input 
+                                            id="p-location"
+                                            type="text" 
+                                            name="location"
+                                            value={formState.location}
+                                            onChange={handleChange}
+                                            placeholder="e.g. Mumbai, Pune, Delhi..." 
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -297,28 +401,41 @@ export const ContactPage = () => {
 
                                     <button 
                                         type="submit" 
-                                        className={`proposal-submit-btn ${status === 'success' ? 'proposal-submit-btn--success' : ''}`}
+                                        className={`proposal-submit-btn ${status === 'success' ? 'proposal-submit-btn--success' : ''} ${status === 'error' ? 'proposal-submit-btn--error' : ''}`}
                                         disabled={status === 'loading'}
                                     >
                                         {status === 'loading' && (
                                             <>
                                                 <Loader2 size={18} className="spin-icon" />
-                                                <span>Transmitting Proposal Request...</span>
+                                                <span>Submitting...</span>
                                             </>
                                         )}
                                         {status === 'success' && (
                                             <>
                                                 <Check size={18} />
-                                                <span>Proposal Request Submitted Successfully!</span>
+                                                <span>Submitted Successfully!</span>
+                                            </>
+                                        )}
+                                        {status === 'error' && (
+                                            <>
+                                                <span>Retry Submission</span>
+                                                <Send size={16} />
                                             </>
                                         )}
                                         {status === 'idle' && (
                                             <>
-                                                <span>Submit Technical Proposal Request</span>
+                                                <span>Submit</span>
                                                 <Send size={16} />
                                             </>
                                         )}
                                     </button>
+
+                                    {status === 'error' && errorMessage && (
+                                        <div className="contact-form-error-banner">
+                                            <AlertCircle size={18} className="error-banner-icon" />
+                                            <span>{errorMessage}</span>
+                                        </div>
+                                    )}
                                 </form>
                             </div>
                         </div>
