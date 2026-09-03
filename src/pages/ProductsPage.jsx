@@ -130,7 +130,7 @@ export const ProductsPage = () => {
                             <p>We manufacture custom enclosures, flameproof certification batches and tailored micro-controllers according to your site Single Line Diagrams.</p>
                         </div>
                         <Link to="/contact" className="products-cta-btn">
-                            <span>Get Custom Quotation</span>
+                            <span>Request a Quote</span>
                             <ArrowUpRight size={16} />
                         </Link>
                     </div>

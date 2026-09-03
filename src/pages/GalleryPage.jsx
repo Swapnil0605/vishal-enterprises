@@ -181,7 +181,7 @@ export const GalleryPage = () => {
                                 <p>Our senior electrical engineers review tender drawings, SLDs and site specifications to provide comprehensive commercial proposals within 24 hours.</p>
                             </div>
                             <Link to="/contact" className="gallery-cta-btn">
-                                <span>Request a Technical Proposal</span>
+                                <span>Request a Quote</span>
                                 <ArrowRight size={18} />
                             </Link>
                         </div>

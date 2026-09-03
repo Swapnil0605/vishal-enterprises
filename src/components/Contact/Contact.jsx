@@ -48,7 +48,7 @@ export const Contact = () => {
                                 to="/contact"
                                 className="cta-proposal-button"
                             >
-                                <span>Request a Technical Proposal</span>
+                                <span>Request a Quote</span>
                                 <ArrowRight size={18} className="cta-btn-arrow" />
                             </Link>
                         </div>

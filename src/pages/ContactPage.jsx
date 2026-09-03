@@ -274,7 +274,7 @@ export const ContactPage = () => {
                         <div className="contact-form-col gs-animate" data-animate="fade-left">
                             <div className="contact-form-card">
                                 <div className="form-card-header">
-                                    <h2 className="form-title">Request a Technical Proposal</h2>
+                                    <h2 className="form-title">Request a Quote</h2>
                                     <p className="form-subtitle">
                                         Fill in your project requirements below to receive a formal commercial and engineering proposal within 24 working hours.
                                     </p>

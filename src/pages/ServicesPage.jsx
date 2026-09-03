@@ -132,7 +132,7 @@ export const ServicesPage = () => {
                             <p>Our senior electrical and R&D engineers are available to review your project specifications and provide comprehensive proposals within 24 hours.</p>
                         </div>
                         <Link to="/contact" className="services-cta-btn">
-                            <span>Request a Technical Proposal</span>
+                            <span>Request a Quote</span>
                             <ArrowUpRight size={16} />
                         </Link>
                     </div>

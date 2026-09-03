@@ -309,7 +309,7 @@ export const AboutPage = () => {
                                     to="/contact"
                                     className="about-cta-button"
                                 >
-                                    <span>Request a Technical Proposal</span>
+                                    <span>Request a Quote</span>
                                     <ArrowRight size={18} className="cta-arrow-ic" />
                                 </Link>
                             </div>
