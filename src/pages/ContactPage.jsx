@@ -34,39 +34,8 @@ export const ContactPage = () => {
         const rawProduct = (state.product || '').trim();
         const rawService = (state.service || '').trim();
 
-        // 1. Resolve Product
-        let resolvedProduct = '';
-        if (rawProduct) {
-            const match = productsData.find(p => 
-                p.title.toLowerCase() === rawProduct.toLowerCase() ||
-                p.id.toLowerCase() === rawProduct.toLowerCase() ||
-                p.title.toLowerCase().includes(rawProduct.toLowerCase())
-            );
-            if (match) resolvedProduct = match.title;
-        } else if (rawSubject) {
-            const match = productsData.find(p => 
-                p.title.toLowerCase() === rawSubject.toLowerCase() ||
-                rawSubject.toLowerCase().includes(p.title.toLowerCase())
-            );
-            if (match) resolvedProduct = match.title;
-        }
-
-        // 2. Resolve Service
-        let resolvedService = '';
-        if (rawService) {
-            const match = servicesData.find(s => 
-                s.title.toLowerCase() === rawService.toLowerCase() ||
-                s.slug.toLowerCase() === rawService.toLowerCase() ||
-                s.title.toLowerCase().includes(rawService.toLowerCase())
-            );
-            if (match) resolvedService = match.title;
-        } else if (rawSubject && !resolvedProduct) {
-            const match = servicesData.find(s => 
-                s.title.toLowerCase() === rawSubject.toLowerCase() ||
-                rawSubject.toLowerCase().includes(s.title.toLowerCase())
-            );
-            if (match) resolvedService = match.title;
-        }
+        const resolvedProduct = rawProduct || '';
+        const resolvedService = rawService || (!rawProduct && rawSubject ? rawSubject : '');
 
         return { resolvedProduct, resolvedService };
     };
