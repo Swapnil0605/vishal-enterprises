@@ -317,34 +317,46 @@
 
     .nav-links {
         position: fixed;
-        top: 0;
-        right: -100%;
-        width: 85%;
-        max-width: 320px;
-        height: 100vh;
+        top: 84px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        max-height: calc(100vh - 84px);
         background: #ffffff;
-        transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
-        padding: 90px 24px 32px;
+        transform: translateY(-8px);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+                    opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), 
+                    visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        padding: 16px 20px 24px;
         z-index: 999;
         overflow-y: auto;
-        border-left: 1px solid #e2e8f0;
+        border-bottom: 1.5px solid #e2e8f0;
+        border-top: 1px solid #f1f5f9;
     }
 
     .nav-links.open {
-        right: 0;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .nav-links ul {
         flex-direction: column;
         align-items: stretch;
-        gap: 12px;
+        gap: 8px;
         width: 100%;
     }
 
     .nav-link {
-        font-size: 16px;
-        padding: 12px 14px;
+        font-size: 15px;
+        padding: 10px 14px;
         width: 100%;
         border-radius: 8px;
         display: block;
@@ -398,10 +410,21 @@
         pointer-events: auto;
     }
 
-    .nav-item-mega:hover .mega-dropdown,
+    .nav-item-mega .mega-dropdown {
+        display: none !important;
+    }
+
     .nav-item-mega.open .mega-dropdown {
-        display: block;
+        display: block !important;
         transform: none;
+    }
+
+    .nav-item-mega:hover .dropdown-chevron {
+        transform: none;
+    }
+
+    .nav-item-mega.open .dropdown-chevron {
+        transform: rotate(180deg);
     }
 
     .mega-dropdown-inner {
@@ -468,5 +491,10 @@
 
     .nav-inner {
         height: 74px;
+    }
+
+    .nav-links {
+        top: 74px;
+        max-height: calc(100vh - 74px);
     }
 }

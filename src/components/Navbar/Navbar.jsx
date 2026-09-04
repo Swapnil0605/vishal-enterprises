@@ -90,6 +90,7 @@ export const Navbar = () => {
     const isHomePage = location.pathname === '/';
 
     const handleServicesEnter = () => {
+        if (window.innerWidth <= 990) return;
         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
         if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
         setProductsOpen(false);
@@ -97,6 +98,7 @@ export const Navbar = () => {
     };
 
     const handleServicesLeave = () => {
+        if (window.innerWidth <= 990) return;
         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
         servicesTimeoutRef.current = setTimeout(() => {
             setServicesOpen(false);
@@ -104,6 +106,7 @@ export const Navbar = () => {
     };
 
     const handleProductsEnter = () => {
+        if (window.innerWidth <= 990) return;
         if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
         if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
         setServicesOpen(false);
@@ -111,6 +114,7 @@ export const Navbar = () => {
     };
 
     const handleProductsLeave = () => {
+        if (window.innerWidth <= 990) return;
         if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
         productsTimeoutRef.current = setTimeout(() => {
             setProductsOpen(false);

@@ -117,6 +117,10 @@
     text-shadow: 0 2px 8px rgba(255, 255, 255, 0.4);
 }
 
+.hero-word {
+    display: block;
+}
+
 .text-accent-red {
     color: #e31b23;
 }
@@ -148,6 +152,10 @@
     .hero-main-title {
         font-size: clamp(2.4rem, 6vw, 3.8rem);
     }
+
+    .hero-word {
+        display: block;
+    }
 }
 
 /* Mobile (≤767px) */
@@ -171,6 +179,17 @@
     }
 
     .hero-main-title {
-        font-size: clamp(2.1rem, 8.5vw, 2.8rem);
+        font-size: clamp(1.55rem, 6.8vw, 2.3rem);
+        line-height: 1.18;
+        letter-spacing: -0.5px;
+    }
+
+    .hero-word-group {
+        display: block;
+        white-space: nowrap;
+    }
+
+    .hero-word {
+        display: inline;
     }
 }

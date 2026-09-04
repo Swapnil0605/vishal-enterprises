@@ -74,10 +74,14 @@ export const Hero = () => {
                         </div>
 
                         <h1 className="hero-main-title">
-                            Engineering<br />
-                            <span className="text-accent-red">Reliability.</span><br />
-                            Powering<br />
-                            <span className="text-accent-red">Progress.</span>
+                            <span className="hero-word-group">
+                                <span className="hero-word">Engineering</span>{' '}
+                                <span className="hero-word text-accent-red">Reliability.</span>
+                            </span>
+                            <span className="hero-word-group">
+                                <span className="hero-word">Powering</span>{' '}
+                                <span className="hero-word text-accent-red">Progress.</span>
+                            </span>
                         </h1>
                     </div>
                 </div>

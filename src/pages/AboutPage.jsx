@@ -42,26 +42,6 @@ export const AboutPage = () => {
                         <span className="about-hero-tag">ESTABLISHED 1990 • 35+ YEARS OF EXCELLENCE</span>
                         <h1 className="about-page-title">Precision Engineering & Innovation</h1>
                     </div>
-
-                    {/* Key Metric Dials */}
-                    <div className="about-hero-stats-row">
-                        <div className="hero-stat-card">
-                            <span className="stat-value">35+</span>
-                            <span className="stat-label">Years Track Record</span>
-                        </div>
-                        <div className="hero-stat-card">
-                            <span className="stat-value">500+</span>
-                            <span className="stat-label">Industrial Projects</span>
-                        </div>
-                        <div className="hero-stat-card">
-                            <span className="stat-value">100%</span>
-                            <span className="stat-label">Compliance Standard</span>
-                        </div>
-                        <div className="hero-stat-card">
-                            <span className="stat-value">2</span>
-                            <span className="stat-label">Engineering Hubs</span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
