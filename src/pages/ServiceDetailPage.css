@@ -86,10 +86,8 @@
 }
 
 .service-detail-layout {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 50px;
-    align-items: start;
+    max-width: 980px;
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -521,16 +519,6 @@
 
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
-    .service-detail-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .service-detail-sidebar {
-        position: relative;
-        top: 0;
-    }
-
     .service-featured-image-box {
         height: 340px;
     }

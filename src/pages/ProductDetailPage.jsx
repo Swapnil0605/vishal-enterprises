@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { productsData, getProductBySlug } from '../data/products';
+import { getProductBySlug } from '../data/products';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
@@ -55,36 +55,10 @@ export const ProductDetailPage = () => {
                 </div>
             </div>
 
-            {/* ─── Main Two-Column Layout (Sidebar + Detailed Content) ─── */}
+            {/* ─── Main Content (Product Information → Direct CTA) ─── */}
             <section className="product-detail-body-section">
                 <div className="section-container">
                     <div className="product-detail-layout">
-                        
-                        {/* ─── Left Sidebar: Products Menu ─── */}
-                        <aside className="product-detail-sidebar">
-                            {/* 1. All Products Quick Navigation Directory */}
-                            <div className="sidebar-widget products-menu-widget">
-                                <h3 className="sidebar-widget-title">Product Catalog Directory</h3>
-                                <ul className="sidebar-products-list">
-                                    {productsData.map((item) => {
-                                        const isActive = item.slug === product.slug;
-                                        return (
-                                            <li key={item.id}>
-                                                <Link 
-                                                    to={`/products/${item.slug}`}
-                                                    className={`sidebar-product-link ${isActive ? 'active' : ''}`}
-                                                >
-                                                    <span className="sidebar-link-text">{item.title}</span>
-                                                    <ChevronRight size={15} className="sidebar-arrow" />
-                                                </Link>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
-                        </aside>
-
-                        {/* ─── Right Content: Detail Breakdown ─── */}
                         <main className="product-detail-main">
                             {/* Hero Product Photograph */}
                             <div className="product-main-photo-card">

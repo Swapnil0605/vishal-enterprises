@@ -86,10 +86,8 @@
 }
 
 .product-detail-layout {
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 50px;
-    align-items: start;
+    max-width: 980px;
+    margin: 0 auto;
     width: 100%;
 }
 
@@ -527,25 +525,12 @@
    ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1080px) {
-    .product-detail-layout {
-        grid-template-columns: 300px 1fr;
-        gap: 36px;
-    }
-
     .product-features-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 900px) {
-    .product-detail-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .product-detail-sidebar {
-        position: static;
-    }
 
     .product-quote-banner {
         flex-direction: column;

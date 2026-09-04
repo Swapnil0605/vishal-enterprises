@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { servicesData, getServiceBySlug } from '../data/services';
+import { getServiceBySlug } from '../data/services';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
@@ -53,35 +53,10 @@ export const ServiceDetailPage = () => {
                 </div>
             </div>
 
-            {/* ─── Main Two-Column Layout (Sidebar + Detailed Content) ─── */}
+            {/* ─── Main Content (Service Information → Direct CTA) ─── */}
             <section className="service-detail-body-section">
                 <div className="section-container">
                     <div className="service-detail-layout">
-                        {/* ─── Left Sidebar: Services Menu ─── */}
-                        <aside className="service-detail-sidebar">
-                            {/* 1. All Services Quick Navigation Directory */}
-                            <div className="sidebar-widget services-menu-widget">
-                                <h3 className="sidebar-widget-title">Our Services Directory</h3>
-                                <ul className="sidebar-services-list">
-                                    {servicesData.map((item) => {
-                                        const isActive = item.slug === service.slug;
-                                        return (
-                                            <li key={item.id}>
-                                                <Link 
-                                                    to={`/services/${item.slug}`} 
-                                                    className={`sidebar-service-link ${isActive ? 'active' : ''}`}
-                                                >
-                                                    <span className="sidebar-link-text">{item.title}</span>
-                                                    <ChevronRight size={15} className="sidebar-arrow" />
-                                                </Link>
-                                            </li>
-                                        );
-                                    })}
-                                </ul>
-                            </div>
-                        </aside>
-
-                        {/* ─── Right Main Content: Comprehensive Details ─── */}
                         <main className="service-detail-content">
                             {/* Featured High-Res Visual */}
                             <div className="service-featured-image-box">

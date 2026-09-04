@@ -567,6 +567,18 @@
 
 /* Tablet (≤1024px) */
 @media (max-width: 1024px) {
+    .contact-page-hero {
+        height: auto;
+        min-height: 380px;
+        padding: 50px 0;
+        background: linear-gradient(
+            180deg, 
+            rgba(11, 17, 32, 0.32) 0%, 
+            rgba(11, 17, 32, 0.16) 50%, 
+            rgba(11, 17, 32, 0.48) 100%
+        ), url('/images/contact/contact-hero-bg.jpg') center center / cover no-repeat;
+    }
+
     .contact-grid-layout {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -587,8 +599,14 @@
 @media (max-width: 640px) {
     .contact-page-hero {
         height: auto;
-        min-height: auto;
-        padding: 50px 0 40px;
+        min-height: 320px;
+        padding: 40px 0 32px;
+        background: linear-gradient(
+            180deg, 
+            rgba(11, 17, 32, 0.28) 0%, 
+            rgba(11, 17, 32, 0.12) 50%, 
+            rgba(11, 17, 32, 0.42) 100%
+        ), url('/images/contact/contact-hero-bg.jpg') center center / cover no-repeat;
     }
 
     .contact-main-section {

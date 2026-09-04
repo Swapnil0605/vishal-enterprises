@@ -351,6 +351,21 @@
         color: #1e293b;
     }
 
+    .nav-link-dropdown {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start;
+        gap: 6px;
+        width: 100%;
+    }
+
+    .nav-link-dropdown .dropdown-chevron {
+        display: inline-flex;
+        align-items: center;
+        margin-left: 2px;
+        flex-shrink: 0;
+    }
+
     .nav-link:hover,
     .nav-link:active {
         background: #f1f5f9;

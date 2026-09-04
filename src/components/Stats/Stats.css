@@ -145,33 +145,57 @@
 /* Mobile (≤640px) */
 @media (max-width: 640px) {
     .stats-section {
-        padding: 56px 0;
+        padding: 48px 0;
     }
 
     .stats-grid {
-        grid-template-columns: 1fr;
-        gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 16px;
     }
 
     .stat-icon-wrapper {
-        width: 54px;
-        height: 54px;
-        margin-bottom: 18px;
+        width: 46px;
+        height: 46px;
+        margin-bottom: 12px;
+    }
+
+    .stat-icon {
+        width: 22px;
+        height: 22px;
     }
 
     .stat-number {
-        font-size: 2.8rem;
+        font-size: clamp(2rem, 7.5vw, 2.5rem);
     }
 
     .stat-plus {
+        font-size: clamp(1.4rem, 5vw, 1.7rem);
+    }
+
+    .stat-title {
+        font-size: clamp(0.95rem, 3.4vw, 1.08rem);
+        margin-bottom: 4px;
+        line-height: 1.2;
+    }
+
+    .stat-subtitle {
+        font-size: 0.78rem;
+        line-height: 1.35;
+        max-width: 100%;
+    }
+}
+
+/* Small Mobile (≤360px) */
+@media (max-width: 360px) {
+    .stats-grid {
+        gap: 22px 10px;
+    }
+
+    .stat-number {
         font-size: 1.8rem;
     }
 
     .stat-title {
-        font-size: 1.15rem;
-    }
-
-    .stat-subtitle {
-        max-width: 100%;
+        font-size: 0.88rem;
     }
 }

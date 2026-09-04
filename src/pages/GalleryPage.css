@@ -476,7 +476,14 @@
     }
 
     .gallery-panoramic-hero {
-        min-height: 360px;
+        height: auto;
+        min-height: 380px;
+        background: linear-gradient(
+            180deg, 
+            rgba(11, 17, 32, 0.32) 0%, 
+            rgba(11, 17, 32, 0.16) 50%, 
+            rgba(11, 17, 32, 0.48) 100%
+        ), url('/images/gallery/gallery-hero-bg.jpg') center center / cover no-repeat;
     }
 
     .gallery-cta-content {
@@ -501,7 +508,14 @@
 /* Mobile (≤640px) */
 @media (max-width: 640px) {
     .gallery-panoramic-hero {
-        min-height: 300px;
+        height: auto;
+        min-height: 320px;
+        background: linear-gradient(
+            180deg, 
+            rgba(11, 17, 32, 0.28) 0%, 
+            rgba(11, 17, 32, 0.12) 50%, 
+            rgba(11, 17, 32, 0.42) 100%
+        ), url('/images/gallery/gallery-hero-bg.jpg') center center / cover no-repeat;
     }
 
     .gallery-panoramic-title {
