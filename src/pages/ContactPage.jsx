@@ -80,18 +80,32 @@ export const ContactPage = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch('/api/contact', {
+            const response = await fetch('https://formsubmit.co/ajax/swapnilchikte0@gmail.com', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
                 },
-                body: JSON.stringify(formState)
+                body: JSON.stringify({
+                    _subject: `New Website Enquiry: ${formState.name} ${formState.company ? `(${formState.company})` : ''} - ${formState.service || formState.product || 'General Quotation'}`,
+                    _template: 'table',
+                    _captcha: 'false',
+                    _replyto: formState.email,
+                    "Full Name": formState.name,
+                    "Company / Organization": formState.company || 'Not specified',
+                    "Work Email Address": formState.email,
+                    "Phone Number": formState.phone,
+                    "Required Service": formState.service || 'Not specified',
+                    "Required Product": formState.product || 'Not specified',
+                    "Project Site / City": formState.location || 'Not specified',
+                    "Project Specifications / Requirements": formState.message || 'No additional details provided'
+                })
             });
 
             const data = await response.json();
 
-            if (!response.ok) {
-                throw new Error(data.error || 'Failed to submit inquiry. Please try again.');
+            if (!response.ok || data.success === 'false' || data.success === false) {
+                throw new Error(data.message || 'Failed to submit inquiry. Please try again.');
             }
 
             setStatus('success');
@@ -247,7 +261,19 @@ export const ContactPage = () => {
                                     </p>
                                 </div>
 
-                                <form className="technical-proposal-form" onSubmit={handleSubmit}>
+                                <form 
+                                    id="contactForm"
+                                    action="https://formsubmit.co/swapnilchikte0@gmail.com" 
+                                    method="POST"
+                                    className="technical-proposal-form" 
+                                    onSubmit={handleSubmit}
+                                >
+                                    {/* FormSubmit Hidden Configuration Fields */}
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_template" value="table" />
+                                    <input type="hidden" name="_subject" value="New Website Enquiry - Vishal Enterprises" />
+                                    <input type="hidden" name="_replyto" value={formState.email} />
+
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="p-name">Full Name *</label>
