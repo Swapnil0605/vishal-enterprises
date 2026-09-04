@@ -3,8 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
-import { servicesData } from '../data/services';
-import { productsData } from '../data/products';
 import { 
     Phone, 
     Mail, 
@@ -340,38 +338,26 @@ export const ContactPage = () => {
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="p-service">Required Service</label>
-                                            <select 
+                                            <input 
                                                 id="p-service"
+                                                type="text" 
                                                 name="service" 
                                                 value={formState.service} 
                                                 onChange={handleChange}
-                                            >
-                                                <option value="">Select a Service</option>
-                                                {servicesData.map((service) => (
-                                                    <option key={`serv-${service.id}`} value={service.title}>
-                                                        {service.title}
-                                                    </option>
-                                                ))}
-                                                <option value="Other Custom Service">Other Custom Service</option>
-                                            </select>
+                                                placeholder="Select a Service" 
+                                            />
                                         </div>
 
                                         <div className="form-group">
                                             <label htmlFor="p-product">Required Product</label>
-                                            <select 
+                                            <input 
                                                 id="p-product"
+                                                type="text" 
                                                 name="product" 
                                                 value={formState.product} 
                                                 onChange={handleChange}
-                                            >
-                                                <option value="">Select a Product</option>
-                                                {productsData.map((product) => (
-                                                    <option key={`prod-${product.id}`} value={product.title}>
-                                                        {product.title}
-                                                    </option>
-                                                ))}
-                                                <option value="Other Custom Product">Other Custom Product</option>
-                                            </select>
+                                                placeholder="Select a Product" 
+                                            />
                                         </div>
                                     </div>
 
