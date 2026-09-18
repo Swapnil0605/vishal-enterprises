@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { productsData } from '../../data/products';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
@@ -113,16 +114,20 @@ export const Products = () => {
                         onMouseMove={handleMouseMove}
                     >
                         {productsData.map((prod) => (
-                            <div key={prod.id} className="product-card">
+                            <Link 
+                                key={prod.id} 
+                                to={`/products/${prod.slug || prod.id}`} 
+                                className="product-card"
+                            >
                                 <div className="product-img">
                                     <img src={prod.image} alt={prod.title} draggable={false} loading="lazy" />
                                     <span className="product-category-tag">{prod.category}</span>
                                 </div>
                                 <div className="product-info">
                                     <h4>{prod.title}</h4>
-                                    <p>{prod.subtitle}</p>
+                                    <p>{prod.subtitle || prod.shortDesc}</p>
                                 </div>
-                            </div>
+                            </Link>
                         ))}
                     </div>
 

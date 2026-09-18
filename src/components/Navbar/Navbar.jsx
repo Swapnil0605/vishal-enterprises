@@ -47,34 +47,36 @@ const servicesMegaColumns = [
 const productsMegaColumns = [
     {
         items: [
-            { name: "Advanced Fire Pump Controller", id: "fire-pump-adv" },
-            { name: "Fire Pump Fail-Safe Logic Panel", id: "fire-pump-fail-safe" },
-            { name: "SOP Narrator Audio System", id: "sop-narrator" },
-            { name: "Tank Level Annunciation Panel", id: "tank-level" }
+            { name: "8-Zone Fire Alarm Panel", id: "8-zone-fire-alarm" },
+            { name: "Advanced Fire Engine Panel", id: "advanced-fire-engine" },
+            { name: "Compact Fire Siren Panel", id: "compact-fire-siren" },
+            { name: "Industrial Fire Siren Panel", id: "industrial-fire-siren" },
+            { name: "Jockey Pump Soft Starter", id: "jockey-pump-soft-starter" }
         ]
     },
     {
         items: [
-            { name: "Flameproof Dyke Valve Panel", id: "flp-dyke-valve" },
-            { name: "Gas Detection Controller (BT)", id: "gas-detection-bt" },
-            { name: "Flameproof Fire Alarm Panel", id: "flp-fire-alarm" },
-            { name: "Flameproof SOP Narrator Panel", id: "flp-sop-narrator" }
+            { name: "Flameproof TT Earthing Relay", id: "flp-tt-earthing-relay" },
+            { name: "Flameproof Gas Detection Hub", id: "flp-gas-detection" },
+            { name: "Dyke Valve Position Panel", id: "dyke-valve-position-panel" },
+            { name: "Wireless Fire Pump Telemetry", id: "wireless-fire-jockey-pump-telemetry" },
+            { name: "Digital WTI / OTI Controller", id: "digital-wti-oti-controller" }
         ]
     },
     {
         items: [
-            { name: "Graphical LCD Dual Battery Unit", id: "graphical-lcd" },
-            { name: "Automatic Battery Changeover", id: "battery-changeover" },
-            { name: "Microprocessor ATS Controller", id: "ats-controller" },
-            { name: "CNG Station APFC Panel", id: "cng-apfc-panel" }
+            { name: "ATS Control Panel", id: "ats-control-panel" },
+            { name: "UPS ACDB Distribution Panel", id: "ups-acdb-panel" },
+            { name: "Servo Voltage Stabilizer", id: "servo-voltage-stabilizer" },
+            { name: "VCB & AB Switch Interlock", id: "vcb-ab-switch-interlock" }
         ]
     },
     {
         items: [
-            { name: "AC Sequential Control Panel", id: "ac-sequential" },
-            { name: "RO Utility Automation Panel", id: "ro-utility-panel" },
-            { name: "Accident-Free Days Display", id: "accident-free-days" },
-            { name: "FLP Earthing Relay Interlock", id: "flp-earthing-relay" }
+            { name: "AC Sequential Control Panel", id: "ac-sequential-control" },
+            { name: "Custom Circuit & PLC Panel", id: "custom-circuit-plc" },
+            { name: "PLC Star Delta Starter (FASD)", id: "plc-fasd-starter" },
+            { name: "Thermography Monitoring Panel", id: "thermography-monitoring-panel" }
         ]
     }
 ];
