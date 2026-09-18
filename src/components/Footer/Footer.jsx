@@ -75,8 +75,9 @@ export const Footer = () => {
                             <ul>
                                 <li><Link to="/about"><ChevronRight size={14} /> About Our Enterprise</Link></li>
                                 <li><Link to="/services"><ChevronRight size={14} /> All Services & Scope</Link></li>
-                                <li><Link to="/gallery"><ChevronRight size={14} /> Project Gallery</Link></li>
                                 <li><Link to="/products"><ChevronRight size={14} /> Product Range</Link></li>
+                                <li><Link to="/additional-products"><ChevronRight size={14} /> Additional Products</Link></li>
+                                <li><Link to="/gallery"><ChevronRight size={14} /> Project Gallery</Link></li>
                                 <li><Link to="/contact"><ChevronRight size={14} /> Contact Our Team</Link></li>
                             </ul>
                         </div>

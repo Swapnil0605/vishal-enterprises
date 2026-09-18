@@ -285,6 +285,16 @@ export const Navbar = () => {
 
                         <li>
                             <Link 
+                                to="/additional-products" 
+                                className={`nav-link ${location.pathname === '/additional-products' ? 'active' : ''}`} 
+                                onClick={closeMobileMenu}
+                            >
+                                Additional Products
+                            </Link>
+                        </li>
+
+                        <li>
+                            <Link 
                                 to="/gallery" 
                                 className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`} 
                                 onClick={closeMobileMenu}

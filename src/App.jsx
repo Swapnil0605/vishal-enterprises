@@ -8,6 +8,7 @@ import { ContactPage } from './pages/ContactPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ProductsPage } from './pages/ProductsPage';
 import { ProductDetailPage } from './pages/ProductDetailPage';
+import { AdditionalProductsPage } from './pages/AdditionalProductsPage';
 import { ScrollToTop } from './components/ScrollToTop';
 
 export const App = () => {
@@ -21,6 +22,7 @@ export const App = () => {
                 <Route path="/services/:slug" element={<ServiceDetailPage />} />
                 <Route path="/products" element={<ProductsPage />} />
                 <Route path="/products/:slug" element={<ProductDetailPage />} />
+                <Route path="/additional-products" element={<AdditionalProductsPage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="*" element={<Home />} />

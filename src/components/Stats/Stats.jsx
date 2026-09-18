@@ -7,7 +7,7 @@ import './Stats.css';
 export const Stats = () => {
     const sectionRef = useScrollAnimation();
     const yearsCounter = useCounter(35, 2);
-    const projectsCounter = useCounter(500, 2.5);
+    const projectsCounter = useCounter(1000, 2.5);
     const professionalsCounter = useCounter(50, 2);
     const industriesCounter = useCounter(7, 1.8);
 
