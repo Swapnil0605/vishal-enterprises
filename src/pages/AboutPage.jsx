@@ -39,7 +39,7 @@ export const AboutPage = () => {
                     </div>
 
                     <div className="about-hero-text">
-                        <span className="about-hero-tag">ESTABLISHED 1990 • 35+ YEARS OF EXCELLENCE</span>
+                        <span className="about-hero-tag">• 35+ YEARS OF EXCELLENCE</span>
                         <h1 className="about-page-title">Precision Engineering & Innovation</h1>
                     </div>
                 </div>

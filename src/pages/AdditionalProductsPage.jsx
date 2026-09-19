@@ -8,10 +8,7 @@ import {
     ArrowUpRight, 
     Home as HomeIcon, 
     ChevronRight,
-    Send,
-    PhoneCall,
-    FileText,
-    HelpCircle
+    Send
 } from 'lucide-react';
 import './AdditionalProductsPage.css';
 
@@ -76,38 +73,6 @@ export const AdditionalProductsPage = () => {
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    {/* ─── Unlisted / Custom Spares Helper Banner ─── */}
-                    <div className="unlisted-spares-box">
-                        <div className="unlisted-spares-header">
-                            <div className="unlisted-icon-wrap">
-                                <HelpCircle size={28} />
-                            </div>
-                            <div>
-                                <h3>Looking for an item not listed here?</h3>
-                                <p>We source and supply over 1,000+ specialized OEM industrial spares, obsolete relay replacements, custom switchgear ratings, and brand-specific components (L&T, Siemens, Schneider, Baliga, FCG, Polycab, Omron, etc.).</p>
-                            </div>
-                        </div>
-
-                        <div className="unlisted-actions-row">
-                            <Link 
-                                to="/contact" 
-                                state={{ product: 'Custom Spare Part / Unlisted Item Sourcing', subject: 'Inquiry for Unlisted Industrial Spare Part' }}
-                                className="unlisted-btn unlisted-btn-primary"
-                            >
-                                <FileText size={16} />
-                                <span>Submit Part Request / SLD</span>
-                            </Link>
-
-                            <a 
-                                href="tel:+919822454483" 
-                                className="unlisted-btn unlisted-btn-secondary"
-                            >
-                                <PhoneCall size={16} />
-                                <span>Speak with Sourcing Engineer</span>
-                            </a>
-                        </div>
                     </div>
 
                 </div>
