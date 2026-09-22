@@ -138,11 +138,11 @@ export const ContactPage = () => {
             directionsLink: "https://www.google.com/maps/dir/?api=1&destination=20.8955,74.7675"
         },
         pune: {
-            title: "REGIONAL OPERATIONS & PROJECT LIAISON",
-            name: "VISHAL ENTERPRISES",
-            address: "P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune, Maharashtra 411057, India",
-            mapQuery: "https://maps.google.com/maps?q=18.571676,73.719457+(Vishal+Enterprises+-+Pune+Office)&t=&z=17&ie=UTF8&iwloc=B&output=embed",
-            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=18.571676,73.719457"
+            title: "PUNE BRANCH & REGIONAL OPERATIONS",
+            name: "M/s. VISHAL ENTERPRISES - Pune Branch",
+            address: "123,124, M/s. VISHAL ENTERPRISES - Pune Branch, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057",
+            mapQuery: "https://maps.google.com/maps?q=Rising+City+(24k+Real+Assets),+Thakar+Nagar,+Hinjewadi+Phase+1,+Maan,+Maharashtra+411057&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=Rising+City+(24k+Real+Assets),+Thakar+Nagar,+Hinjewadi+Phase+1,+Maan,+Maharashtra+411057"
         }
     };
 
@@ -241,12 +241,12 @@ export const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="location-item">
-                                        <MapPin size={18} className="loc-icon" />
-                                        <div>
-                                            <strong>Regional Office (Pune)</strong>
-                                            <p>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
-                                        </div>
-                                    </div>
+                                         <MapPin size={18} className="loc-icon" />
+                                         <div>
+                                             <strong>Pune Branch Office</strong>
+                                             <p>123,124, M/s. VISHAL ENTERPRISES - Pune Branch, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057</p>
+                                         </div>
+                                     </div>
                                 </div>
                             </div>
                         </div>

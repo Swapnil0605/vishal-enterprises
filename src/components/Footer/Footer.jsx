@@ -108,8 +108,8 @@ export const Footer = () => {
                             <div className="footer-location">
                                 <MapPin size={18} className="loc-icon" />
                                 <div>
-                                    <strong>Regional Office (Pune)</strong>
-                                    <span>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</span>
+                                    <strong>Pune Branch Office</strong>
+                                    <span>123, 124, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057</span>
                                 </div>
                             </div>
 
