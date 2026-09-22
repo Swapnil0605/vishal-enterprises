@@ -4,7 +4,7 @@ export const servicesData = [
         slug: 'amc-sitc-turnkey-trading',
         num: '01',
         title: 'AMC, SITC & Turnkey Trading',
-        fullTitle: 'AMC, SITC (Supply, Installation, Testing & Commissioning) & Material Trading',
+        fullTitle: 'AMC, SITC & Turnkey Trading',
         category: 'Turnkey & AMC',
         shortDesc: 'Single-window Supply, Installation, Testing and Commissioning (SITC), comprehensive annual maintenance contracts and industrial material trading.',
         detailedDesc: 'Vishal Enterprises provides turnkey single-source execution for industrial electrical and automation projects. From Supply, Installation, Testing and Commissioning (SITC) of complete switchboards to Comprehensive Annual Maintenance Contracts (AMC) with 24/7 breakdown support and authorized industrial material trading.',
@@ -25,14 +25,14 @@ export const servicesData = [
         ],
         standards: ['Government Licensed Class-1 Contractor', 'ISO 9001:2015 Certified', 'GeM Accredited OEM', 'MSME Registered'],
         image: '/images/services/amc-sitc.jpeg',
-        alt: 'AMC SITC and Turnkey Trading Services'
+        alt: 'AMC, SITC & Turnkey Trading'
     },
     {
         id: 'thermography-analysis-service',
         slug: 'thermography-analysis-service',
         num: '02',
         title: 'Thermography Analysis Service',
-        fullTitle: 'On-Site Infrared Thermography Analysis & Thermal Imaging Inspection',
+        fullTitle: 'Thermography Analysis Service',
         category: 'Testing & Audits',
         shortDesc: 'Non-contact infrared thermal imaging audits of live electrical switchboards, transformers, busbar joints, and cable terminations to detect hotspots.',
         detailedDesc: 'Our specialized thermography testing division provides predictive non-invasive thermal imaging audits for critical electrical infrastructure. Utilizing high-resolution calibrated infrared cameras, we detect high-resistance joints, overloaded conductors, phase imbalances, and loose terminations while equipment remains fully energized under actual load.',
@@ -60,7 +60,7 @@ export const servicesData = [
         slug: 'relay-testing',
         num: '03',
         title: 'Relay Testing',
-        fullTitle: 'Protection Relay Testing, Calibration & Secondary Current Injection',
+        fullTitle: 'Relay Testing',
         category: 'Testing & Audits',
         shortDesc: 'Precision secondary injection testing, pick-up/drop-off verification, and timing calibration for numerical, static, and electromechanical protection relays.',
         detailedDesc: 'Vishal Enterprises offers expert testing and calibration services for high and low voltage protection relays. Using calibrated multi-phase secondary current injection kits, our testing engineers verify trip characteristics, overcurrent, earth fault, differential, master trip, and auxiliary relays to ensure foolproof substation protection.',
@@ -81,14 +81,14 @@ export const servicesData = [
         ],
         standards: ['IEC 60255 Protection Relay Standards', 'IS 3231 Electrical Relays', 'Central Electricity Authority (CEA) Regulations', 'NABL Calibrated Test Sets'],
         image: '/images/services/relay-testing.jpeg',
-        alt: 'Relay Testing and Calibration Services'
+        alt: 'Relay Testing'
     },
     {
         id: 'acb-servicing-maintenance',
         slug: 'acb-servicing-maintenance',
         num: '04',
         title: 'ACB Servicing and Maintenance',
-        fullTitle: 'Air Circuit Breaker (ACB) Overhauling, Servicing & Tripping Mechanism Testing',
+        fullTitle: 'ACB Servicing and Maintenance',
         category: 'Maintenance & Servicing',
         shortDesc: 'Comprehensive on-site overhauling, contact resistance testing, mechanism lubrication, and micro-release testing of low voltage Air Circuit Breakers.',
         detailedDesc: 'We provide end-to-end servicing, overhauling, and preventive maintenance for all major makes of Air Circuit Breakers (L&T, Schneider, ABB, Siemens, C&S). Our service protocol includes deep de-dusting, contact inspection, arc chute cleaning, racking mechanism servicing, contact resistance measurement, and microprocessor release testing.',
@@ -116,7 +116,7 @@ export const servicesData = [
         slug: 'vcb-servicing-maintenance',
         num: '05',
         title: 'VCB Servicing and Maintenance',
-        fullTitle: 'Vacuum Circuit Breaker (VCB) Overhaul, Timing Analysis & Contact Resistance Testing',
+        fullTitle: 'VCB Servicing and Maintenance',
         category: 'Maintenance & Servicing',
         shortDesc: 'Specialized 11kV/33kV Vacuum Circuit Breaker overhauling, bottle integrity checks, closing/tripping time analysis, and Hi-Pot dielectric testing.',
         detailedDesc: 'Vishal Enterprises delivers certified maintenance and life-extension overhauls for 11kV, 22kV, and 33kV Vacuum Circuit Breakers (VCBs). We conduct contact erosion measurements, vacuum bottle dielectric integrity (Hi-Pot) tests, breaker operating speed/timing analysis, and spring charging mechanism overhauls to ensure maximum operational safety.',
@@ -144,7 +144,7 @@ export const servicesData = [
         slug: 'insulation-mat-testing',
         num: '06',
         title: 'Insulation Mat Testing',
-        fullTitle: 'High Voltage Electrical Insulation Mat Testing & Statutory Safety Certification',
+        fullTitle: 'Insulation Mat Testing',
         category: 'Safety & Compliance',
         shortDesc: 'Dielectric proof testing, breakdown voltage verification, and statutory safety compliance certification for electrical rubber/insulating mats as per IS 15652.',
         detailedDesc: 'Electrical insulating safety mats placed in front of HT and LT panels are the first line of defense for personnel against fatal electric shocks. We provide on-site and laboratory dielectric proof testing, leakage current measurement, and breakdown verification for electrical rubber safety mats in accordance with IS 15652 / IEC 61111 standards.',
@@ -165,14 +165,14 @@ export const servicesData = [
         ],
         standards: ['IS 15652:2006 Insulating Mats', 'IEC 61111 Electrical Safety Standards', 'CEA Safety Regulations 2010', 'Factories Act Compliance'],
         image: '/images/services/insulation-mat-testing.avif',
-        alt: 'Insulation Mat Testing and Safety Certification'
+        alt: 'Insulation Mat Testing'
     },
     {
         id: 'ht-works-substation-tests',
         slug: 'ht-works-substation-tests',
         num: '07',
         title: 'HT Works & Sub-Station Tests (Transformer)',
-        fullTitle: 'High Tension (HT) Works, Transformer Oil Filtration, BDV Testing & Sub-Station Tests',
+        fullTitle: 'HT Works & Sub-Station Tests (Transformer)',
         category: 'Substation & HT',
         shortDesc: 'Turnkey high-tension substation execution, transformer oil dehydration & filtration, BDV testing, ratio tests, and earthing pit resistance audits.',
         detailedDesc: 'As a licensed Class-1 Electrical Contractor, Vishal Enterprises executes complete High Tension (HT) substation works up to 33kV/66kV. Our services include transformer erection, high-vacuum oil dehydration & filtration, breakdown voltage (BDV) restoration, winding resistance, voltage ratio tests, and earthing grid testing.',
@@ -193,7 +193,7 @@ export const servicesData = [
         ],
         standards: ['IS 2026 / IS 1866 Transformer Standards', 'Government Licensed Class-1 Contractor', 'CEA Safety Regulations 2010', 'ISO 9001:2015'],
         image: '/images/services/ht-transformer-works.jpeg',
-        alt: 'HT Works and Transformer Sub-Station Tests'
+        alt: 'HT Works & Sub-Station Tests (Transformer)'
     }
 ];
 

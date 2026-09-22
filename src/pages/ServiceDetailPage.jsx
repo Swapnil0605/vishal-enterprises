@@ -47,7 +47,7 @@ export const ServiceDetailPage = () => {
                     <div className="service-header-row">
                         <div>
                             <span className="service-detail-badge">{service.num} | {service.category}</span>
-                            <h1 className="service-detail-title">{service.fullTitle}</h1>
+                            <h1 className="service-detail-title">{service.title}</h1>
                         </div>
                     </div>
                 </div>
