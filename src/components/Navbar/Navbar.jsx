@@ -38,36 +38,36 @@ const servicesMegaColumns = [
 const productsMegaColumns = [
     {
         items: [
-            { name: "8-Zone Fire Alarm Panel", id: "8-zone-fire-alarm" },
-            { name: "Advanced Fire Engine Panel", id: "advanced-fire-engine" },
+            { name: "8 Zone Fire Alarm Control Panel", id: "8-zone-fire-alarm" },
+            { name: "Advanced Fire Engine Control Panel", id: "advanced-fire-engine" },
             { name: "Compact Fire Siren Panel", id: "compact-fire-siren" },
-            { name: "Industrial Fire Siren Panel", id: "industrial-fire-siren" },
-            { name: "Jockey Pump Soft Starter", id: "jockey-pump-soft-starter" }
+            { name: "Fire Siren Control Panel", id: "industrial-fire-siren" },
+            { name: "Jockey Pump Soft Starter Control Panel", id: "jockey-pump-soft-starter" }
         ]
     },
     {
         items: [
             { name: "Flameproof TT Earthing Relay", id: "flp-tt-earthing-relay" },
-            { name: "Flameproof Gas Detection Hub", id: "flp-gas-detection" },
-            { name: "Dyke Valve Position Panel", id: "dyke-valve-position-panel" },
-            { name: "Wireless Fire Pump Telemetry", id: "wireless-fire-jockey-pump-telemetry" },
-            { name: "Digital WTI / OTI Controller", id: "digital-wti-oti-controller" }
+            { name: "Gas Detection Controller (FLP)", id: "flp-gas-detection" },
+            { name: "Dyke Valve Position Indication Panel", id: "dyke-valve-position-panel" },
+            { name: "Wireless Fire Pump or Jockey Pump Status Control Panels", id: "wireless-fire-jockey-pump-telemetry" },
+            { name: "Digital WTI or OTI Controller with Simulation settings", id: "digital-wti-oti-controller" }
         ]
     },
     {
         items: [
             { name: "ATS Control Panel", id: "ats-control-panel" },
-            { name: "UPS ACDB Distribution Panel", id: "ups-acdb-panel" },
-            { name: "Servo Voltage Stabilizer", id: "servo-voltage-stabilizer" },
-            { name: "VCB & AB Switch Interlock", id: "vcb-ab-switch-interlock" }
+            { name: "UPS ACDB Panel", id: "ups-acdb-panel" },
+            { name: "Servo Stabilisers", id: "servo-voltage-stabilizer" },
+            { name: "VCB - AB Switch Interlock Control Panel", id: "vcb-ab-switch-interlock" }
         ]
     },
     {
         items: [
             { name: "AC Sequential Control Panel", id: "ac-sequential-control" },
-            { name: "Custom Circuit & PLC Panel", id: "custom-circuit-plc" },
-            { name: "PLC Star Delta Starter (FASD)", id: "plc-fasd-starter" },
-            { name: "Thermography Monitoring Panel", id: "thermography-monitoring-panel" }
+            { name: "Circuit Designing and Programming", id: "custom-circuit-plc" },
+            { name: "PLC based Fully Automatic Star Delta Starter (FASD)", id: "plc-fasd-starter" },
+            { name: "Thermography Analysis on site", id: "thermography-monitoring-panel" }
         ]
     }
 ];

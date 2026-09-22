@@ -49,7 +49,7 @@ export const ProductDetailPage = () => {
                     <div className="product-header-row">
                         <div>
                             <span className="product-detail-badge">#{product.num} • {product.category}</span>
-                            <h1 className="product-detail-title">{product.fullTitle || product.title}</h1>
+                            <h1 className="product-detail-title">{product.title}</h1>
                         </div>
                     </div>
                 </div>
