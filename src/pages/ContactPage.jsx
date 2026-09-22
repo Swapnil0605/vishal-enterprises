@@ -141,8 +141,8 @@ export const ContactPage = () => {
             title: "PUNE BRANCH & REGIONAL OPERATIONS",
             name: "M/s. VISHAL ENTERPRISES - Pune Branch",
             address: "123,124, M/s. VISHAL ENTERPRISES - Pune Branch, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057",
-            mapQuery: "https://maps.google.com/maps?q=Rising+City+(24k+Real+Assets),+Thakar+Nagar,+Hinjewadi+Phase+1,+Maan,+Maharashtra+411057&t=&z=16&ie=UTF8&iwloc=B&output=embed",
-            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=Rising+City+(24k+Real+Assets),+Thakar+Nagar,+Hinjewadi+Phase+1,+Maan,+Maharashtra+411057"
+            mapQuery: "https://maps.google.com/maps?q=18.5784,73.7112+(M/s.+VISHAL+ENTERPRISES+-+Pune+Branch)&t=&z=16&ie=UTF8&iwloc=B&output=embed",
+            directionsLink: "https://www.google.com/maps/dir/?api=1&destination=18.5784,73.7112"
         }
     };
 
