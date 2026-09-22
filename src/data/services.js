@@ -164,7 +164,7 @@ export const servicesData = [
             'Factory Shopfloors with Heavy Electrical Machinery'
         ],
         standards: ['IS 15652:2006 Insulating Mats', 'IEC 61111 Electrical Safety Standards', 'CEA Safety Regulations 2010', 'Factories Act Compliance'],
-        image: '/images/services/insulation-mat-testing.avif',
+        image: '/images/services/insulation-mat-testing.jpeg',
         alt: 'Insulation Mat Testing'
     },
     {
