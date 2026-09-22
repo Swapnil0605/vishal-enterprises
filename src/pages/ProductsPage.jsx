@@ -6,7 +6,6 @@ import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
 import { 
     ArrowUpRight, 
-    ShieldCheck, 
     Home as HomeIcon, 
     ChevronRight,
     Flame,
@@ -84,12 +83,6 @@ export const ProductsPage = () => {
                                         className="yt-thumbnail-img" 
                                         loading="lazy"
                                     />
-
-                                    {/* YouTube Duration-Style Compliance Badge (Bottom Right) */}
-                                    <div className="yt-duration-badge">
-                                        <ShieldCheck size={12} />
-                                        <span>{product.standard}</span>
-                                    </div>
                                 </Link>
 
                                 {/* Metadata Content */}

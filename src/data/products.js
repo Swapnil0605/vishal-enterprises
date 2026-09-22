@@ -4,7 +4,8 @@ export const productCategories = [
     { id: 'Hazardous Area', label: 'Hazardous Area' },
     { id: 'Automation & Controls', label: 'Automation & Controls' },
     { id: 'Power Management', label: 'Power Management' },
-    { id: 'Process Monitoring', label: 'Process Monitoring' }
+    { id: 'Process Monitoring', label: 'Process Monitoring' },
+    { id: 'Industrial Displays', label: 'Industrial Displays' }
 ];
 
 export const productsData = [
@@ -600,6 +601,461 @@ export const productsData = [
             'Large Industrial Manufacturing Campuses & SEZs',
             'Airport Logistics Areas & Port Terminals',
             'Thermal Power Stations & Multi-Block Chemical Complexes'
+        ]
+    },
+    {
+        id: 'custom-panels',
+        slug: 'customised-automation-panels',
+        num: '19',
+        title: 'Customised Automation Panels',
+        fullTitle: 'Design & Manufacturing of Customised Automation Panels',
+        category: 'Automation & Controls',
+        standard: 'ISO 9001:2015 / IEC 61439',
+        subtitle: 'Custom-engineered control desks, mimic panels and microprocessor automation panels.',
+        shortDesc: 'Custom-engineered control desks, mimic panels and microprocessor-based automation panels tailored to exact industrial specifications.',
+        image: '/images/products/AC Sequential Control Panel.jpeg',
+        overview: 'Vishal Enterprises specializes in end-to-end design, sheet metal fabrication, wiring and assembly of customized industrial automation panels. Engineered for extreme reliability, our panels incorporate advanced microprocessor controllers, mimic diagrams, custom interlocks and intelligent power distribution networks built to withstand demanding industrial environments.',
+        features: [
+            'Tailor-made control desk and enclosure fabrication (CRCA / Stainless Steel)',
+            'Custom microprocessor and microcontroller hardware integration',
+            'Full mimic diagram layouts with LED live status annunciation',
+            'Fail-safe interlocks and comprehensive electrical protection circuitry',
+            'In-house factory acceptance testing (FAT) and rigorous wire-load simulation',
+            'Modular expandable architecture for seamless future capacity upgrades'
+        ],
+        specifications: [
+            { label: 'Enclosure Material', value: '14/16 SWG CRCA Sheet / SS304 Stainless Steel' },
+            { label: 'Ingress Protection', value: 'IP55 / IP65 Certified Weatherproof' },
+            { label: 'Standard Compliance', value: 'IEC 61439 / IS 8623 / ISO 9001:2015' },
+            { label: 'Busbar System', value: 'Electrolytic Grade Tinned Copper / Aluminum' },
+            { label: 'Control Logic', value: 'Microprocessor / PLC / Hardwired Interlocks' }
+        ],
+        applications: [
+            'Petroleum Storage Depots & Terminals',
+            'Thermal Power Generation Utilities',
+            'Continuous Chemical Processing Plants',
+            'Automated Material Handling Facilities',
+            'Municipal Water Treatment Stations'
+        ]
+    },
+    {
+        id: 'plc-process',
+        slug: 'plc-panels-process-controls',
+        num: '20',
+        title: 'PLC Panels & Process Controls',
+        fullTitle: 'PLC Panels and Continuous Process Automation Controls',
+        category: 'Automation & Controls',
+        standard: 'IEC 61131-3 / IEEE 802.3',
+        subtitle: 'SCADA and PLC integration for automated batching, sequencing & process flow.',
+        shortDesc: 'SCADA and PLC integration for automated continuous batching, pipeline sequencing and process flow control.',
+        image: '/images/products/RO Utility Control Panel.jpeg',
+        overview: 'Our Programmable Logic Controller (PLC) and Supervisory Control and Data Acquisition (SCADA) panels deliver precise process automation for continuous and batch operations. We provide turnkey programming, human-machine interface (HMI) screen development, telemetry networking and fail-safe automated shutdowns for high-consequence industrial facilities.',
+        features: [
+            'Multi-platform PLC integration (Siemens, Schneider, Allen-Bradley, Delta)',
+            'High-resolution touchscreen HMI control with intuitive graphical synoptics',
+            'Redundant power supply and fail-safe CPU hot-standby architectures',
+            'Modbus TCP/IP, RS485 RTU, Profinet and Ethernet/IP telemetry',
+            'Automated sequence batching, PID loop tuning and flow modulation',
+            'Historical alarms logging, audit-trail data archiving and remote SCADA'
+        ],
+        specifications: [
+            { label: 'PLC Brands Supported', value: 'Siemens S7, Schneider Modicon, Delta, Rockwell AB' },
+            { label: 'HMI Display', value: '7" / 10" / 15" Multi-Touch Color TFT Screens' },
+            { label: 'Communication Ports', value: 'Ethernet RJ45, RS485 Modbus, Profibus, CAN' },
+            { label: 'Power Supply', value: '230V AC with Redundant 24V DC Industrial SMPS' },
+            { label: 'Enclosure Rating', value: 'IP55 Free-Standing / Wall-Mount CRCA Enclosure' }
+        ],
+        applications: [
+            'Oil & Gas Pipeline Pumping Terminals',
+            'Water Filtration & Reverse Osmosis Plants',
+            'Food & Pharmaceutical Continuous Batching',
+            'Automated Blending and Decantation Facilities',
+            'Bulk Material Conveying & Storage Silos'
+        ]
+    },
+    {
+        id: 'fire-engine-jockey',
+        slug: 'fire-engine-jockey-pump-panels',
+        num: '21',
+        title: 'Fire Engine & Jockey Pump Panels',
+        fullTitle: 'Fire Engine and Jockey Pump Automatic Sequencing Control Panels',
+        category: 'Fire & Safety',
+        standard: 'OISD-117 / NFPA-20',
+        subtitle: 'Automatic duty rotation, fail-safe sequencing and soft-starter systems.',
+        shortDesc: 'Automatic duty rotation, fail-safe sequencing and soft-starter systems engineered in compliance with OISD-117 standards.',
+        image: '/images/products/Fire Pump Duty Control Panel.jpeg',
+        overview: 'Engineered specifically for mission-critical fire safety in petroleum refineries, chemical depots and industrial plants, our Fire Pump Duty Controllers (FPDC) and Jockey Pump panels guarantee instantaneous starting, automatic engine duty cycling, battery monitoring and fail-safe sequencing in strict compliance with OISD-117 and NFPA-20 guidelines.',
+        features: [
+            'Automatic multi-pump duty rotation and pressure-switch sequencing logic',
+            'Soft starter and Star-Delta starting for reduced starting inrush currents',
+            'Dual-battery automatic cranking and charger health monitoring for diesel engines',
+            'OISD-117 compliant audio-visual hooter annunciation and emergency override',
+            'Modbus communication for central fire control room / DCS monitoring',
+            'Emergency manual starting bypass switchgear with mechanical interlock'
+        ],
+        specifications: [
+            { label: 'Standard Compliance', value: 'OISD-117 / NFPA-20 / IS 12469' },
+            { label: 'Operating Voltage', value: '415V AC 3-Phase (Electric) / 12V-24V DC (Diesel Engine)' },
+            { label: 'Pump Sequencing', value: 'Jockey -> Main Electric -> Standby Diesel Auto Sequence' },
+            { label: 'Enclosure', value: 'CRCA 14/16 SWG, Fire Red (RAL 3000), IP55' },
+            { label: 'Monitoring', value: 'Pressure Transducer + Dual Pressure Switch Interlocks' }
+        ],
+        applications: [
+            'Petroleum Refineries & POL Storage Depots',
+            'LPG Bottling & Storage Installations',
+            'Thermal & Hydro Power Plant Fire Networks',
+            'Chemical & Petrochemical Industrial Complexes',
+            'Commercial High-Rise Infrastructure & Airports'
+        ]
+    },
+    {
+        id: 'vfd-pmcc-ro',
+        slug: 'vfd-fasd-pmcc-ro-utility-panels',
+        num: '22',
+        title: 'VFD, FASD, PMCC & RO Utility Panels',
+        fullTitle: 'VFD, FASD, PMCC Switchgear and RO Utility Automation Panels',
+        category: 'Power Management',
+        standard: 'IEC 61439-1/2 / IS 8623',
+        subtitle: 'High-efficiency motor control centers, VFDs and reverse osmosis automation.',
+        shortDesc: 'High-efficiency motor control centers, soft starters, variable frequency drives and reverse osmosis utility automation.',
+        image: '/images/products/CNG panel and Thyristor controlled APFC PAN.jpeg',
+        overview: 'Our Power and Motor Control Centers (PMCC), Variable Frequency Drive (VFD) panels and Fully Automatic Star-Delta (FASD) starters provide robust energy management and reliable motor protection for heavy industrial loads. From municipal water utilities to heavy machinery plants, our switchgear delivers smooth acceleration, harmonic mitigation and optimal power factor.',
+        features: [
+            'Precision Variable Frequency Drives (VFD) for energy optimization and speed control',
+            'Fully Automatic Star-Delta (FASD) starters with thermal overload protection',
+            'Form 3b / Form 4 compartmentalized PMCC and MCC drawout switchboards',
+            'Active harmonic filtration and power factor correction integration',
+            'Complete Reverse Osmosis (RO) high-pressure pump sequencing logic',
+            'Comprehensive digital metering with voltage, current, power factor and kWh logging'
+        ],
+        specifications: [
+            { label: 'Voltage Grade', value: '415V AC, 3-Phase 4-Wire, 50 Hz' },
+            { label: 'Current Capacity', value: 'Up to 3200A Busbar Rating' },
+            { label: 'Form of Separation', value: 'Form 2b / Form 3b / Form 4b' },
+            { label: 'Drive Integration', value: 'VFDs from ABB, Danfoss, Schneider, Siemens' },
+            { label: 'Enclosure Rating', value: 'IP54 / IP55 CRCA Sheet Steel' }
+        ],
+        applications: [
+            'Industrial Effluent & RO Water Treatment Plants',
+            'Heavy Manufacturing & Steel Rolling Mills',
+            'Cement & Mining Conveyor Drives',
+            'HVAC Central Chiller & Cooling Tower Plants',
+            'Municipal Raw Water Pumping Schemes'
+        ]
+    },
+    {
+        id: 'siren-dyke',
+        slug: 'siren-dyke-valve-position-panels',
+        num: '23',
+        title: 'Siren & Dyke Valve Position Panels',
+        fullTitle: 'Siren Control Panels and Dyke Valve Position Annunciation Panels',
+        category: 'Hazardous Area',
+        standard: 'OISD-117 & 118 / PESO',
+        subtitle: 'Plant emergency siren controllers and remote dyke valve position annunciation.',
+        shortDesc: 'Centralized emergency plant siren controllers and remote dyke valve position annunciation panels for petroleum tank farms.',
+        image: '/images/products/Dyke Valve Position Annunciation Panel.jpeg',
+        overview: 'Designed to safeguard hazardous storage environments, our Dyke Valve Position Monitoring and Emergency Siren Control Panels provide real-time status indication of containment valves in petroleum tank farms. Equipped with explosion-proof limit switches, audio-visual alarms and wireless telemetry, they prevent hazardous chemical containment breaches.',
+        features: [
+            'High-reliability dyke valve open/close status monitoring via proximity sensors',
+            'Multi-tone emergency siren controllers with timed disaster signaling',
+            'Remote wireless and RS485 communication to centralized control rooms',
+            'Auxiliary contact outputs for automatic sump pump trip interlocks',
+            'Weatherproof IP66 and Flameproof Zone 1 / 2 certified enclosures',
+            'Battery backup operation during complete facility mains power failure'
+        ],
+        specifications: [
+            { label: 'Channel Monitoring', value: '4 to 24 Dyke Valve Channels' },
+            { label: 'Siren Drive Capacity', value: 'Supports Electronic Sirens & Motorized Sirens up to 5 HP' },
+            { label: 'Safety Norms', value: 'OISD-117 / OISD-118 Compliant' },
+            { label: 'Communication', value: 'RS485 Modbus / Wireless RF Telemetry' },
+            { label: 'Power Supply', value: '230V AC with Dual SMPS / Battery Backup' }
+        ],
+        applications: [
+            'Petroleum Dyke Tank Farms (IOCL, BPCL, HPCL)',
+            'Chemical Bulk Storage Tank Terminals',
+            'LPG / Propane Storage Sphere Areas',
+            'Hazardous Spill Containment Basins',
+            'Disaster Management Early Warning Networks'
+        ]
+    },
+    {
+        id: 'fire-alarm',
+        slug: 'fire-alarm-detection-panels',
+        num: '24',
+        title: 'Fire Alarm & Detection Panels',
+        fullTitle: 'Multi-Zone Addressable & Conventional Fire Alarm Detection Panels',
+        category: 'Fire & Safety',
+        standard: 'IS 2189 / NFPA 72',
+        subtitle: 'Multi-zone fire alarm detection panels with audio-visual hooter & beacon annunciation.',
+        shortDesc: 'Multi-zone addressable and conventional fire alarm detection panels with audio-visual hooter and beacon annunciation.',
+        image: '/images/products/Fire Alarm Control Panel.jpeg',
+        overview: 'Our multi-zone conventional and addressable fire alarm control panels provide rapid early detection of smoke, heat and flame hazards across complex industrial and commercial plants. Featuring microprocessor supervision, zone-wise isolation, repeater panel interfacing and automated fire extinguishing release logic.',
+        features: [
+            'Multi-zone supervision supporting conventional smoke and thermal heat detectors',
+            'Addressable loop controllers with pinpoint geographical hazard localization',
+            'Synchronized audio-visual hooters, strobes and beacon output channels',
+            'Automatic fire suppression solenoid and deluge valve actuation interlocks',
+            'Integrated dual-battery backup system with smart float charging',
+            'BMS and SCADA integration via clean potential-free relay contacts'
+        ],
+        specifications: [
+            { label: 'Capacity', value: '2, 4, 8, 16 to 32 Zones (Conventional & Addressable)' },
+            { label: 'Input Power', value: '230V AC ±10%, 50 Hz with 24V DC Standby Battery' },
+            { label: 'Applicable Standard', value: 'IS 2189 / NFPA 72 / NBC Compliant' },
+            { label: 'Notification Outputs', value: 'Dual Sounder Circuits (24V DC, 1A each)' },
+            { label: 'Cabinet MOC', value: 'CRCA Sheet Steel, Fire Red Epoxy Powder Coated' }
+        ],
+        applications: [
+            'Substations & High-Voltage Switchgear Rooms',
+            'Petrochemical Control Centers & Server Rooms',
+            'Industrial Warehouses & Logistics Hubs',
+            'Manufacturing Workshop Facilities',
+            'Commercial Buildings & Corporate Complexes'
+        ]
+    },
+    {
+        id: 'flp-gas',
+        slug: 'flp-gas-detection-simulation',
+        num: '25',
+        title: 'FLP Gas Detection & Simulation Panels',
+        fullTitle: 'Flameproof (FLP) Gas Detection and Simulation Controller Systems',
+        category: 'Hazardous Area',
+        standard: 'IS/IEC 60079-0/1 / PESO',
+        subtitle: 'Certified explosion-proof gas detectors and calibration simulation units.',
+        shortDesc: 'Certified explosion-proof gas concentration detectors and calibration simulation units engineered for Zone 1 and Zone 2 areas.',
+        image: '/images/products/Gas Detection Controller with Bluetooth control.jpeg',
+        overview: 'Vishal Enterprises engineers certified Flameproof (FLP) Gas Detection Systems and live calibration simulation test panels specifically tailored for petroleum depots, refineries and hazardous gas handling plants. Featuring Bluetooth-enabled concentration calibration, electrochemical sensors and instant high-LEL emergency trip triggers.',
+        features: [
+            'Bluetooth-enabled wireless concentration monitoring and threshold configuration',
+            'High-accuracy catalytic and electrochemical sensors for Hydrocarbon & Toxic gases',
+            'Live gas simulation functionality for routine safety drill validation without gas exposure',
+            'PESO / CIMFR certified Ex-d Flameproof enclosures for Gas Group IIA, IIB & IIC',
+            'Two-level LEL alarm trip relays for ventilation fan start and plant emergency shutdown',
+            'Digital OLED/LCD real-time %LEL and PPM gas concentration display'
+        ],
+        specifications: [
+            { label: 'Hazardous Zone', value: 'Zone 1 & Zone 2, Gas Groups IIA, IIB, IIC' },
+            { label: 'Sensor Compatibility', value: 'Catalytic Bead, Electrochemical, Infrared' },
+            { label: 'Display & Connectivity', value: 'High-Contrast OLED Display + Bluetooth BLE App' },
+            { label: 'Output Relays', value: 'Warning (20% LEL), Alarm (40% LEL), Fault Relay' },
+            { label: 'Enclosure Material', value: 'Die-Cast LM6 Flameproof Aluminum Alloy' }
+        ],
+        applications: [
+            'LPG Bottling & Storage Carousels',
+            'Crude Oil & Petroleum Refinery Units',
+            'Natural Gas Regulating & Metering Stations',
+            'Chemical Processing & Reactor Rooms',
+            'Battery Charging & Hydrogen Generation Rooms'
+        ]
+    },
+    {
+        id: 'flp-earthing',
+        slug: 'flp-earthing-relay-monitoring',
+        num: '26',
+        title: 'FLP Earthing Relay & Monitoring Panels',
+        fullTitle: 'FLP Earthing Relay Units and TT DP Switch Decantation Safety Monitoring',
+        category: 'Hazardous Area',
+        standard: 'IS/IEC 60079-11 / PESO',
+        subtitle: 'Static earthing interlock relays with decantation pump interlocking.',
+        shortDesc: 'Static earthing interlock relays with decantation pump interlocking and tank truck discharge safety monitoring.',
+        image: '/images/products/New product launched. FLP Earthing Relay interlocking with decantation  delivery pump..jpeg',
+        overview: 'Our Flameproof Static Earthing Interlock Relay Units ensure safe decantation of flammable volatile liquids by constantly verifying ground continuity and electrostatic charge dissipation before allowing decantation pumps to start. Incorporating Tank Truck (TT) DP switch monitoring to eliminate static spark hazards during tanker loading and unloading.',
+        features: [
+            'Continuous static earth loop resistance monitoring (< 10 Ohms threshold)',
+            'Positive interlock contact with tanker loading / decantation pumps',
+            'Heavy-duty stainless steel grounding clamp with shielded retractable coiled cable',
+            'Visual tri-color LED status indicators (Permissive Green / Interlocked Red)',
+            'Explosion-proof aluminum cast alloy enclosure for Zone 1 hazardous environments',
+            'Built-in surge protection and intrinsically safe monitoring circuitry'
+        ],
+        specifications: [
+            { label: 'Loop Resistance Trip', value: '< 10 Ohms (Intrinsically Safe Ex-ia Circuit)' },
+            { label: 'Hazardous Area Class', value: 'PESO Certified Ex-d IIB+H2 T6, Zone 1 & 2' },
+            { label: 'Operating Voltage', value: '230V AC ±10%, 50 Hz' },
+            { label: 'Interlock Relays', value: '2x Heavy-Duty 10A NO/NC Contacts for Pump Interlock' },
+            { label: 'Cable & Clamp', value: '10-Meter Retractable High-Flex Spiral Cable + SS Clamp' }
+        ],
+        applications: [
+            'Tank Truck (TT) Decantation Gantries at POL Depots',
+            'LPG Tanker Unloading Terminals',
+            'Solvent Loading and Chemical Transfer Bays',
+            'Aviation Refueling Storage Depots',
+            'Paint & Flammable Liquids Blending Plants'
+        ]
+    },
+    {
+        id: 'battery-changeover',
+        slug: 'automatic-battery-changeover-panels',
+        num: '27',
+        title: 'Automatic Battery Changeover Panels',
+        fullTitle: 'Dual-Bank Automatic Battery Changeover Panels with Smart Diagnostics',
+        category: 'Power Management',
+        standard: 'ISO 9001:2015 / OISD-117',
+        subtitle: 'Dual-battery automatic changeover systems with graphical LCD status display.',
+        shortDesc: 'Dual-battery automatic changeover systems with graphical LCD status display and smart battery health diagnostics.',
+        image: '/images/products/Automatic Battery Changeover Panel.jpeg',
+        overview: 'Our Automatic Battery Changeover Panels (ABCP) guarantee 100% uninterrupted DC auxiliary power for critical fire engine starting circuits and protection relays. Incorporating intelligent dual-bank monitoring, auto-swap on bank degradation, precision boost/float charging and high-resolution graphical LCD status indicators.',
+        features: [
+            'Microcontroller-based intelligent automatic dual battery bank changeover',
+            'Continuous battery impedance, cell voltage and discharge health tracking',
+            'High-contrast Graphical LCD panel displaying real-time V, I and battery state',
+            'Automatic switchover to Bank 2 if Bank 1 fails during engine cranking attempt',
+            'Dual independent SMPS float-cum-boost battery charger modules',
+            'Modbus RS485 telemetry for remote SCADA station battery diagnostics'
+        ],
+        specifications: [
+            { label: 'DC Voltage Grades', value: '12V DC / 24V DC / 110V DC Dual Bank' },
+            { label: 'Charger Topology', value: 'Dual SMPS Float & Boost with Auto Transition' },
+            { label: 'Display Interface', value: '128x64 Graphical Backlit LCD' },
+            { label: 'Transfer Time', value: '< 20 Milliseconds (Zero DC Dropout)' },
+            { label: 'Communication', value: 'RS485 Modbus RTU Protocol' }
+        ],
+        applications: [
+            'Diesel Engine Driven Fire Pump Sets',
+            'High Voltage Substation DC Protection Circuits',
+            'Telecom & Supervisory Microwave Repeater Sites',
+            'Emergency Diesel Generator (DG) Starting Banks',
+            'Critical Industrial UPS & Inverter Facilities'
+        ]
+    },
+    {
+        id: 'wti-oti',
+        slug: 'wti-oti-safety-alarms-simulation',
+        num: '28',
+        title: 'WTI / OTI & Live Simulation Panels',
+        fullTitle: 'WTI / OTI and Safety Alarms Live Simulation & Marshalling Kiosk Panels',
+        category: 'Process Monitoring',
+        standard: 'IS 3639 / IEC 60076-2',
+        subtitle: 'Winding & oil temperature indicators with live safety simulation.',
+        shortDesc: 'Winding and oil temperature indicator controllers with built-in live simulation functionality for power and distribution transformers.',
+        image: '/images/products/Tank Level Annunciation Panel for Oil Industries.jpeg',
+        overview: 'Our Winding Temperature Indicator (WTI) and Oil Temperature Indicator (OTI) controllers provide ultra-precise thermal monitoring and safety tripping for high-voltage power transformers. Equipped with patent-inspired live test simulation dials allowing maintenance engineers to test cooler bank staging and alarm trip circuits without taking transformers offline.',
+        features: [
+            'High-precision dual-channel WTI and OTI digital temperature tracking',
+            'Built-in manual/automated live trip simulation circuit for routine health audits',
+            'Multi-stage cooling fan and oil circulation pump control relay contacts',
+            '4-20mA analog telemetry outputs for remote SCADA temperature recording',
+            'Weatherproof powder-coated marshaling box enclosure with IP65 seal',
+            'Peak temperature memory retention and resettable maximum indicator'
+        ],
+        specifications: [
+            { label: 'Input Channels', value: 'Dual Pt100 RTD Sensors + 1A/5A CT Input' },
+            { label: 'Range & Accuracy', value: '0°C to 150°C (±1°C Resolution)' },
+            { label: 'Control Relays', value: 'Fan 1, Fan 2, High Temp Alarm, Trip Contact' },
+            { label: 'Simulation Dial', value: 'Built-in 0-100% Calibrated Simulation Potentiometer' },
+            { label: 'Enclosure Rating', value: 'IP65 Weatherproof Stainless Steel / CRCA Marshaling Box' }
+        ],
+        applications: [
+            'Power & Distribution Transformers (11kV to 220kV Substations)',
+            'State Electricity Transmission & Distribution Networks',
+            'Industrial Captive Power Plant Transformers',
+            'Renewable Solar & Wind Farm Sub-Stations',
+            'Heavy Metal Smelting & Furnace Transformers'
+        ]
+    },
+    {
+        id: 'energy-annunciation',
+        slug: 'energy-saving-annunciation-panels',
+        num: '29',
+        title: 'Energy Saving & Annunciation Panels',
+        fullTitle: 'Energy Saving Thyristor APFC Panels and Fault Alarm Annunciator Consoles',
+        category: 'Power Management',
+        standard: 'IS 13340 / IEC 60831',
+        subtitle: 'Automatic APFC thyristor switching and multi-window alarm annunciator systems.',
+        shortDesc: 'Automatic Power Factor Correction (APFC), thyristor switching and multi-window fault alarm annunciator systems.',
+        image: '/images/products/Graphical LCD Panel.jpeg',
+        overview: 'We manufacture advanced Automatic Power Factor Correction (APFC) panels featuring ultra-fast thyristor switching for rapid load compensation alongside microprocessor-based multi-window fault alarm annunciators that provide crystal-clear visual and audible warnings for industrial process upsets.',
+        features: [
+            'Thyristor-switched capacitor banks for instantaneous power factor correction',
+            'Eliminates utility low-power-factor penalties and reduces line harmonic losses',
+            'Microprocessor multi-window LED alarm annunciator with customizable legends',
+            'Selectable ISA sequence alarm functions (Auto-reset, Manual reset, First-out)',
+            'Integrated digital power analyzer for real-time THD, kVAR and kWh monitoring',
+            'Heavy-duty de-tuned reactors for comprehensive capacitor harmonic protection'
+        ],
+        specifications: [
+            { label: 'Capacitor Rating', value: '50 kVAR to 1000 kVAR Modular Steps' },
+            { label: 'Switching Technology', value: 'Zero-Crossing Solid-State Thyristor Modules (< 20ms)' },
+            { label: 'Annunciator Windows', value: '8, 16, 24, or 32 Window High-Brightness LED Matrix' },
+            { label: 'Sequence Logic', value: 'ISA-18.1 Standard Annunciator Sequences' },
+            { label: 'Enclosure Class', value: 'IP54 / IP55 Free-Standing Compartmentalized Panel' }
+        ],
+        applications: [
+            'Automotive & Heavy Fabrication Plants',
+            'Plastic Injection Molding & Extrusion Facilities',
+            'Textile & Paper Continuous Processing Mills',
+            'Commercial IT Parks & Hospital Facilities',
+            'Substation Control & Protection Desks'
+        ]
+    },
+    {
+        id: 'data-comm',
+        slug: 'data-communication-wireless-modbus',
+        num: '30',
+        title: 'Data Communication (Wireless & Modbus)',
+        fullTitle: 'Industrial IoT Telemetry, Modbus RTU/TCP Gateways & Wireless Data Systems',
+        category: 'Automation & Controls',
+        standard: 'Modbus Org / IEEE 802.15.4',
+        subtitle: 'Industrial IoT gateways, RS485 telemetry and wireless data loggers.',
+        shortDesc: 'Industrial IoT gateways, RS485 Modbus telemetry and wireless Bluetooth data loggers for plant-wide networking.',
+        image: '/images/products/Advanced Fire Pump Control Panel.jpeg',
+        overview: 'Vishal Enterprises provides comprehensive plant telemetry and industrial IoT communication infrastructure. We bridge field instrumentation with centralized control systems using ruggedized industrial Modbus RTU/TCP gateways, long-range wireless telemetry, fiber-optic converters and secure cloud monitoring.',
+        features: [
+            'RS485 Modbus RTU to Modbus TCP/Ethernet protocol converters',
+            'Long-range wireless industrial RF and 4G/5G cellular IoT telemetry gateways',
+            'Multi-drop instrument networking with galvanic optical isolation',
+            'Bluetooth low-energy (BLE) field diagnostic transceivers for technician tablets',
+            'Built-in cybersecurity firewall and encrypted protocol transmission',
+            'Seamless interfacing with Honeywell, Emerson, Yokogawa and Siemens DCS'
+        ],
+        specifications: [
+            { label: 'Serial Ports', value: 'Galvanically Isolated RS-485 / RS-232 Ports' },
+            { label: 'Ethernet', value: 'Dual 10/100 Mbps RJ-45 with Auto-MDIX' },
+            { label: 'Wireless Protocol', value: 'LoRaWAN / 865 MHz Industrial RF / BLE 5.0 / 4G LTE' },
+            { label: 'Operating Voltage', value: '9-36V DC Wide Range Industrial Input' },
+            { label: 'Mounting', value: 'DIN-Rail Mount / NEMA 4X Wall Enclosure' }
+        ],
+        applications: [
+            'Cross-Country Oil & Gas Pipeline Valve Stations',
+            'Water Distribution Remote Monitoring Networks',
+            'Remote Solar & Wind Generation Substations',
+            'Plant-Wide Environmental Emission Monitoring',
+            'Multi-Building Industrial Campus Automation'
+        ]
+    },
+    {
+        id: 'display-panels',
+        slug: 'p4-p6-safety-led-displays',
+        num: '31',
+        title: 'P4 & P6 Safety LED Displays',
+        fullTitle: 'P4 & P6 High-Brightness Outdoor Safety & Accident-Free Days LED Display Boards',
+        category: 'Industrial Displays',
+        standard: 'IP65 Weatherproof / CE',
+        subtitle: 'Weatherproof high-brightness digital display boards for safety milestone tracking.',
+        shortDesc: 'Weatherproof high-brightness digital display boards for safety milestone tracking and real-time plant safety metrics.',
+        image: '/images/products/Accident Free Days Display.jpeg',
+        overview: 'We manufacture industrial-grade P4 and P6 full-color outdoor LED display systems engineered to promote safety awareness across industrial complexes. Displaying automatic counting of "Accident-Free Days", real-time weather metrics, production figures and live plant environmental announcements.',
+        features: [
+            'Ultra-bright outdoor P4 / P6 SMD LED modules with automatic ambient dimming',
+            'Automated real-time calculation of accident-free man-hours and milestone days',
+            'IP65 weatherproof, dust-proof and corrosion-resistant powder-coated housing',
+            'Wireless Wi-Fi, Ethernet and USB programming for instant message updates',
+            'RTC precision clock synchronization for exact date and time logging',
+            'Multi-language graphical display supporting English, Hindi and regional scripts'
+        ],
+        specifications: [
+            { label: 'Pixel Pitch', value: 'P4 (4mm Pitch) / P6 (6mm Pitch) High Resolution' },
+            { label: 'Brightness', value: '> 6500 Nits (Crystal Clear Sunlight Readability)' },
+            { label: 'Ingress Protection', value: 'IP65 Front & Rear Weatherproof Enclosure' },
+            { label: 'Connectivity', value: 'Wi-Fi / Ethernet LAN / RS485 / Cloud CMS' },
+            { label: 'Power Input', value: '230V AC ±10%, 50 Hz with Surge Protection' }
+        ],
+        applications: [
+            'Industrial Main Entry Security Gates',
+            'Manufacturing Workshop Shopfloors',
+            'Petroleum Depot Safety Scoreboard Displays',
+            'Highway & Toll Plaza Dynamic Message Signs',
+            'Corporate Campus Information Message Boards'
         ]
     }
 ];

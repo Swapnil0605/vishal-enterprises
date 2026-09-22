@@ -12,34 +12,25 @@ import './Navbar.css';
 const servicesMegaColumns = [
     {
         items: [
-            { name: "Customised Automation Panels", slug: "customised-automation-panels" },
-            { name: "PLC Panels & Process Controls", slug: "plc-panels-process-controls" },
-            { name: "Fire Engine & Jockey Pump Panels", slug: "fire-engine-jockey-pump-panels" },
-            { name: "VFD, FASD, PMCC & RO Utility", slug: "vfd-fasd-pmcc-ro-utility-panels" }
+            { name: "AMC, SITC & Turnkey Trading", slug: "amc-sitc-turnkey-trading" },
+            { name: "Thermography Analysis Service", slug: "thermography-analysis-service" }
         ]
     },
     {
         items: [
-            { name: "Siren & Dyke Valve Position Panels", slug: "siren-dyke-valve-position-panels" },
-            { name: "Fire Alarm & Detection Panels", slug: "fire-alarm-detection-panels" },
-            { name: "FLP Gas Detection & Simulation", slug: "flp-gas-detection-simulation" },
-            { name: "FLP Earthing Relay & Monitoring", slug: "flp-earthing-relay-monitoring" }
+            { name: "Relay Testing", slug: "relay-testing" },
+            { name: "ACB Servicing and Maintenance", slug: "acb-servicing-maintenance" }
         ]
     },
     {
         items: [
-            { name: "Automatic Battery Changeover Panels", slug: "automatic-battery-changeover-panels" },
-            { name: "WTI / OTI & Live Simulation", slug: "wti-oti-safety-alarms-simulation" },
-            { name: "Energy Saving & Annunciation Panels", slug: "energy-saving-annunciation-panels" },
-            { name: "Data Communication (Wireless/Modbus)", slug: "data-communication-wireless-modbus" }
+            { name: "VCB Servicing and Maintenance", slug: "vcb-servicing-maintenance" },
+            { name: "Insulation Mat Testing", slug: "insulation-mat-testing" }
         ]
     },
     {
         items: [
-            { name: "HT Works & Sub-Station Tests", slug: "ht-works-substation-tests" },
-            { name: "P4 & P6 Safety LED Displays", slug: "p4-p6-safety-led-displays" },
-            { name: "Testing & Thermography Services", slug: "testing-thermography-services" },
-            { name: "AMC, SITC & Turnkey Trading", slug: "amc-sitc-turnkey-trading" }
+            { name: "HT Works & Sub-Station Tests (Transformer)", slug: "ht-works-substation-tests" }
         ]
     }
 ];

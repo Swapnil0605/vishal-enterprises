@@ -20,7 +20,6 @@ export const Footer = () => {
                                 <img src="/images/logo.png" alt="Vishal Enterprises Official Logo" />
                                 <div className="footer-logo-text">
                                     <span className="footer-logo-name">VISHAL ENTERPRISES</span>
-                                    <span className="footer-logo-tagline">Engineering Excellence Since 1990</span>
                                 </div>
                             </div>
                             <p className="footer-about">

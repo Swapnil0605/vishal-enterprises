@@ -67,10 +67,6 @@ export const ProductDetailPage = () => {
                                     alt={product.title} 
                                     className="product-main-img" 
                                 />
-                                <div className="product-photo-badge">
-                                    <ShieldCheck size={16} />
-                                    <span>{product.standard}</span>
-                                </div>
                             </div>
 
                             {/* Comprehensive Overview */}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { servicesData } from '../data/services';
 import { Navbar } from '../components/Navbar/Navbar';
@@ -6,47 +6,21 @@ import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
 import { 
     ArrowUpRight, 
-    ShieldCheck, 
     Home as HomeIcon, 
-    ChevronRight,
-    Cpu,
-    Zap,
-    Flame,
-    Activity,
-    Layers
+    ChevronRight
 } from 'lucide-react';
 import './ServicesPage.css';
 
 const serviceCategories = [
     { id: 'all', label: 'All Services' },
-    { id: 'Automation & Controls', label: 'Automation & Controls' },
-    { id: 'Power & Distribution', label: 'Power & Distribution' },
-    { id: 'Flameproof & Safety', label: 'Flameproof & Safety' },
-    { id: 'Testing & Maintenance', label: 'Testing & Maintenance' }
+    { id: 'Turnkey & AMC', label: 'Turnkey & AMC' },
+    { id: 'Testing & Audits', label: 'Testing & Audits' },
+    { id: 'Maintenance & Servicing', label: 'Maintenance & Servicing' },
+    { id: 'Safety & Compliance', label: 'Safety & Compliance' },
+    { id: 'Substation & HT', label: 'Substation & HT' }
 ];
 
-const getCategoryIcon = (category) => {
-    switch(category) {
-        case 'Automation & Controls':
-            return <Cpu size={18} />;
-        case 'Power & Distribution':
-            return <Zap size={18} />;
-        case 'Flameproof & Safety':
-            return <Flame size={18} />;
-        case 'Testing & Maintenance':
-            return <Activity size={18} />;
-        default:
-            return <Layers size={18} />;
-    }
-};
-
 export const ServicesPage = () => {
-    const [activeFilter, setActiveFilter] = useState('all');
-
-    const filteredServices = activeFilter === 'all' 
-        ? servicesData 
-        : servicesData.filter(item => item.category === activeFilter);
-
     return (
         <div className="services-page-wrapper">
             <Navbar />
@@ -67,7 +41,7 @@ export const ServicesPage = () => {
                         Comprehensive Engineering <span className="title-accent">Services & Scope</span>
                     </h1>
                     <p className="services-page-subtitle">
-                        Explore our complete portfolio spanning custom automation panels, flameproof systems and turnkey high-tension testing.
+                        Explore our complete engineering services spanning turnkey AMCs, thermography analysis, relay testing, breaker overhauling, and high-tension substation tests.
                     </p>
                 </div>
             </div>
@@ -86,15 +60,9 @@ export const ServicesPage = () => {
                                     <img 
                                         src={service.image} 
                                         alt={service.alt || service.title} 
-                                        className="yt-thumbnail-img"
+                                        className="yt-thumbnail-img" 
                                         loading="lazy"
                                     />
-
-                                    {/* YouTube Duration-Style Compliance Badge (Bottom Right) */}
-                                    <div className="yt-duration-badge">
-                                        <ShieldCheck size={12} />
-                                        <span>{service.standards[0] || 'ISO 9001:2015'}</span>
-                                    </div>
                                 </Link>
 
                                 {/* Metadata Content */}

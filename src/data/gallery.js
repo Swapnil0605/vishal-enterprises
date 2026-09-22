@@ -159,13 +159,13 @@ export const galleryItems = [
     },
     {
         id: 16,
-        title: "High-Resolution Graphical LCD Status Annunciator",
-        caption: "Graphical HMI Telemetry & Real-Time Fault Logging Console",
+        title: "Automatic FE battery Changeover Panel",
+        caption: "Automatic FE battery Changeover Panel",
         category: "panels",
         categoryLabel: "Control & Power Panels",
         image: "/images/gallery/graphical-lcd-panel.jpeg",
-        tag: "HMI Interface",
-        description: "Customized multi-line graphical telemetry screen displaying real-time feeder status, faults and chronological event logging."
+        tag: "Battery Changeover",
+        description: "Customized multi-line graphical telemetry screen and automatic dual fire engine battery changeover controller panel."
     },
     {
         id: 17,
