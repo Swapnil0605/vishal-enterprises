@@ -67,7 +67,7 @@ const productsMegaColumns = [
             { name: "AC Sequential Control Panel", id: "ac-sequential-control" },
             { name: "Circuit Designing and Programming", id: "custom-circuit-plc" },
             { name: "PLC based Fully Automatic Star Delta Starter (FASD)", id: "plc-fasd-starter" },
-            { name: "Thermography Analysis on site", id: "thermography-monitoring-panel" }
+            { name: "Fire Pump Duty Control Panel", id: "fire-pump-duty-control" }
         ]
     }
 ];

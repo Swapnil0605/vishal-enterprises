@@ -490,41 +490,9 @@ export const productsData = [
         ]
     },
     {
-        id: 'thermography-monitoring-panel',
-        slug: 'thermography-monitoring-panel',
-        num: '16',
-        title: 'Thermography Analysis on site',
-        fullTitle: 'Thermography Analysis on site',
-        category: 'Process Monitoring',
-        standard: 'NFPA 70B / ISO 18434',
-        shortDesc: 'Continuous multi-point non-contact infrared thermal monitoring console for critical electrical switchgear and busbar joints.',
-        image: '/images/products/Thermography Analysis on site.jpeg',
-        overview: 'Provides 24/7 continuous non-contact infrared temperature monitoring across high-voltage busbar joints, breaker terminal connections, and transformer cable terminations. Detects loose connections and thermal hotspots months before catastrophic electrical fires or flashovers occur.',
-        features: [
-            'Non-contact infrared optical sensor heads mounted safely inside live switchgear bays',
-            'Multi-channel thermal controller displaying real-time Celsius temperature per phase joint',
-            'Dual-stage programmable alarm contacts: Warning (Pre-alarm) and Trip interlock',
-            'Historical temperature trend logging with high-temperature alarm timestamping',
-            'RS485 Modbus / Ethernet interface for remote SCADA predictive maintenance telemetry'
-        ],
-        specifications: [
-            { label: 'Sensor Technology', value: 'Precision Non-Contact Optical IR Thermopile Heads' },
-            { label: 'Measuring Range', value: '-20°C to +180°C with ±1°C Accuracy' },
-            { label: 'Channel Count', value: '6, 12, 18, or 24 Hotspot Monitoring Points' },
-            { label: 'Standard Compliance', value: 'NFPA 70B / ISO 18434-1 / IEEE C37.20.7' },
-            { label: 'Telemetry Output', value: 'Modbus RTU over RS-485 / 4-20mA Retransmission' }
-        ],
-        applications: [
-            'HT/LT Switchgear Panels, PCC & MCC Incomers',
-            'Substation Busduct & Transformer Bushing Joints',
-            'Data Center High-Density Power Distribution Racks',
-            'Heavy Arc Furnace & Rolling Mill Power Feeds'
-        ]
-    },
-    {
         id: 'ups-acdb-panel',
         slug: 'ups-acdb-panel',
-        num: '17',
+        num: '16',
         title: 'UPS ACDB Panel',
         fullTitle: 'UPS ACDB Panel',
         category: 'Power Management',
@@ -556,7 +524,7 @@ export const productsData = [
     {
         id: 'vcb-ab-switch-interlock',
         slug: 'vcb-ab-switch-interlock',
-        num: '18',
+        num: '17',
         title: 'VCB - AB Switch Interlock Control Panel',
         fullTitle: 'VCB - AB Switch Interlock Control Panel',
         category: 'Power Management',
@@ -588,7 +556,7 @@ export const productsData = [
     {
         id: 'wireless-fire-jockey-pump-telemetry',
         slug: 'wireless-fire-jockey-pump-telemetry',
-        num: '19',
+        num: '18',
         title: 'Wireless Fire Pump or Jockey Pump Status Control Panels',
         fullTitle: 'Wireless Fire Pump or Jockey Pump Status Control Panels',
         category: 'Fire & Safety',
@@ -618,77 +586,9 @@ export const productsData = [
         ]
     },
     {
-        id: 'custom-panels',
-        slug: 'customised-automation-panels',
-        num: '20',
-        title: 'AC Sequential Control Panel',
-        fullTitle: 'AC Sequential Control Panel',
-        category: 'Automation & Controls',
-        standard: 'ISO 9001:2015 / IEC 61439',
-        shortDesc: 'Custom-engineered control desks, mimic panels and microprocessor-based automation panels tailored to exact industrial specifications.',
-        image: '/images/products/AC Sequential Control Panel.jpeg',
-        overview: 'Vishal Enterprises specializes in end-to-end design, sheet metal fabrication, wiring and assembly of customized industrial automation panels. Engineered for extreme reliability, our panels incorporate advanced microprocessor controllers, mimic diagrams, custom interlocks and intelligent power distribution networks built to withstand demanding industrial environments.',
-        features: [
-            'Tailor-made control desk and enclosure fabrication (CRCA / Stainless Steel)',
-            'Custom microprocessor and microcontroller hardware integration',
-            'Full mimic diagram layouts with LED live status annunciation',
-            'Fail-safe interlocks and comprehensive electrical protection circuitry',
-            'In-house factory acceptance testing (FAT) and rigorous wire-load simulation',
-            'Modular expandable architecture for seamless future capacity upgrades'
-        ],
-        specifications: [
-            { label: 'Enclosure Material', value: '14/16 SWG CRCA Sheet / SS304 Stainless Steel' },
-            { label: 'Ingress Protection', value: 'IP55 / IP65 Certified Weatherproof' },
-            { label: 'Standard Compliance', value: 'IEC 61439 / IS 8623 / ISO 9001:2015' },
-            { label: 'Busbar System', value: 'Electrolytic Grade Tinned Copper / Aluminum' },
-            { label: 'Control Logic', value: 'Microprocessor / PLC / Hardwired Interlocks' }
-        ],
-        applications: [
-            'Petroleum Storage Depots & Terminals',
-            'Thermal Power Generation Utilities',
-            'Continuous Chemical Processing Plants',
-            'Automated Material Handling Facilities',
-            'Municipal Water Treatment Stations'
-        ]
-    },
-    {
-        id: 'plc-process',
-        slug: 'plc-panels-process-controls',
-        num: '21',
-        title: 'RO Utility Control Panel',
-        fullTitle: 'RO Utility Control Panel',
-        category: 'Automation & Controls',
-        standard: 'IEC 61131-3 / IEEE 802.3',
-        shortDesc: 'SCADA and PLC integration for automated continuous batching, pipeline sequencing and process flow control.',
-        image: '/images/products/RO Utility Control Panel.jpeg',
-        overview: 'Our Programmable Logic Controller (PLC) and Supervisory Control and Data Acquisition (SCADA) panels deliver precise process automation for continuous and batch operations. We provide turnkey programming, human-machine interface (HMI) screen development, telemetry networking and fail-safe automated shutdowns for high-consequence industrial facilities.',
-        features: [
-            'Multi-platform PLC integration (Siemens, Schneider, Allen-Bradley, Delta)',
-            'High-resolution touchscreen HMI control with intuitive graphical synoptics',
-            'Redundant power supply and fail-safe CPU hot-standby architectures',
-            'Modbus TCP/IP, RS485 RTU, Profinet and Ethernet/IP telemetry',
-            'Automated sequence batching, PID loop tuning and flow modulation',
-            'Historical alarms logging, audit-trail data archiving and remote SCADA'
-        ],
-        specifications: [
-            { label: 'PLC Brands Supported', value: 'Siemens S7, Schneider Modicon, Delta, Rockwell AB' },
-            { label: 'HMI Display', value: '7" / 10" / 15" Multi-Touch Color TFT Screens' },
-            { label: 'Communication Ports', value: 'Ethernet RJ45, RS485 Modbus, Profibus, CAN' },
-            { label: 'Power Supply', value: '230V AC with Redundant 24V DC Industrial SMPS' },
-            { label: 'Enclosure Rating', value: 'IP55 Free-Standing / Wall-Mount CRCA Enclosure' }
-        ],
-        applications: [
-            'Oil & Gas Pipeline Pumping Terminals',
-            'Water Filtration & Reverse Osmosis Plants',
-            'Food & Pharmaceutical Continuous Batching',
-            'Automated Blending and Decantation Facilities',
-            'Bulk Material Conveying & Storage Silos'
-        ]
-    },
-    {
         id: 'fire-engine-jockey',
         slug: 'fire-engine-jockey-pump-panels',
-        num: '22',
+        num: '19',
         title: 'Fire Pump Duty Control Panel',
         fullTitle: 'Fire Pump Duty Control Panel',
         category: 'Fire & Safety',
@@ -720,9 +620,43 @@ export const productsData = [
         ]
     },
     {
+        id: 'plc-process',
+        slug: 'plc-panels-process-controls',
+        num: '20',
+        title: 'RO Utility Control Panel',
+        fullTitle: 'RO Utility Control Panel',
+        category: 'Automation & Controls',
+        standard: 'IEC 61131-3 / IEEE 802.3',
+        shortDesc: 'SCADA and PLC integration for automated continuous batching, pipeline sequencing and process flow control.',
+        image: '/images/products/RO Utility Control Panel.jpeg',
+        overview: 'Our Programmable Logic Controller (PLC) and Supervisory Control and Data Acquisition (SCADA) panels deliver precise process automation for continuous and batch operations. We provide turnkey programming, human-machine interface (HMI) screen development, telemetry networking and fail-safe automated shutdowns for high-consequence industrial facilities.',
+        features: [
+            'Multi-platform PLC integration (Siemens, Schneider, Allen-Bradley, Delta)',
+            'High-resolution touchscreen HMI control with intuitive graphical synoptics',
+            'Redundant power supply and fail-safe CPU hot-standby architectures',
+            'Modbus TCP/IP, RS485 RTU, Profinet and Ethernet/IP telemetry',
+            'Automated sequence batching, PID loop tuning and flow modulation',
+            'Historical alarms logging, audit-trail data archiving and remote SCADA'
+        ],
+        specifications: [
+            { label: 'PLC Brands Supported', value: 'Siemens S7, Schneider Modicon, Delta, Rockwell AB' },
+            { label: 'HMI Display', value: '7" / 10" / 15" Multi-Touch Color TFT Screens' },
+            { label: 'Communication Ports', value: 'Ethernet RJ45, RS485 Modbus, Profibus, CAN' },
+            { label: 'Power Supply', value: '230V AC with Redundant 24V DC Industrial SMPS' },
+            { label: 'Enclosure Rating', value: 'IP55 Free-Standing / Wall-Mount CRCA Enclosure' }
+        ],
+        applications: [
+            'Oil & Gas Pipeline Pumping Terminals',
+            'Water Filtration & Reverse Osmosis Plants',
+            'Food & Pharmaceutical Continuous Batching',
+            'Automated Blending and Decantation Facilities',
+            'Bulk Material Conveying & Storage Silos'
+        ]
+    },
+    {
         id: 'vfd-pmcc-ro',
         slug: 'vfd-fasd-pmcc-ro-utility-panels',
-        num: '23',
+        num: '21',
         title: 'CNG panel and Thyristor controlled APFC PAN',
         fullTitle: 'CNG panel and Thyristor controlled APFC PAN',
         category: 'Power Management',
@@ -756,7 +690,7 @@ export const productsData = [
     {
         id: 'siren-dyke',
         slug: 'siren-dyke-valve-position-panels',
-        num: '24',
+        num: '22',
         title: 'Dyke Valve Position Annunciation Panel',
         fullTitle: 'Dyke Valve Position Annunciation Panel',
         category: 'Hazardous Area',
@@ -790,7 +724,7 @@ export const productsData = [
     {
         id: 'fire-alarm',
         slug: 'fire-alarm-detection-panels',
-        num: '25',
+        num: '23',
         title: 'Fire Alarm Control Panel',
         fullTitle: 'Fire Alarm Control Panel',
         category: 'Fire & Safety',
@@ -824,7 +758,7 @@ export const productsData = [
     {
         id: 'flp-gas',
         slug: 'flp-gas-detection-simulation',
-        num: '26',
+        num: '24',
         title: 'Gas Detection Controller with Bluetooth control',
         fullTitle: 'Gas Detection Controller with Bluetooth control',
         category: 'Hazardous Area',
@@ -858,7 +792,7 @@ export const productsData = [
     {
         id: 'flp-earthing',
         slug: 'flp-earthing-relay-monitoring',
-        num: '27',
+        num: '25',
         title: 'New product launched. FLP Earthing Relay interlocking with decantation  delivery pump.',
         fullTitle: 'New product launched. FLP Earthing Relay interlocking with decantation  delivery pump.',
         category: 'Hazardous Area',
@@ -892,7 +826,7 @@ export const productsData = [
     {
         id: 'battery-changeover',
         slug: 'automatic-battery-changeover-panels',
-        num: '28',
+        num: '26',
         title: 'Automatic Battery Changeover Panel',
         fullTitle: 'Automatic Battery Changeover Panel',
         category: 'Power Management',
@@ -926,7 +860,7 @@ export const productsData = [
     {
         id: 'wti-oti',
         slug: 'wti-oti-safety-alarms-simulation',
-        num: '29',
+        num: '27',
         title: 'Tank Level Annunciation Panel for Oil Industries',
         fullTitle: 'Tank Level Annunciation Panel for Oil Industries',
         category: 'Process Monitoring',
@@ -960,7 +894,7 @@ export const productsData = [
     {
         id: 'energy-annunciation',
         slug: 'energy-saving-annunciation-panels',
-        num: '30',
+        num: '28',
         title: 'Graphical LCD Panel',
         fullTitle: 'Graphical LCD Panel',
         category: 'Power Management',
@@ -994,7 +928,7 @@ export const productsData = [
     {
         id: 'data-comm',
         slug: 'data-communication-wireless-modbus',
-        num: '31',
+        num: '29',
         title: 'Advanced Fire Pump Control Panel',
         fullTitle: 'Advanced Fire Pump Control Panel',
         category: 'Automation & Controls',
@@ -1028,7 +962,7 @@ export const productsData = [
     {
         id: 'display-panels',
         slug: 'p4-p6-safety-led-displays',
-        num: '32',
+        num: '30',
         title: 'Accident Free Days Display',
         fullTitle: 'Accident Free Days Display',
         category: 'Industrial Displays',
@@ -1062,7 +996,7 @@ export const productsData = [
     {
         id: 'fire-pump-fail-safe-sequencing',
         slug: 'fire-pump-fail-safe-sequencing',
-        num: '33',
+        num: '31',
         title: 'Fire Pump Fail Safe Sequencing Logic Panel',
         fullTitle: 'Fire Pump Fail Safe Sequencing Logic Panel',
         category: 'Fire & Safety',
@@ -1091,7 +1025,7 @@ export const productsData = [
     {
         id: 'flameproof-fire-alarm-panel',
         slug: 'flameproof-fire-alarm-panel',
-        num: '34',
+        num: '32',
         title: 'Flameproof Fire Alarm Control Panel',
         fullTitle: 'Flameproof Fire Alarm Control Panel',
         category: 'Hazardous Area',
@@ -1120,7 +1054,7 @@ export const productsData = [
     {
         id: 'flameproof-sop-narrator',
         slug: 'flameproof-sop-narrator',
-        num: '35',
+        num: '33',
         title: 'Flameproof SOP Narrator Panel',
         fullTitle: 'Flameproof SOP Narrator Panel',
         category: 'Hazardous Area',
@@ -1149,7 +1083,7 @@ export const productsData = [
     {
         id: 'flameproof-dyke-valve-annunciation',
         slug: 'flameproof-dyke-valve-annunciation',
-        num: '36',
+        num: '34',
         title: 'Flameproof Dyke Valve Position Annunciation Panel',
         fullTitle: 'Flameproof Dyke Valve Position Annunciation Panel',
         category: 'Hazardous Area',
@@ -1178,7 +1112,7 @@ export const productsData = [
     {
         id: 'sop-narrator',
         slug: 'sop-narrator',
-        num: '37',
+        num: '35',
         title: 'SOP Narrator',
         fullTitle: 'SOP Narrator',
         category: 'Automation & Controls',
@@ -1207,7 +1141,7 @@ export const productsData = [
     {
         id: 'gas-detection-controller',
         slug: 'gas-detection-controller',
-        num: '38',
+        num: '36',
         title: 'Gas Detection Controller',
         fullTitle: 'Gas Detection Controller',
         category: 'Hazardous Area',
