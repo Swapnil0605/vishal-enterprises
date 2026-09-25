@@ -172,11 +172,6 @@ export const Navbar = () => {
                         <div className="mobile-brand-name">M/s VISHAL ENTERPRISES</div>
                         <div className="mobile-brand-license">Govt. Licensed Electrical Contractor - MC 34227</div>
                         <div className="mobile-brand-iso">An ISO 9001:2015 Company, GEM Accredited OEM</div>
-                        <div className="mobile-brand-address">18, " VISHAL", Keruji Nagar, Chakkarbardi Road, Dhule Dist. - Dhule</div>
-                        <div className="mobile-brand-contact">
-                            <span>Contact: (02562)249374, 8275580423</span>
-                            <span>E-mail: vishalent@yahoo.co.in</span>
-                        </div>
                     </div>
                 </Link>
 
@@ -199,26 +194,46 @@ export const Navbar = () => {
                             </Link>
                         </li>
 
-                        {/* ─── Services Mega Dropdown (Qiro Tech Style) ─── */}
+                        {/* ─── Services Mega Dropdown ─── */}
                         <li 
                             className={`nav-item-mega ${servicesOpen ? 'open' : ''}`}
                             onMouseEnter={handleServicesEnter}
                             onMouseLeave={handleServicesLeave}
                         >
-                            <Link 
-                                to="/services" 
-                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''}`} 
-                                onClick={handleServicesToggle}
-                            >
-                                <span>Services</span>
-                                <ChevronDown size={14} className="dropdown-chevron" />
-                            </Link>
+                            <div className="nav-dropdown-header-row">
+                                <Link 
+                                    to="/services" 
+                                    className={`nav-link nav-link-main ${location.pathname.startsWith('/services') ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    <span>Services</span>
+                                </Link>
+                                <button 
+                                    type="button" 
+                                    className="nav-dropdown-caret-btn"
+                                    onClick={handleServicesToggle}
+                                    aria-label="Toggle Services menu"
+                                >
+                                    <ChevronDown size={15} className={`dropdown-chevron ${servicesOpen ? 'open' : ''}`} />
+                                </button>
+                            </div>
 
                             <div 
                                 className="mega-dropdown"
                                 onMouseEnter={handleServicesEnter}
                                 onMouseLeave={handleServicesLeave}
                             >
+                                <div className="mega-view-all-header">
+                                    <Link 
+                                        to="/services" 
+                                        className="mega-view-all-action"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        <span>Explore All Services & Scope</span>
+                                        <ArrowRight size={15} />
+                                    </Link>
+                                </div>
+
                                 <div className="mega-dropdown-inner">
                                     {servicesMegaColumns.map((col, idx) => (
                                         <div key={idx} className="mega-col">
@@ -242,26 +257,46 @@ export const Navbar = () => {
                             </div>
                         </li>
 
-                        {/* ─── Products Mega Dropdown (Qiro Tech Style) ─── */}
+                        {/* ─── Products Mega Dropdown ─── */}
                         <li 
                             className={`nav-item-mega ${productsOpen ? 'open' : ''}`}
                             onMouseEnter={handleProductsEnter}
                             onMouseLeave={handleProductsLeave}
                         >
-                            <Link 
-                                to="/products" 
-                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''}`} 
-                                onClick={handleProductsToggle}
-                            >
-                                <span>Products</span>
-                                <ChevronDown size={14} className="dropdown-chevron" />
-                            </Link>
+                            <div className="nav-dropdown-header-row">
+                                <Link 
+                                    to="/products" 
+                                    className={`nav-link nav-link-main ${location.pathname.startsWith('/products') ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    <span>Products</span>
+                                </Link>
+                                <button 
+                                    type="button" 
+                                    className="nav-dropdown-caret-btn"
+                                    onClick={handleProductsToggle}
+                                    aria-label="Toggle Products menu"
+                                >
+                                    <ChevronDown size={15} className={`dropdown-chevron ${productsOpen ? 'open' : ''}`} />
+                                </button>
+                            </div>
 
                             <div 
                                 className="mega-dropdown"
                                 onMouseEnter={handleProductsEnter}
                                 onMouseLeave={handleProductsLeave}
                             >
+                                <div className="mega-view-all-header">
+                                    <Link 
+                                        to="/products" 
+                                        className="mega-view-all-action"
+                                        onClick={closeMobileMenu}
+                                    >
+                                        <span>Explore All Products & Solutions</span>
+                                        <ArrowRight size={15} />
+                                    </Link>
+                                </div>
+
                                 <div className="mega-dropdown-inner">
                                     {productsMegaColumns.map((col, idx) => (
                                         <div key={idx} className="mega-col">

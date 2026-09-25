@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { servicesData } from '../../data/services';
 import { 
     MapPin, 
     Mail, 
@@ -85,12 +86,13 @@ export const Footer = () => {
                         <div className="footer-links-group">
                             <h4>Key Solutions</h4>
                             <ul>
-                                <li><Link to="/services/fire-engine-jockey-pump-panels"><ChevronRight size={14} /> Fire Pump Duty Controllers (FPDC)</Link></li>
-                                <li><Link to="/services/flp-gas-detection-simulation"><ChevronRight size={14} /> Gas Detection & Simulation</Link></li>
-                                <li><Link to="/services/flp-earthing-relay-monitoring"><ChevronRight size={14} /> Certified Flameproof (FLP) Panels</Link></li>
-                                <li><Link to="/services/plc-panels-process-controls"><ChevronRight size={14} /> PLC & SCADA Automation Panels</Link></li>
-                                <li><Link to="/services/vfd-fasd-pmcc-ro-utility-panels"><ChevronRight size={14} /> VFD & PMCC Control Centers</Link></li>
-                                <li><Link to="/services/testing-thermography-services"><ChevronRight size={14} /> Relay Testing & Thermography</Link></li>
+                                {servicesData.map((service) => (
+                                    <li key={service.id}>
+                                        <Link to={`/services/${service.slug}`}>
+                                            <ChevronRight size={14} /> {service.title}
+                                        </Link>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
