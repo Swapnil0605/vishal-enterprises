@@ -27,7 +27,7 @@ export const additionalProductsData = [
     {
         id: 'circuit-relays-ssr',
         name: 'Circuit Mount Relays (AC/DC), SSR, Thermal & Numerical Relays',
-        image: '/images/additional-products/Circuit Relays SSR.jpeg',
+        image: '/images/additional-products/Circuit Mount Relays (ACDC), SSR, Thermal & Numerical Relays.jpg',
         category: 'Switchgear & Protection'
     },
     {
@@ -231,9 +231,15 @@ export const additionalProductsData = [
         category: 'High Voltage & Substation'
     },
     {
-        id: 'vcb-acb-accessories',
-        name: 'VCB & ACB Accessories, Trip Coils, Closing Coils & Mechanisms',
-        image: '/images/additional-products/VCB ACB Accessories.jpeg',
+        id: 'vcb-acb-accessories-closing-coils',
+        name: 'VCB & ACB Accessories - Closing Coils & Mechanisms',
+        image: '/images/additional-products/VCB & ACB Accessories Closing Coils.jpg',
+        category: 'High Voltage & Substation'
+    },
+    {
+        id: 'vcb-acb-accessories-trip-coils',
+        name: 'VCB & ACB Accessories - Trip Coils & Shunt Releases',
+        image: '/images/additional-products/VCB & ACB Accessories, Trip Coils.jpg',
         category: 'High Voltage & Substation'
     },
 

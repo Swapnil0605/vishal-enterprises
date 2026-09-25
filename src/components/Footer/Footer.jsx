@@ -101,7 +101,7 @@ export const Footer = () => {
                                 <MapPin size={18} className="loc-icon" />
                                 <div>
                                     <strong>Manufacturing Works (Dhule)</strong>
-                                    <span>18, Keruji Nagar, Chakkarbardi Rd, Dhule 424001</span>
+                                    <span>18, Keruji Nagar, Chakkarbardi Road, Dhule 424001</span>
                                 </div>
                             </div>
 
@@ -109,7 +109,7 @@ export const Footer = () => {
                                 <MapPin size={18} className="loc-icon" />
                                 <div>
                                     <strong>Pune Branch Office</strong>
-                                    <span>123, 124, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057</span>
+                                    <span>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</span>
                                 </div>
                             </div>
 

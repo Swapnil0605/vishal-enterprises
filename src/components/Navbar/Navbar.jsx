@@ -165,9 +165,19 @@ export const Navbar = () => {
     return (
         <header className={`navbar ${isScrolled ? 'scrolled' : ''}`} id="navbar">
             <div className="nav-inner">
-                {/* Enlarged VE Logo */}
+                {/* Enlarged VE Logo & Mobile View Header Details */}
                 <Link to="/" className="nav-logo" onClick={closeMobileMenu} aria-label="Vishal Enterprises Home">
                     <img src="/images/logo.png" alt="Vishal Enterprises Official Logo" className="logo-img" />
+                    <div className="nav-mobile-brand-banner">
+                        <div className="mobile-brand-name">M/s VISHAL ENTERPRISES</div>
+                        <div className="mobile-brand-license">Govt. Licensed Electrical Contractor - MC 34227</div>
+                        <div className="mobile-brand-iso">An ISO 9001:2015 Company, GEM Accredited OEM</div>
+                        <div className="mobile-brand-address">18, " VISHAL", Keruji Nagar, Chakkarbardi Road, Dhule Dist. - Dhule</div>
+                        <div className="mobile-brand-contact">
+                            <span>Contact: (02562)249374, 8275580423</span>
+                            <span>E-mail: vishalent@yahoo.co.in</span>
+                        </div>
+                    </div>
                 </Link>
 
                 <nav className={`nav-links ${mobileOpen ? 'open' : ''}`}>

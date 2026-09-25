@@ -80,7 +80,7 @@ export const ContactPage = () => {
         setErrorMessage('');
 
         try {
-            const response = await fetch('https://formsubmit.co/ajax/swapnilchikte0@gmail.com', {
+            const response = await fetch('https://formsubmit.co/ajax/vishalent@yahoo.co.in', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -244,7 +244,7 @@ export const ContactPage = () => {
                                          <MapPin size={18} className="loc-icon" />
                                          <div>
                                              <strong>Pune Branch Office</strong>
-                                             <p>123,124, M/s. VISHAL ENTERPRISES - Pune Branch, Rising City (24k Real Assets), Plot no 122, Survey No. 115/2/A, near Club House, Thakar Nagar, Hinjewadi Ph 1, Maan, Maharashtra 411057</p>
+                                             <p>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
                                          </div>
                                      </div>
                                 </div>
@@ -263,7 +263,7 @@ export const ContactPage = () => {
 
                                 <form 
                                     id="contactForm"
-                                    action="https://formsubmit.co/swapnilchikte0@gmail.com" 
+                                    action="https://formsubmit.co/vishalent@yahoo.co.in" 
                                     method="POST"
                                     className="technical-proposal-form" 
                                     onSubmit={handleSubmit}
