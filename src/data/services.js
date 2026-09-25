@@ -194,6 +194,34 @@ export const servicesData = [
         standards: ['IS 2026 / IS 1866 Transformer Standards', 'Government Licensed Class-1 Contractor', 'CEA Safety Regulations 2010', 'ISO 9001:2015'],
         image: '/images/services/ht-transformer-works.jpeg',
         alt: 'HT Works & Sub-Station Tests (Transformer)'
+    },
+    {
+        id: 'illumination-lux-level-analysis',
+        slug: 'illumination-lux-level-analysis',
+        num: '08',
+        title: 'Illumination (Lux) Level Analysis',
+        fullTitle: 'Illumination (Lux) Level Analysis',
+        category: 'Testing & Audits',
+        shortDesc: 'Comprehensive on-site lux level mapping, emergency lighting verification, and statutory illumination audits using calibrated digital lux meters.',
+        detailedDesc: 'Vishal Enterprises conducts precision illumination (lux) level analysis and optical audits across industrial plant floors, control rooms, electrical switchgear substations, and emergency exit routes. Using NABL-calibrated digital precision lux meters with cosine correction, our certified safety auditors map luminous intensity distribution, evaluate glare ratios, and verify statutory lighting compliance as per IS 3646 and the Factories Act.',
+        features: [
+            'On-site point-by-point lux level measurement across industrial shopfloors & panel rooms',
+            'Evaluation of general, task-specific, and emergency egress lighting levels',
+            'NABL-calibrated digital lux meters with photopic spectral sensitivity & cosine correction',
+            'Comprehensive lux mapping report with uniformity ratios and glare hazard analysis',
+            'Statutory illumination audit certification compliant with Factory Inspectorate norms',
+            'Energy-efficient LED retrofitting recommendations to improve work area ergonomics'
+        ],
+        applications: [
+            'HT & LT Electrical Switchgear Rooms and Substation Control Bays',
+            'Continuous Industrial Manufacturing Shopfloors & Assembly Lines',
+            'Chemical, Pharmaceutical, and Petrochemical Hazardous Plants',
+            'Emergency Escape Routes, Fire Exits, and Stairwells',
+            'Corporate Control Centers, Server Rooms, and Data Centers'
+        ],
+        standards: ['IS 3646 Code of Practice for Interior Illumination', 'IS 6665 Industrial Lighting Guidelines', 'The Factories Act 1948 Compliance', 'NABL Calibrated Instrumentation'],
+        image: '/images/services/illumination-lux-analysis.jpeg',
+        alt: 'Illumination (Lux) Level Analysis'
     }
 ];
 

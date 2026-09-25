@@ -30,7 +30,8 @@ const servicesMegaColumns = [
     },
     {
         items: [
-            { name: "HT Works & Sub-Station Tests (Transformer)", slug: "ht-works-substation-tests" }
+            { name: "HT Works & Sub-Station Tests (Transformer)", slug: "ht-works-substation-tests" },
+            { name: "Illumination (Lux) Level Analysis", slug: "illumination-lux-level-analysis" }
         ]
     }
 ];
