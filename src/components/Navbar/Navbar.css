@@ -5,10 +5,13 @@
     right: 0;
     z-index: 1000;
     padding: 0;
+    margin: 0;
     background: #ffffff;
     border-bottom: 1px solid #e2e8f0;
     transition: all 0.3s ease;
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .navbar.scrolled {
@@ -354,9 +357,33 @@
 
 /* Tablet & Mobile Navigation Drawer (≤990px) */
 @media (max-width: 990px) {
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+        position: sticky;
+        top: 0;
+        background: #ffffff;
+    }
+
+    .navbar.scrolled {
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
     .nav-inner {
-        height: 76px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
         padding: 0 8px;
+        box-sizing: border-box;
+        height: 76px;
         gap: 4px;
     }
 
@@ -364,10 +391,11 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        flex: 1;
+        flex: 1 1 auto;
         min-width: 0;
         height: 56px;
         text-decoration: none;
+        overflow: hidden;
     }
 
     .logo-img {
@@ -387,8 +415,7 @@
         gap: 2px;
         height: 56px;
         max-height: 56px;
-        flex: 1;
-        width: 100%;
+        flex: 1 1 auto;
         min-width: 0;
         padding: 0 1px 0 6px;
         border-left: 1.5px solid #cbd5e1;
@@ -415,10 +442,10 @@
         background: transparent;
         border: none;
         color: #0f172a;
-        font-size: clamp(10.4px, 2.15vw, 6.2px);
+        font-size: clamp(10.2px, 2.35vw, 9.8px);
         font-weight: 700;
-        letter-spacing: -0.1px;
-        line-height: 1.2;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
         padding: 0;
         text-align: left;
         white-space: nowrap;
@@ -431,10 +458,10 @@
         background: transparent;
         border: none;
         color: #0f172a;
-        font-size: clamp(10.4px, 2.15vw, 6.2px);
+        font-size: clamp(10.2px, 2.35vw, 9.8px);
         font-weight: 700;
-        letter-spacing: -0.1px;
-        line-height: 1.2;
+        letter-spacing: -0.2px;
+        line-height: 1.25;
         padding: 0;
         text-align: left;
         white-space: nowrap;
@@ -447,7 +474,8 @@
         display: flex;
         flex-shrink: 0;
         padding: 2px;
-        margin-left: 2px;
+        margin-left: 0;
+        box-sizing: border-box;
     }
 
     .nav-links {
@@ -471,6 +499,8 @@
         padding: 16px 20px 24px;
         z-index: 999;
         overflow-y: auto;
+        overflow-x: hidden;
+        box-sizing: border-box;
         border-bottom: 1.5px solid #e2e8f0;
         border-top: 1px solid #f1f5f9;
     }
@@ -626,6 +656,7 @@
         right: 0;
         bottom: 0;
         width: 100%;
+        max-width: 100%;
         height: calc(100vh - 76px);
         background: #ffffff;
         z-index: 1005;
@@ -746,41 +777,72 @@
 
 /* Small mobile (≤480px) */
 @media (max-width: 480px) {
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        left: 0;
+        right: 0;
+        box-sizing: border-box;
+        border-top: 1px solid #e2e8f0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
     .nav-inner {
         height: 70px;
-        padding: 0 8px;
-        gap: 6px;
+        padding: 0 4px;
+        gap: 4px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .nav-links {
         top: 70px;
         max-height: calc(100vh - 70px);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .mega-dropdown {
         top: 70px;
         height: calc(100vh - 70px);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
     }
 
     .nav-logo {
         height: 52px;
-        gap: 6px;
+        gap: 4px;
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
     }
 
     .logo-img {
-        height: 52px;
-        width: 52px;
-        min-width: 52px;
-        max-width: 52px;
+        height: 50px;
+        width: 48px;
+        min-width: 48px;
+        max-width: 48px;
+        flex-shrink: 0;
     }
 
     .nav-mobile-brand-banner {
         height: 52px;
         max-height: 52px;
-        padding: 0 2px 0 6px;
+        padding: 0 1px 0 4px;
         justify-content: center;
         align-items: flex-start;
         gap: 2px;
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        box-sizing: border-box;
     }
 
     .mobile-brand-name {
@@ -788,8 +850,9 @@
     }
 
     .mobile-brand-license {
-        font-size: clamp(10.4px, 2.15vw, 6.2px);
-        letter-spacing: -0.1px;
+        font-size: clamp(10.2px, 2.35vw, 9.8px);
+        letter-spacing: -0.2px;
+        line-height: 1.25;
         padding: 0;
         background: transparent;
         border: none;
@@ -798,8 +861,9 @@
     }
 
     .mobile-brand-iso {
-        font-size: clamp(10.4px, 2.15vw, 6.2px);
-        letter-spacing: -0.1px;
+        font-size: clamp(10.2px, 2.35vw, 9.8px);
+        letter-spacing: -0.2px;
+        line-height: 1.25;
         padding: 0;
         background: transparent;
         border: none;
@@ -809,7 +873,10 @@
 
     .nav-toggle {
         padding: 2px;
-        min-width: 32px;
-        min-height: 32px;
+        min-width: 30px;
+        min-height: 30px;
+        margin-left: 0;
+        flex-shrink: 0;
+        box-sizing: border-box;
     }
 }
