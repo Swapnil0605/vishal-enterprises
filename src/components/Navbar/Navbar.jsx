@@ -5,7 +5,8 @@ import {
     X, 
     ArrowUpRight, 
     ChevronDown, 
-    ArrowRight 
+    ArrowRight,
+    ArrowLeft 
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -66,6 +67,7 @@ const productsMegaColumns = [
     {
         items: [
             { name: "AC Sequential Control Panel", id: "ac-sequential-control" },
+            { name: "AC Sequential Controllers", id: "ac-sequential-controllers" },
             { name: "Circuit Designing and Programming", id: "custom-circuit-plc" },
             { name: "PLC based Fully Automatic Star Delta Starter (FASD)", id: "plc-fasd-starter" },
             { name: "Fire Pump Duty Control Panel", id: "fire-pump-duty-control" }
@@ -144,7 +146,10 @@ export const Navbar = () => {
 
     const handleServicesToggle = (e) => {
         if (window.innerWidth <= 990) {
-            e.preventDefault();
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             setServicesOpen(prev => !prev);
             setProductsOpen(false);
         } else {
@@ -154,12 +159,26 @@ export const Navbar = () => {
 
     const handleProductsToggle = (e) => {
         if (window.innerWidth <= 990) {
-            e.preventDefault();
+            if (e) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
             setProductsOpen(prev => !prev);
             setServicesOpen(false);
         } else {
             closeMobileMenu();
         }
+    };
+
+    const handleCloseSubmenu = (e) => {
+        if (e) {
+            if (typeof e.preventDefault === 'function') e.preventDefault();
+            if (typeof e.stopPropagation === 'function') e.stopPropagation();
+        }
+        if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+        if (productsTimeoutRef.current) clearTimeout(productsTimeoutRef.current);
+        setServicesOpen(false);
+        setProductsOpen(false);
     };
 
     return (
@@ -200,29 +219,33 @@ export const Navbar = () => {
                             onMouseEnter={handleServicesEnter}
                             onMouseLeave={handleServicesLeave}
                         >
-                            <div className="nav-dropdown-header-row">
-                                <Link 
-                                    to="/services" 
-                                    className={`nav-link nav-link-main ${location.pathname.startsWith('/services') ? 'active' : ''}`} 
-                                    onClick={closeMobileMenu}
-                                >
-                                    <span>Services</span>
-                                </Link>
-                                <button 
-                                    type="button" 
-                                    className="nav-dropdown-caret-btn"
-                                    onClick={handleServicesToggle}
-                                    aria-label="Toggle Services menu"
-                                >
-                                    <ChevronDown size={15} className={`dropdown-chevron ${servicesOpen ? 'open' : ''}`} />
-                                </button>
-                            </div>
+                            <Link 
+                                to="/services" 
+                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''} ${servicesOpen ? 'open' : ''}`} 
+                                onClick={handleServicesToggle}
+                            >
+                                <span>Services</span>
+                                <ChevronDown size={15} className={`dropdown-chevron ${servicesOpen ? 'open' : ''}`} />
+                            </Link>
 
                             <div 
                                 className="mega-dropdown"
                                 onMouseEnter={handleServicesEnter}
                                 onMouseLeave={handleServicesLeave}
                             >
+                                <div className="mobile-submenu-top-bar">
+                                    <button 
+                                        type="button" 
+                                        className="mobile-submenu-back-btn"
+                                        onClick={handleCloseSubmenu}
+                                        aria-label="Back to main menu"
+                                    >
+                                        <ArrowLeft size={16} />
+                                        <span>Back</span>
+                                    </button>
+                                    <span className="mobile-submenu-heading">Services</span>
+                                </div>
+
                                 <div className="mega-view-all-header">
                                     <Link 
                                         to="/services" 
@@ -241,9 +264,9 @@ export const Navbar = () => {
                                                 {col.items.map((item, i) => (
                                                     <li key={i}>
                                                         <Link 
-                                                            to={`/services/${item.slug}`} 
-                                                            className="mega-item-link"
-                                                            onClick={closeMobileMenu}
+                                                             to={`/services/${item.slug}`} 
+                                                             className="mega-item-link"
+                                                             onClick={closeMobileMenu}
                                                         >
                                                             <span>{item.name}</span>
                                                             <ArrowRight size={14} className="mega-arrow" />
@@ -263,29 +286,33 @@ export const Navbar = () => {
                             onMouseEnter={handleProductsEnter}
                             onMouseLeave={handleProductsLeave}
                         >
-                            <div className="nav-dropdown-header-row">
-                                <Link 
-                                    to="/products" 
-                                    className={`nav-link nav-link-main ${location.pathname.startsWith('/products') ? 'active' : ''}`} 
-                                    onClick={closeMobileMenu}
-                                >
-                                    <span>Products</span>
-                                </Link>
-                                <button 
-                                    type="button" 
-                                    className="nav-dropdown-caret-btn"
-                                    onClick={handleProductsToggle}
-                                    aria-label="Toggle Products menu"
-                                >
-                                    <ChevronDown size={15} className={`dropdown-chevron ${productsOpen ? 'open' : ''}`} />
-                                </button>
-                            </div>
+                            <Link 
+                                to="/products" 
+                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''} ${productsOpen ? 'open' : ''}`} 
+                                onClick={handleProductsToggle}
+                            >
+                                <span>Products</span>
+                                <ChevronDown size={15} className={`dropdown-chevron ${productsOpen ? 'open' : ''}`} />
+                            </Link>
 
                             <div 
                                 className="mega-dropdown"
                                 onMouseEnter={handleProductsEnter}
                                 onMouseLeave={handleProductsLeave}
                             >
+                                <div className="mobile-submenu-top-bar">
+                                    <button 
+                                        type="button" 
+                                        className="mobile-submenu-back-btn"
+                                        onClick={handleCloseSubmenu}
+                                        aria-label="Back to main menu"
+                                    >
+                                        <ArrowLeft size={16} />
+                                        <span>Back</span>
+                                    </button>
+                                    <span className="mobile-submenu-heading">Products</span>
+                                </div>
+
                                 <div className="mega-view-all-header">
                                     <Link 
                                         to="/products" 

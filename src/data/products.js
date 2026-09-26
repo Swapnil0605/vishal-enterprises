@@ -1166,6 +1166,40 @@ export const productsData = [
             'Chemical Processing & Reaction Units',
             'Battery Charging Rooms and Furnace Areas'
         ]
+    },
+    {
+        id: 'ac-sequential-controllers',
+        slug: 'ac-sequential-controllers',
+        num: '37',
+        title: 'AC Sequential Controllers',
+        fullTitle: 'AC Sequential Controllers (1, 2 & 3 Air Conditioners)',
+        category: 'Automation & Controls',
+        standard: 'Microprocessor Cyclic Timer',
+        shortDesc: 'Compact standalone cyclic sequential controllers for 1, 2, and 3 Air Conditioners with selectable run durations and Auto-Manual bypass.',
+        image: '/images/products/AC Sequential Controllers.jpeg',
+        overview: 'Designed for telecom shelters, server rooms, laboratories, and ATM kiosks, these compact wall-mount AC Sequential Controllers provide automated cyclic duty sharing across 1, 2, or 3 air conditioning units. Equipped with front-panel run status indications, selectable timer durations (30 min, 45 min, 1 hr, 2 hr, 3 hr), independent Auto-Manual toggle switches for each AC, and a master reset pushbutton to protect compressors from continuous strain.',
+        features: [
+            'Available in dedicated models for 1-AC (with spare), 2-AC, and 3-AC automated cyclic sequencing',
+            'Selectable duty cycle timer settings (30 min, 45 min, 1 hr, 2 hr, 3 hr) with LED interval indicators',
+            'Independent Auto-Manual (A-M) toggle switches for each air conditioner for seamless maintenance bypass',
+            'Front-panel high-visibility run status indication lamps (AC1, AC2, AC3 / Spare)',
+            'Compressor anti-recycle delay and master reset function to prevent short-cycling damage',
+            'Heavy-duty potential-free relay outputs compatible with split, cassette, and window AC units up to 2 Tons'
+        ],
+        specifications: [
+            { label: 'Operating Voltage', value: '230V AC ±10%, 50 Hz Single Phase' },
+            { label: 'Models Available', value: '1 AC + Spare, 2 AC Cyclic, 3 AC Cyclic Rotation' },
+            { label: 'Time Settings', value: '30 Min, 45 Min, 1 Hr, 2 Hr, 3 Hr (Selectable)' },
+            { label: 'Control Modes', value: 'Auto / Manual (Independent per AC unit)' },
+            { label: 'Relay Rating', value: '30A Heavy-Duty Potential-Free Relay Contacts' },
+            { label: 'Enclosure', value: 'Wall-Mount Powder Coated CRCA Steel Enclosure' }
+        ],
+        applications: [
+            'Server Rooms, Data Centers & Telecom Shelters',
+            'Bank ATM Kiosks and UPS Battery Rooms',
+            'Diagnostic Labs, Testing Facilities & Clean Rooms',
+            'Commercial Offices and Industrial Control Cabins'
+        ]
     }
 ];
 
