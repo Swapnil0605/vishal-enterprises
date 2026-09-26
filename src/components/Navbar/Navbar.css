@@ -426,9 +426,9 @@
     .mobile-brand-name {
         color: #e31b23;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: clamp(11.5px, 3.4vw, 15px);
+        font-size: clamp(10.5px, 3.2vw, 15px);
         font-weight: 900;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.2px;
         line-height: 1.15;
         text-transform: uppercase;
         text-align: left;
@@ -442,9 +442,9 @@
         background: transparent;
         border: none;
         color: #0f172a;
-        font-size: clamp(10.2px, 2.35vw, 9.8px);
+        font-size: clamp(7.5px, calc(1.6px + 1.85vw), 10.2px);
         font-weight: 700;
-        letter-spacing: -0.2px;
+        letter-spacing: -0.15px;
         line-height: 1.25;
         padding: 0;
         text-align: left;
@@ -457,10 +457,10 @@
     .mobile-brand-iso {
         background: transparent;
         border: none;
-        color: #0f172a;
-        font-size: clamp(10.2px, 2.35vw, 9.8px);
-        font-weight: 700;
-        letter-spacing: -0.2px;
+        color: #334155;
+        font-size: clamp(7.2px, calc(1.4px + 1.8vw), 9.8px);
+        font-weight: 600;
+        letter-spacing: -0.15px;
         line-height: 1.25;
         padding: 0;
         text-align: left;
@@ -791,7 +791,7 @@
 
     .nav-inner {
         height: 70px;
-        padding: 0 4px;
+        padding: 0 6px;
         gap: 4px;
         width: 100%;
         max-width: 100%;
@@ -817,8 +817,8 @@
     }
 
     .nav-logo {
-        height: 52px;
-        gap: 4px;
+        height: 50px;
+        gap: 5px;
         flex: 1 1 auto;
         min-width: 0;
         overflow: hidden;
@@ -826,57 +826,87 @@
 
     .logo-img {
         height: 50px;
-        width: 48px;
-        min-width: 48px;
-        max-width: 48px;
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
         flex-shrink: 0;
     }
 
     .nav-mobile-brand-banner {
-        height: 52px;
-        max-height: 52px;
-        padding: 0 1px 0 4px;
+        height: 50px;
+        max-height: 50px;
+        padding: 0 1px 0 5px;
+        border-left: 1.5px solid #cbd5e1;
         justify-content: center;
         align-items: flex-start;
-        gap: 2px;
+        gap: 1.5px;
         flex: 1 1 auto;
         min-width: 0;
         overflow: hidden;
         box-sizing: border-box;
     }
 
-    .mobile-brand-name {
-        font-size: clamp(10px, 3.2vw, 13px);
-    }
-
-    .mobile-brand-license {
-        font-size: clamp(10.2px, 2.35vw, 9.8px);
-        letter-spacing: -0.2px;
-        line-height: 1.25;
-        padding: 0;
-        background: transparent;
-        border: none;
-        color: #0f172a;
-        font-weight: 700;
-    }
-
-    .mobile-brand-iso {
-        font-size: clamp(10.2px, 2.35vw, 9.8px);
-        letter-spacing: -0.2px;
-        line-height: 1.25;
-        padding: 0;
-        background: transparent;
-        border: none;
-        color: #0f172a;
-        font-weight: 700;
-    }
-
     .nav-toggle {
         padding: 2px;
-        min-width: 30px;
-        min-height: 30px;
+        min-width: 32px;
+        min-height: 32px;
         margin-left: 0;
         flex-shrink: 0;
         box-sizing: border-box;
+    }
+
+    .nav-toggle svg {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Extra small mobile (≤360px) */
+@media (max-width: 360px) {
+    .nav-inner {
+        height: 66px;
+        padding: 0 4px;
+        gap: 3px;
+    }
+
+    .nav-links {
+        top: 66px;
+        max-height: calc(100vh - 66px);
+    }
+
+    .mega-dropdown {
+        top: 66px;
+        height: calc(100vh - 66px);
+    }
+
+    .nav-logo {
+        height: 46px;
+        gap: 4px;
+    }
+
+    .logo-img {
+        height: 46px;
+        width: 46px;
+        min-width: 46px;
+        max-width: 46px;
+    }
+
+    .nav-mobile-brand-banner {
+        height: 46px;
+        max-height: 46px;
+        padding: 0 1px 0 4px;
+        border-left: 1px solid #cbd5e1;
+        gap: 1px;
+    }
+
+    .nav-toggle {
+        min-width: 28px;
+        min-height: 28px;
+        padding: 1px;
+    }
+
+    .nav-toggle svg {
+        width: 22px;
+        height: 22px;
     }
 }
