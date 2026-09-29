@@ -6,7 +6,8 @@ import {
     ArrowUpRight, 
     ChevronDown, 
     ArrowRight,
-    ArrowLeft 
+    ArrowLeft,
+    Search
 } from 'lucide-react';
 import './Navbar.css';
 
@@ -80,10 +81,22 @@ export const Navbar = () => {
     const [mobileOpen, setMobileOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
+    const [searchQuery, setSearchQuery] = useState('');
     const servicesTimeoutRef = useRef(null);
     const productsTimeoutRef = useRef(null);
     const location = useLocation();
     const isHomePage = location.pathname === '/';
+
+    const allProducts = productsMegaColumns.flatMap(col => col.items);
+    const allServices = servicesMegaColumns.flatMap(col => col.items);
+
+    const filteredProducts = searchQuery.trim()
+        ? allProducts.filter(p => p.name.toLowerCase().includes(searchQuery.toLowerCase()))
+        : [];
+    const filteredServices = searchQuery.trim()
+        ? allServices.filter(s => s.name.toLowerCase().includes(searchQuery.toLowerCase()))
+        : [];
+    const hasSearchResults = filteredProducts.length > 0 || filteredServices.length > 0;
 
     const handleServicesEnter = () => {
         if (window.innerWidth <= 990) return;
@@ -131,8 +144,9 @@ export const Navbar = () => {
     }, []);
 
     const toggleMobileMenu = () => {
-        setMobileOpen(!mobileOpen);
-        document.body.style.overflow = !mobileOpen ? 'hidden' : '';
+        const nextState = !mobileOpen;
+        setMobileOpen(nextState);
+        document.body.style.overflow = nextState ? 'hidden' : '';
     };
 
     const closeMobileMenu = () => {
@@ -141,6 +155,7 @@ export const Navbar = () => {
         setServicesOpen(false);
         setProductsOpen(false);
         setMobileOpen(false);
+        setSearchQuery('');
         document.body.style.overflow = '';
     };
 
@@ -194,189 +209,290 @@ export const Navbar = () => {
                     </div>
                 </Link>
 
+                {/* Dark semi-transparent backdrop overlay for left-sliding drawer */}
+                <div 
+                    className={`nav-backdrop ${mobileOpen ? 'open' : ''}`} 
+                    onClick={closeMobileMenu}
+                    aria-hidden="true"
+                />
+
                 <nav className={`nav-links ${mobileOpen ? 'open' : ''}`}>
-                    <ul>
-                        <li>
-                            {isHomePage ? (
-                                <a href="#hero" className="nav-link active" onClick={closeMobileMenu}>Home</a>
-                            ) : (
-                                <Link to="/" className="nav-link" onClick={closeMobileMenu}>Home</Link>
-                            )}
-                        </li>
-                        <li>
-                            <Link 
-                                to="/about" 
-                                className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
-                            >
-                                About Us
-                            </Link>
-                        </li>
-
-                        {/* ─── Services Mega Dropdown ─── */}
-                        <li 
-                            className={`nav-item-mega ${servicesOpen ? 'open' : ''}`}
-                            onMouseEnter={handleServicesEnter}
-                            onMouseLeave={handleServicesLeave}
+                    {/* Mobile Drawer Top Header with Brand Name and Close Button */}
+                    <div className="mobile-drawer-header">
+                        <div className="mobile-drawer-brand">
+                            <span className="mobile-drawer-title">VISHAL ENTERPRISES</span>
+                        </div>
+                        <button 
+                            type="button" 
+                            className="mobile-drawer-close-btn" 
+                            onClick={closeMobileMenu}
+                            aria-label="Close menu"
                         >
-                            <Link 
-                                to="/services" 
-                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''} ${servicesOpen ? 'open' : ''}`} 
-                                onClick={handleServicesToggle}
-                            >
-                                <span>Services</span>
-                                <ChevronDown size={15} className={`dropdown-chevron ${servicesOpen ? 'open' : ''}`} />
-                            </Link>
+                            <X size={20} />
+                        </button>
+                    </div>
 
-                            <div 
-                                className="mega-dropdown"
+                    {/* Mobile Drawer Search Bar */}
+                    <div className="mobile-drawer-search">
+                        <div className="drawer-search-box">
+                            <Search size={16} className="drawer-search-icon" />
+                            <input 
+                                type="text" 
+                                placeholder="Search products..." 
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="drawer-search-input"
+                            />
+                            {searchQuery && (
+                                <button 
+                                    type="button" 
+                                    className="drawer-search-clear"
+                                    onClick={() => setSearchQuery('')}
+                                    aria-label="Clear search"
+                                >
+                                    <X size={14} />
+                                </button>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Live Search Results view when user types */}
+                    {searchQuery.trim() ? (
+                        <div className="drawer-search-results">
+                            {filteredProducts.length > 0 && (
+                                <div className="drawer-results-group">
+                                    <div className="drawer-results-category">PRODUCTS ({filteredProducts.length})</div>
+                                    {filteredProducts.map((p, idx) => (
+                                        <Link 
+                                            key={idx} 
+                                            to={`/products/${p.id}`} 
+                                            className="drawer-result-item" 
+                                            onClick={closeMobileMenu}
+                                        >
+                                            <span>{p.name}</span>
+                                            <ArrowRight size={14} />
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+
+                            {filteredServices.length > 0 && (
+                                <div className="drawer-results-group">
+                                    <div className="drawer-results-category">SERVICES ({filteredServices.length})</div>
+                                    {filteredServices.map((s, idx) => (
+                                        <Link 
+                                            key={idx} 
+                                            to={`/services/${s.slug}`} 
+                                            className="drawer-result-item" 
+                                            onClick={closeMobileMenu}
+                                        >
+                                            <span>{s.name}</span>
+                                            <ArrowRight size={14} />
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+
+                            {!hasSearchResults && (
+                                <div className="drawer-no-results">
+                                    No products or services found for "{searchQuery}"
+                                </div>
+                            )}
+                        </div>
+                    ) : (
+                        /* Standard Nav Menu List */
+                        <ul>
+                            <li>
+                                {isHomePage ? (
+                                    <a href="#hero" className="nav-link active" onClick={closeMobileMenu}>Home</a>
+                                ) : (
+                                    <Link to="/" className="nav-link" onClick={closeMobileMenu}>Home</Link>
+                                )}
+                            </li>
+                            <li>
+                                <Link 
+                                    to="/about" 
+                                    className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    About Us
+                                </Link>
+                            </li>
+
+                            {/* ─── Services Mega Dropdown ─── */}
+                            <li 
+                                className={`nav-item-mega ${servicesOpen ? 'open' : ''}`}
                                 onMouseEnter={handleServicesEnter}
                                 onMouseLeave={handleServicesLeave}
                             >
-                                <div className="mobile-submenu-top-bar">
-                                    <button 
-                                        type="button" 
-                                        className="mobile-submenu-back-btn"
-                                        onClick={handleCloseSubmenu}
-                                        aria-label="Back to main menu"
-                                    >
-                                        <ArrowLeft size={16} />
-                                        <span>Back</span>
-                                    </button>
-                                    <span className="mobile-submenu-heading">Services</span>
+                                <Link 
+                                    to="/services" 
+                                    className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/services') ? 'active' : ''} ${servicesOpen ? 'open' : ''}`} 
+                                    onClick={handleServicesToggle}
+                                >
+                                    <span>Services</span>
+                                    <ChevronDown size={15} className={`dropdown-chevron ${servicesOpen ? 'open' : ''}`} />
+                                </Link>
+
+                                <div 
+                                    className="mega-dropdown"
+                                    onMouseEnter={handleServicesEnter}
+                                    onMouseLeave={handleServicesLeave}
+                                >
+                                    <div className="mobile-submenu-top-bar">
+                                        <button 
+                                            type="button" 
+                                            className="mobile-submenu-back-btn"
+                                            onClick={handleCloseSubmenu}
+                                            aria-label="Back to main menu"
+                                        >
+                                            <ArrowLeft size={16} />
+                                            <span>Back</span>
+                                        </button>
+                                        <span className="mobile-submenu-heading">Services</span>
+                                    </div>
+
+                                    <div className="mega-view-all-header">
+                                        <Link 
+                                            to="/services" 
+                                            className="mega-view-all-action"
+                                            onClick={closeMobileMenu}
+                                        >
+                                            <span>Explore All Services & Scope</span>
+                                            <ArrowRight size={15} />
+                                        </Link>
+                                    </div>
+
+                                    <div className="mega-dropdown-inner">
+                                        {servicesMegaColumns.map((col, idx) => (
+                                            <div key={idx} className="mega-col">
+                                                <ul className="mega-items-list">
+                                                    {col.items.map((item, i) => (
+                                                        <li key={i}>
+                                                            <Link 
+                                                                to={`/services/${item.slug}`} 
+                                                                className="mega-item-link"
+                                                                onClick={closeMobileMenu}
+                                                            >
+                                                                <span>{item.name}</span>
+                                                                <ArrowRight size={14} className="mega-arrow" />
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
+                            </li>
 
-                                <div className="mega-view-all-header">
-                                    <Link 
-                                        to="/services" 
-                                        className="mega-view-all-action"
-                                        onClick={closeMobileMenu}
-                                    >
-                                        <span>Explore All Services & Scope</span>
-                                        <ArrowRight size={15} />
-                                    </Link>
-                                </div>
-
-                                <div className="mega-dropdown-inner">
-                                    {servicesMegaColumns.map((col, idx) => (
-                                        <div key={idx} className="mega-col">
-                                            <ul className="mega-items-list">
-                                                {col.items.map((item, i) => (
-                                                    <li key={i}>
-                                                        <Link 
-                                                             to={`/services/${item.slug}`} 
-                                                             className="mega-item-link"
-                                                             onClick={closeMobileMenu}
-                                                        >
-                                                            <span>{item.name}</span>
-                                                            <ArrowRight size={14} className="mega-arrow" />
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </li>
-
-                        {/* ─── Products Mega Dropdown ─── */}
-                        <li 
-                            className={`nav-item-mega ${productsOpen ? 'open' : ''}`}
-                            onMouseEnter={handleProductsEnter}
-                            onMouseLeave={handleProductsLeave}
-                        >
-                            <Link 
-                                to="/products" 
-                                className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''} ${productsOpen ? 'open' : ''}`} 
-                                onClick={handleProductsToggle}
-                            >
-                                <span>Products</span>
-                                <ChevronDown size={15} className={`dropdown-chevron ${productsOpen ? 'open' : ''}`} />
-                            </Link>
-
-                            <div 
-                                className="mega-dropdown"
+                            {/* ─── Products Mega Dropdown ─── */}
+                            <li 
+                                className={`nav-item-mega ${productsOpen ? 'open' : ''}`}
                                 onMouseEnter={handleProductsEnter}
                                 onMouseLeave={handleProductsLeave}
                             >
-                                <div className="mobile-submenu-top-bar">
-                                    <button 
-                                        type="button" 
-                                        className="mobile-submenu-back-btn"
-                                        onClick={handleCloseSubmenu}
-                                        aria-label="Back to main menu"
-                                    >
-                                        <ArrowLeft size={16} />
-                                        <span>Back</span>
-                                    </button>
-                                    <span className="mobile-submenu-heading">Products</span>
+                                <Link 
+                                    to="/products" 
+                                    className={`nav-link nav-link-dropdown ${location.pathname.startsWith('/products') ? 'active' : ''} ${productsOpen ? 'open' : ''}`} 
+                                    onClick={handleProductsToggle}
+                                >
+                                    <span>Products</span>
+                                    <ChevronDown size={15} className={`dropdown-chevron ${productsOpen ? 'open' : ''}`} />
+                                </Link>
+
+                                <div 
+                                    className="mega-dropdown"
+                                    onMouseEnter={handleProductsEnter}
+                                    onMouseLeave={handleProductsLeave}
+                                >
+                                    <div className="mobile-submenu-top-bar">
+                                        <button 
+                                            type="button" 
+                                            className="mobile-submenu-back-btn"
+                                            onClick={handleCloseSubmenu}
+                                            aria-label="Back to main menu"
+                                        >
+                                            <ArrowLeft size={16} />
+                                            <span>Back</span>
+                                        </button>
+                                        <span className="mobile-submenu-heading">Products</span>
+                                    </div>
+
+                                    <div className="mega-view-all-header">
+                                        <Link 
+                                            to="/products" 
+                                            className="mega-view-all-action"
+                                            onClick={closeMobileMenu}
+                                        >
+                                            <span>Explore All Products & Solutions</span>
+                                            <ArrowRight size={15} />
+                                        </Link>
+                                    </div>
+
+                                    <div className="mega-dropdown-inner">
+                                        {productsMegaColumns.map((col, idx) => (
+                                            <div key={idx} className="mega-col">
+                                                <ul className="mega-items-list">
+                                                    {col.items.map((item, i) => (
+                                                        <li key={i}>
+                                                            <Link 
+                                                                to={`/products/${item.id}`} 
+                                                                className="mega-item-link"
+                                                                onClick={closeMobileMenu}
+                                                            >
+                                                                <span>{item.name}</span>
+                                                                <ArrowRight size={14} className="mega-arrow" />
+                                                            </Link>
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
+                            </li>
 
-                                <div className="mega-view-all-header">
-                                    <Link 
-                                        to="/products" 
-                                        className="mega-view-all-action"
-                                        onClick={closeMobileMenu}
-                                    >
-                                        <span>Explore All Products & Solutions</span>
-                                        <ArrowRight size={15} />
-                                    </Link>
-                                </div>
+                            <li>
+                                <Link 
+                                    to="/additional-products" 
+                                    className={`nav-link ${location.pathname === '/additional-products' ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    Additional Products
+                                </Link>
+                            </li>
 
-                                <div className="mega-dropdown-inner">
-                                    {productsMegaColumns.map((col, idx) => (
-                                        <div key={idx} className="mega-col">
-                                            <ul className="mega-items-list">
-                                                {col.items.map((item, i) => (
-                                                    <li key={i}>
-                                                        <Link 
-                                                            to={`/products/${item.id}`} 
-                                                            className="mega-item-link"
-                                                            onClick={closeMobileMenu}
-                                                        >
-                                                            <span>{item.name}</span>
-                                                            <ArrowRight size={14} className="mega-arrow" />
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </li>
-
-                        <li>
-                            <Link 
-                                to="/additional-products" 
-                                className={`nav-link ${location.pathname === '/additional-products' ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
-                            >
-                                Additional Products
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link 
-                                to="/gallery" 
-                                className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
-                            >
-                                Gallery
-                            </Link>
-                        </li>
-                        <li>
-                            <Link 
-                                to="/contact" 
-                                className={`nav-cta-btn ${location.pathname === '/contact' ? 'active' : ''}`} 
-                                onClick={closeMobileMenu}
-                            >
-                                <span>Get a Quote</span>
-                                <ArrowUpRight size={16} className="cta-arrow" />
-                            </Link>
-                        </li>
-                    </ul>
+                            <li>
+                                <Link 
+                                    to="/gallery" 
+                                    className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    Gallery
+                                </Link>
+                            </li>
+                            <li>
+                                <Link 
+                                    to="/contact" 
+                                    className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`} 
+                                    onClick={closeMobileMenu}
+                                >
+                                    Contact
+                                </Link>
+                            </li>
+                            <li className="mobile-quote-li">
+                                <Link 
+                                    to="/contact" 
+                                    className="nav-cta-btn" 
+                                    onClick={closeMobileMenu}
+                                >
+                                    <span>Get a Quote</span>
+                                    <ArrowUpRight size={16} className="cta-arrow" />
+                                </Link>
+                            </li>
+                        </ul>
+                    )}
                 </nav>
 
                 <button 

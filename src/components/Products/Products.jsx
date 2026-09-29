@@ -121,7 +121,6 @@ export const Products = () => {
                             >
                                 <div className="product-img">
                                     <img src={prod.image} alt={prod.title} draggable={false} loading="lazy" />
-                                    <span className="product-category-tag">{prod.category}</span>
                                 </div>
                                 <div className="product-info">
                                     <h4>{prod.title}</h4>
