@@ -186,7 +186,7 @@ export const additionalProductsData = [
     },
     {
         id: 'programming-kits-ics',
-        name: 'Programming Kits, ICs, Microcontrollers & Development Tools',
+        name: 'Programming Kits, ICs, Microcontroller/Microprocessor/PLCs & Development Tools',
         image: '/images/additional-products/Programming kits.jpg',
         category: 'Electronics & Automation'
     },

@@ -3,16 +3,16 @@ import { Link, useLocation } from 'react-router-dom';
 import { Navbar } from '../components/Navbar/Navbar';
 import { Footer } from '../components/Footer/Footer';
 import { BackToTop } from '../components/BackToTop/BackToTop';
-import { 
-    Phone, 
-    Mail, 
-    MapPin, 
-    Send, 
-    Check, 
-    Loader2, 
-    ShieldCheck, 
-    Home as HomeIcon, 
-    ChevronRight, 
+import {
+    Phone,
+    Mail,
+    MapPin,
+    Send,
+    Check,
+    Loader2,
+    ShieldCheck,
+    Home as HomeIcon,
+    ChevronRight,
     Building2,
     Award,
     ExternalLink,
@@ -241,12 +241,12 @@ export const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="location-item">
-                                         <MapPin size={18} className="loc-icon" />
-                                         <div>
-                                             <strong>Pune Branch Office</strong>
-                                             <p>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
-                                         </div>
-                                     </div>
+                                        <MapPin size={18} className="loc-icon" />
+                                        <div>
+                                            <strong>Pune Branch Office</strong>
+                                            <p>Address: P7, Rising City, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -261,11 +261,11 @@ export const ContactPage = () => {
                                     </p>
                                 </div>
 
-                                <form 
+                                <form
                                     id="contactForm"
-                                    action="https://formsubmit.co/vishalent@yahoo.co.in" 
+                                    action="https://formsubmit.co/vishalent@yahoo.co.in"
                                     method="POST"
-                                    className="technical-proposal-form" 
+                                    className="technical-proposal-form"
                                     onSubmit={handleSubmit}
                                 >
                                     {/* FormSubmit Hidden Configuration Fields */}
@@ -277,27 +277,27 @@ export const ContactPage = () => {
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="p-name">Full Name *</label>
-                                            <input 
+                                            <input
                                                 id="p-name"
-                                                type="text" 
+                                                type="text"
                                                 name="name"
                                                 value={formState.name}
                                                 onChange={handleChange}
-                                                placeholder="e.g. Rajesh Kumar" 
-                                                required 
+                                                placeholder="e.g. Rajesh Kumar"
+                                                required
                                             />
                                         </div>
 
                                         <div className="form-group">
                                             <label htmlFor="p-company">Company / Organization *</label>
-                                            <input 
+                                            <input
                                                 id="p-company"
-                                                type="text" 
+                                                type="text"
                                                 name="company"
                                                 value={formState.company}
                                                 onChange={handleChange}
-                                                placeholder="e.g. Indian Oil Corporation" 
-                                                required 
+                                                placeholder="e.g. Indian Oil Corporation"
+                                                required
                                             />
                                         </div>
                                     </div>
@@ -305,27 +305,27 @@ export const ContactPage = () => {
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="p-email">Work Email Address *</label>
-                                            <input 
+                                            <input
                                                 id="p-email"
-                                                type="email" 
+                                                type="email"
                                                 name="email"
                                                 value={formState.email}
                                                 onChange={handleChange}
-                                                placeholder="name@company.com" 
-                                                required 
+                                                placeholder="name@company.com"
+                                                required
                                             />
                                         </div>
 
                                         <div className="form-group">
                                             <label htmlFor="p-phone">Phone Number *</label>
-                                            <input 
+                                            <input
                                                 id="p-phone"
-                                                type="tel" 
+                                                type="tel"
                                                 name="phone"
                                                 value={formState.phone}
                                                 onChange={handleChange}
-                                                placeholder="+91 98765 43210" 
-                                                required 
+                                                placeholder="+91 98765 43210"
+                                                required
                                             />
                                         </div>
                                     </div>
@@ -333,55 +333,55 @@ export const ContactPage = () => {
                                     <div className="form-row">
                                         <div className="form-group">
                                             <label htmlFor="p-service">Required Service</label>
-                                            <input 
+                                            <input
                                                 id="p-service"
-                                                type="text" 
-                                                name="service" 
-                                                value={formState.service} 
+                                                type="text"
+                                                name="service"
+                                                value={formState.service}
                                                 onChange={handleChange}
-                                                placeholder="Select a Service" 
+                                                placeholder="Select a Service"
                                             />
                                         </div>
 
                                         <div className="form-group">
                                             <label htmlFor="p-product">Required Product</label>
-                                            <input 
+                                            <input
                                                 id="p-product"
-                                                type="text" 
-                                                name="product" 
-                                                value={formState.product} 
+                                                type="text"
+                                                name="product"
+                                                value={formState.product}
                                                 onChange={handleChange}
-                                                placeholder="Select a Product" 
+                                                placeholder="Select a Product"
                                             />
                                         </div>
                                     </div>
 
                                     <div className="form-group">
                                         <label htmlFor="p-location">Project Site / City</label>
-                                        <input 
+                                        <input
                                             id="p-location"
-                                            type="text" 
+                                            type="text"
                                             name="location"
                                             value={formState.location}
                                             onChange={handleChange}
-                                            placeholder="e.g. Mumbai, Pune, Delhi..." 
+                                            placeholder="e.g. Mumbai, Pune, Delhi..."
                                         />
                                     </div>
 
                                     <div className="form-group">
                                         <label htmlFor="p-message">Project Specifications / Requirements</label>
-                                        <textarea 
+                                        <textarea
                                             id="p-message"
                                             name="message"
                                             value={formState.message}
                                             onChange={handleChange}
-                                            rows="4" 
+                                            rows="4"
                                             placeholder="Provide details on voltage ratings, single line diagrams (SLD), panel dimensions, PLC model preference, or tender reference..."
                                         ></textarea>
                                     </div>
 
-                                    <button 
-                                        type="submit" 
+                                    <button
+                                        type="submit"
                                         className={`proposal-submit-btn ${status === 'success' ? 'proposal-submit-btn--success' : ''} ${status === 'error' ? 'proposal-submit-btn--error' : ''}`}
                                         disabled={status === 'loading'}
                                     >
@@ -439,13 +439,13 @@ export const ContactPage = () => {
                     {/* Floating Info Card on Map (Matching Reference) */}
                     <div className="map-floating-overlay-card gs-animate" data-animate="fade-right">
                         <div className="map-card-tabs">
-                            <button 
+                            <button
                                 className={`map-tab-btn ${selectedLocation === 'dhule' ? 'active' : ''}`}
                                 onClick={() => setSelectedLocation('dhule')}
                             >
                                 Dhule (Plant)
                             </button>
-                            <button 
+                            <button
                                 className={`map-tab-btn ${selectedLocation === 'pune' ? 'active' : ''}`}
                                 onClick={() => setSelectedLocation('pune')}
                             >
@@ -461,9 +461,9 @@ export const ContactPage = () => {
                         <h3 className="map-card-name">{activeLoc.name}</h3>
                         <p className="map-card-address">{activeLoc.address}</p>
 
-                        <a 
+                        <a
                             href={activeLoc.directionsLink}
-                            target="_blank" 
+                            target="_blank"
                             rel="noopener noreferrer"
                             className="map-card-directions-link"
                         >

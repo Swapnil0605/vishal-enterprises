@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { servicesData } from '../../data/services';
-import { 
-    MapPin, 
-    Mail, 
-    ChevronRight, 
+import {
+    MapPin,
+    Mail,
+    ChevronRight,
     ArrowUpRight
 } from 'lucide-react';
 import './Footer.css';
@@ -29,10 +29,10 @@ export const Footer = () => {
 
                             {/* Social Media Links */}
                             <div className="footer-social-row">
-                                <a 
-                                    href="https://www.instagram.com/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
+                                <a
+                                    href="https://www.instagram.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Follow Vishal Enterprises on Instagram"
                                     className="footer-social-btn"
                                 >
@@ -42,21 +42,21 @@ export const Footer = () => {
                                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                     </svg>
                                 </a>
-                                <a 
-                                    href="https://www.facebook.com/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
+                                <a
+                                    href="https://www.facebook.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Follow Vishal Enterprises on Facebook"
                                     className="footer-social-btn"
                                 >
                                     <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                     </svg>
                                 </a>
-                                <a 
-                                    href="https://www.linkedin.com/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer" 
+                                <a
+                                    href="https://www.linkedin.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     aria-label="Connect with Vishal Enterprises on LinkedIn"
                                     className="footer-social-btn"
                                 >
@@ -111,7 +111,7 @@ export const Footer = () => {
                                 <MapPin size={18} className="loc-icon" />
                                 <div>
                                     <strong>Pune Branch Office</strong>
-                                    <span>P7, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</span>
+                                    <span>Address: P7, Rising City, Thakar Nagar, Maan, Hinjewadi Ph 1, Pune 411057</span>
                                 </div>
                             </div>
 
@@ -132,13 +132,13 @@ export const Footer = () => {
                 <div className="section-container">
                     <div className="footer-bottom-inner">
                         <p className="footer-copyright">&copy; {new Date().getFullYear()} Vishal Enterprises. All rights reserved.</p>
-                        
+
                         <div className="footer-credits">
                             <span>Designed and Developed by </span>
-                            <a 
-                                href="https://qirotec.com/" 
-                                target="_blank" 
-                                rel="noopener noreferrer" 
+                            <a
+                                href="https://qirotec.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="qiro-credit-link"
                             >
                                 <strong>QIRO TECH INNOVATION PVT LTD</strong>

@@ -115,7 +115,7 @@ export const productsData = [
         standard: 'Microprocessor Unit',
         shortDesc: 'Intelligent Automatic Transfer Switch controller unit with digital voltage sensing and generator auto-start signaling.',
         image: '/images/products/ATS Controller.jpeg',
-        overview: 'Microcontroller-based ATS Controller unit designed for seamless monitoring of primary and secondary electrical sources. Automatically senses mains fail, under-voltage, phase loss, and frequency deviations to issue start signals to standby generators and operate motorized changeover switches.',
+        overview: 'Microcontroller/Microprocessor/PLC-based ATS Controller unit designed for seamless monitoring of primary and secondary electrical sources. Automatically senses mains fail, under-voltage, phase loss, and frequency deviations to issue start signals to standby generators and operate motorized changeover switches.',
         features: [
             'Precision 3-phase true RMS voltage and frequency measurement',
             'Programmable engine start delay, warm-up timer, and cool-down timer',
@@ -177,7 +177,7 @@ export const productsData = [
         fullTitle: 'Circuit Designing and Programming',
         category: 'Automation & Controls',
         standard: 'Custom Embedded OEM',
-        shortDesc: 'Turnkey customized embedded microcontrollers, PCB design and PLC control architectures built to custom machine OEM Single Line Diagrams.',
+        shortDesc: 'Turnkey customized embedded Microcontroller/Microprocessor/PLCs, PCB design and PLC control architectures built to custom machine OEM Single Line Diagrams.',
         image: '/images/products/Circuit Designing and Programming.jpeg',
         overview: 'Vishal Enterprises specializes in bespoke embedded circuit designing, specialized microprocessor firmware, and multi-brand PLC programming (Siemens, Delta, Mitsubishi, Schneider). We design purpose-built electronic boards and industrial control panels for proprietary industrial machinery and process lines.',
         features: [
@@ -470,7 +470,7 @@ export const productsData = [
         overview: 'Engineered for sensitive CNC machines, analytical laboratory instruments, and complete factory loads. This heavy-duty copper-wound servo stabilizer uses a high-speed microprocessor controller and precision servo motor drive to deliver ultra-stable 415V output (±1%) across wide grid fluctuations.',
         features: [
             '100% electrolytic grade copper wound variable autotransformer (Variac) and buck-boost',
-            'Microcontroller-based fast response servo motor drive (correction speed > 35V/sec)',
+            'Microcontroller/Microprocessor/PLC-based fast response servo motor drive (correction speed > 35V/sec)',
             'Digital LCD display indicating individual Phase-to-Phase and Phase-to-Neutral voltages',
             'Comprehensive protection: Under-Voltage, Over-Voltage, Phase Loss, Surge Suppressor',
             'Built-in manual bypass switch allowing maintenance without powering down downstream loads'
@@ -835,7 +835,7 @@ export const productsData = [
         image: '/images/products/Automatic Battery Changeover Panel.jpeg',
         overview: 'Our Automatic Battery Changeover Panels (ABCP) guarantee 100% uninterrupted DC auxiliary power for critical fire engine starting circuits and protection relays. Incorporating intelligent dual-bank monitoring, auto-swap on bank degradation, precision boost/float charging and high-resolution graphical LCD status indicators.',
         features: [
-            'Microcontroller-based intelligent automatic dual battery bank changeover',
+            'Microcontroller/Microprocessor/PLC-based intelligent automatic dual battery bank changeover',
             'Continuous battery impedance, cell voltage and discharge health tracking',
             'High-contrast Graphical LCD panel displaying real-time V, I and battery state',
             'Automatic switchover to Bank 2 if Bank 1 fails during engine cranking attempt',
