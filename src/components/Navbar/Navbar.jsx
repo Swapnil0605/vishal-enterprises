@@ -62,7 +62,8 @@ const productsMegaColumns = [
             { name: "ATS Control Panel", id: "ats-control-panel" },
             { name: "UPS ACDB Panel", id: "ups-acdb-panel" },
             { name: "Servo Stabilisers", id: "servo-voltage-stabilizer" },
-            { name: "VCB - AB Switch Interlock Control Panel", id: "vcb-ab-switch-interlock" }
+            { name: "VCB - AB Switch Interlock Control Panel", id: "vcb-ab-switch-interlock" },
+            { name: "SOP Narrator", id: "sop-narrator" }
         ]
     },
     {

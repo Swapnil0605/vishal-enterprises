@@ -100,6 +100,10 @@
     border-radius: 2px;
 }
 
+.nav-link-dropdown::after {
+    display: none;
+}
+
 /* ─── Qiro Tech Style Full-Width Mega Dropdown Menu ─── */
 @media (min-width: 992px) {
     .nav-links {
@@ -128,6 +132,24 @@
         gap: 4px;
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    /* Prevent static/detached red underline on full-height dropdown triggers when not hovering */
+    .nav-link-dropdown::after {
+        display: none !important;
+    }
+
+    .nav-item-mega:hover .nav-link-dropdown::after,
+    .nav-link-dropdown.open::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 4px;
+        right: 4px;
+        height: 3px;
+        background: #e31b23;
+        border-radius: 2px 2px 0 0;
+        display: block !important;
     }
 }
 
